@@ -1,5 +1,15 @@
 RatingProject
 
+
+=== Changes ===
+ #I've placed the home screen into the "features" and added the first three tasks to it. 
+ #I'm working on the "feature" branch to maintain code cleanliness.
+
+
+
+
+--- Project Description ---
+
 RatingProject is a project that fulfills one of my deepest dreams. It represents my approach to creating an application from scratch and, at the same time, provides an excellent opportunity to showcase my programming skills.
 
 This application will evolve as the project progresses, fully demonstrating the extent of my capabilities. One of its main components will be the "Deadlines" screen, which will serve as a preview, allowing users to peek into the future and discover what's coming next for the application in the following weeks. The deadlines accompanying these previews will serve as evidence of my commitment and diligence in working on the project, always ensuring the timely delivery of solutions.
@@ -42,5 +52,4 @@ Last but not least, użytkownicy będą mieli możliwość interakcji z treścia
 Wszystkie te elementy razem stanowią pełny obraz projektu RatingProject, który jest zarówno moim osobistym wyzwaniem, jak i dowodem na moje umiejętności w dziedzinie tworzenia zaawansowanych aplikacji mobilnych.
 
 Od czasu do czasu w tym pliku  będą widoczne aktualizacje, co zmieniło się w aplikacji.
-
 
