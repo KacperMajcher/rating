@@ -2,9 +2,8 @@ RatingProject
 
 
 === Changes ===
- #I've placed the home screen into the "features" and added the first three tasks to it. 
- #I'm working on the "feature" branch to maintain code cleanliness.
-
+#Improve home page look
+![Check progress here](web\icons\ImproveHomeScreenLook.png)
 
 
 
