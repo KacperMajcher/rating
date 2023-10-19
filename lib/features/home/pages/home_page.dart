@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rating/features/widgets/search_box.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,6 +14,13 @@ class HomePage extends StatelessWidget {
         margin: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
+            const SizedBox(
+              height: 15,
+            ),
+            searchBox(),
+            const SizedBox(
+              height: 23,
+            ),
             Container(
               height: 120,
               color: const Color.fromRGBO(41, 41, 41, 1),
@@ -34,18 +42,14 @@ class HomePage extends StatelessWidget {
                   height: 30,
                 ),
                 _DeadlineItem(
-                  task: 'Improve home_page screen look',
-                  deadline: 1,
-                ),
-                SizedBox(height: 10),
-                _DeadlineItem(
-                  task: 'Add deadline',
-                  deadline: 2,
+                  task:
+                      'Implement search box functionality to filter deadlines',
+                  deadline: 0,
                 ),
                 SizedBox(height: 10),
                 _DeadlineItem(
                   task: 'Add firebase to the project',
-                  deadline: 3,
+                  deadline: 0,
                 ),
                 SizedBox(height: 10),
               ]),
@@ -82,7 +86,7 @@ class _DeadlineItem extends StatelessWidget {
         leading: const Padding(
           padding: EdgeInsets.all(8.0),
           child: Icon(
-            Icons.circle_outlined,
+                        Icons.circle_outlined,
             color: Color.fromARGB(255, 207, 200, 200),
           ),
         ),

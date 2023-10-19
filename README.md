@@ -3,10 +3,10 @@
 
 # === Changes ===
 
-## Transparency from the "app planner" container when scrolling through tasks is removed. 
-## The deadlines have been equipped with a function to check whether the number of remaining days until the deadline is singular or plural, allowing for the display of "day(s) left" in the appropriate format.
+## Implement search box
+## Add new deadlines for today
 
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/eeadeddd-c3a6-417d-a020-383eea4495bf)
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/b13d94a8-9ada-4751-b8ca-70779b083988)
 
 
 
