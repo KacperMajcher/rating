@@ -3,11 +3,9 @@
 
 # === Changes ===
 
-## Implement search box
-## Add new deadlines for today
-
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/b13d94a8-9ada-4751-b8ca-70779b083988)
-
+## Create deadline model
+## Deadline item moved into a new folder
+## Displaying deadline items using a for loop
 
 
 
