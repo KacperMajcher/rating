@@ -10,19 +10,14 @@ class HomePage extends StatelessWidget {
       appBar: _buildAppBar(),
       backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
       body: Container(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 17,
-          vertical: 15,
-        ),
-        child: Expanded(
-          child: Column(
-            children: [
-              Container(
-                color: const Color.fromRGBO(41, 41, 41, 1),
-                margin: const EdgeInsets.only(
-                  top: 35,
-                  bottom: 25,
-                ),
+        margin: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          children: [
+            Container(
+              height: 120,
+              color: const Color.fromRGBO(41, 41, 41, 1),
+              child: Align(
+                alignment: Alignment.center,
                 child: Text(
                   'App Planner: Upcoming Deadlines',
                   style: GoogleFonts.sono(
@@ -32,30 +27,30 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
-              Expanded(
-                child: ListView(children: const [
-                  SizedBox(
-                    height: 50,
-                  ),
-                  _DeadlineItem(
-                    task: 'Improve home_page screen look',
-                    deadline: 1,
-                  ),
-                  SizedBox(height: 10),
-                  _DeadlineItem(
-                    task: 'Add deadline',
-                    deadline: 1,
-                  ),
-                  SizedBox(height: 10),
-                  _DeadlineItem(
-                    task: 'Add firebase to the project',
-                    deadline: 1,
-                  ),
-                  SizedBox(height: 10),
-                ]),
-              )
-            ],
-          ),
+            ),
+            Expanded(
+              child: ListView(children: const [
+                SizedBox(
+                  height: 30,
+                ),
+                _DeadlineItem(
+                  task: 'Improve home_page screen look',
+                  deadline: 1,
+                ),
+                SizedBox(height: 10),
+                _DeadlineItem(
+                  task: 'Add deadline',
+                  deadline: 2,
+                ),
+                SizedBox(height: 10),
+                _DeadlineItem(
+                  task: 'Add firebase to the project',
+                  deadline: 3,
+                ),
+                SizedBox(height: 10),
+              ]),
+            )
+          ],
         ),
       ),
     );
@@ -101,6 +96,7 @@ class _DeadlineItem extends StatelessWidget {
         trailing: Padding(
           padding: const EdgeInsets.all(2.0),
           child: Container(
+            margin: const EdgeInsets.all(3),
             height: 110,
             width: 100,
             decoration: BoxDecoration(
@@ -113,18 +109,33 @@ class _DeadlineItem extends StatelessWidget {
                 Text(
                   deadline.toString(),
                   style: GoogleFonts.ubuntuMono(
-                    fontSize: 12,
+                    fontSize: 22,
                     color: Colors.black,
                     textStyle: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
-                Text(
-                  'day/s left',
-                  style: GoogleFonts.ubuntuMono(
-                      fontSize: 15,
-                      color: Colors.black,
-                      textStyle: const TextStyle(fontWeight: FontWeight.bold)),
-                ),
+                StreamBuilder<Object>(
+                    stream: null,
+                    builder: (context, snapshot) {
+                      if (deadline.toString() == '1') {
+                        return Text(
+                          'day left',
+                          style: GoogleFonts.ubuntuMono(
+                              fontSize: 15,
+                              color: Colors.black,
+                              textStyle:
+                                  const TextStyle(fontWeight: FontWeight.bold)),
+                        );
+                      }
+                      return Text(
+                        'days left',
+                        style: GoogleFonts.ubuntuMono(
+                            fontSize: 15,
+                            color: Colors.black,
+                            textStyle:
+                                const TextStyle(fontWeight: FontWeight.bold)),
+                      );
+                    }),
               ],
             ),
           ),

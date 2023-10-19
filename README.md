@@ -1,9 +1,12 @@
-RatingProject
+# RatingProject
 
 
-=== Changes ===
-#Improve home page look
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/b2d6c0b9-e005-49f4-8e54-7225d9e9acda)
+# === Changes ===
+
+## Transparency from the "app planner" container when scrolling through tasks is removed. 
+## The deadlines have been equipped with a function to check whether the number of remaining days until the deadline is singular or plural, allowing for the display of "day(s) left" in the appropriate format.
+
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/eeadeddd-c3a6-417d-a020-383eea4495bf)
 
 
 
