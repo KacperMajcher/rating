@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rating/features/widgets/deadline_item.dart';
-import 'package:rating/features/widgets/search_box.dart';
 import 'package:rating/model/deadline.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,6 +12,13 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final deadlineItemsList = DeadlineItem.deadlineItemsList();
+  List<DeadlineItem> foundDeadlineItem = [];
+
+  @override
+  void initState() {
+    foundDeadlineItem = deadlineItemsList;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +32,7 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 15,
             ),
-            searchBox(),
+            searchBoxDeadlines(),
             const SizedBox(
               height: 23,
             ),
@@ -47,7 +53,7 @@ class _HomePageState extends State<HomePage> {
             ),
             Expanded(
               child: ListView(children: [
-                for (DeadlineItem deadlineItems in deadlineItemsList)
+                for (DeadlineItem deadlineItems in foundDeadlineItem)
                   DeadlineItems(
                     deadlineItem: deadlineItems,
                     onCheckBoxChange: _checkBoxChanged,
@@ -61,9 +67,57 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
+  Widget searchBoxDeadlines() {
+    return Container(
+      height: 48,
+      padding: const EdgeInsets.symmetric(
+        horizontal: 15,
+      ),
+      decoration: BoxDecoration(
+        color: const Color.fromRGBO(61, 61, 61, 1),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: TextField(
+        onChanged: (value) => _filter(value),
+        decoration: const InputDecoration(
+          contentPadding: EdgeInsets.all(0),
+          prefixIcon: Icon(
+            Icons.search,
+            color: Color.fromRGBO(232, 93, 4, 1),
+            size: 20,
+          ),
+          prefixIconConstraints: BoxConstraints(
+            maxHeight: 20,
+            minWidth: 25,
+          ),
+          border: InputBorder.none,
+          hintText: 'Search',
+          hintStyle: TextStyle(
+              color: Color.fromRGBO(155, 155, 149, 1),
+              fontStyle: FontStyle.normal),
+        ),
+      ),
+    );
+  }
+
   void _checkBoxChanged(DeadlineItem deadlineItem) {
     setState(() {
       deadlineItem.isDone = !deadlineItem.isDone;
+    });
+  }
+
+  void _filter(String enteredKeyword) {
+    List<DeadlineItem> results = [];
+    if (enteredKeyword.isEmpty) {
+      results = deadlineItemsList;
+    } else {
+      results = deadlineItemsList
+          .where((item) =>
+              item.task!.toLowerCase().contains(enteredKeyword.toLowerCase()))
+          .toList();
+    }
+    setState(() {
+      foundDeadlineItem = results;
     });
   }
 
