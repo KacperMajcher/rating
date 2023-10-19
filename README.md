@@ -3,7 +3,8 @@ RatingProject
 
 === Changes ===
 #Improve home page look
-![Check progress here](web\icons\ImproveHomeScreenLook.png)
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/b2d6c0b9-e005-49f4-8e54-7225d9e9acda)
+
 
 
 
