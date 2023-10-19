@@ -4,9 +4,14 @@ import 'package:rating/features/widgets/deadline_item.dart';
 import 'package:rating/features/widgets/search_box.dart';
 import 'package:rating/model/deadline.dart';
 
-class HomePage extends StatelessWidget {
-  HomePage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   final deadlineItemsList = DeadlineItem.deadlineItemsList();
 
   @override
@@ -43,7 +48,10 @@ class HomePage extends StatelessWidget {
             Expanded(
               child: ListView(children: [
                 for (DeadlineItem deadlineItems in deadlineItemsList)
-                  DeadlineItems(deadlineItem: deadlineItems),
+                  DeadlineItems(
+                    deadlineItem: deadlineItems,
+                    onCheckBoxChange: _checkBoxChanged,
+                  ),
                 const SizedBox(height: 30),
               ]),
             )
@@ -51,6 +59,12 @@ class HomePage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _checkBoxChanged(DeadlineItem deadlineItem) {
+    setState(() {
+      deadlineItem.isDone = !deadlineItem.isDone;
+    });
   }
 
   AppBar _buildAppBar() {

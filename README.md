@@ -3,7 +3,11 @@
 
 # === Changes ===
 
-## Install firebase core
+## Add checkboxes functionality 
+After clicking the container, the text gets crossed out, and the checkbox fills in - this only works within the application; the code in the model and isChecked do not change. After refreshing the emulator, we return to the initial state - this will be fixed with the implementation of Firebase in the project.
+
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/1fa803f2-1ecb-4efb-9377-1696d95185a7)
+
 
 --- Project Description ---
 

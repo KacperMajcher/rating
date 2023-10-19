@@ -13,8 +13,21 @@ class DeadlineItem {
 
   static List<DeadlineItem> deadlineItemsList() {
     return [
-      DeadlineItem(id: 1, task: 'Add firebase to the project', deadline: 0),
-      DeadlineItem(id: 2, task: 'Add Searchbox functionality', deadline: 0),
+      DeadlineItem(
+          id: 2,
+          task: 'Add checkBoxes functionality',
+          deadline: 0,
+          isDone: true),
+      DeadlineItem(
+        id: 1,
+        task: 'Add firebase to the project',
+        deadline: 0,
+      ),
+      DeadlineItem(
+          id: 2,
+          task: 'Add Searchbox functionality',
+          deadline: 0,
+          isDone: true),
     ];
   }
 }

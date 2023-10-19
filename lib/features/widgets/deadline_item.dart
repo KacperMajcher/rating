@@ -3,25 +3,31 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:rating/model/deadline.dart';
 
 class DeadlineItems extends StatelessWidget {
-  const DeadlineItems({super.key, required this.deadlineItem});
+  const DeadlineItems(
+      {super.key, required this.onCheckBoxChange, required this.deadlineItem});
 
-  final DeadlineItem deadlineItem; // z modelu
+  final DeadlineItem deadlineItem;
+  final onCheckBoxChange;
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
         margin: const EdgeInsets.only(bottom: 8),
         child: ListTile(
-          onTap: () {},
+          onTap: () {
+            onCheckBoxChange(deadlineItem);
+          },
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25),
           ),
           tileColor: const Color.fromRGBO(82, 82, 82, 1),
-          leading: const Padding(
-            padding: EdgeInsets.all(8.0),
+          leading: Padding(
+            padding: const EdgeInsets.all(8.0),
             child: Icon(
-              Icons.circle_outlined,
-              color: Color.fromARGB(255, 207, 200, 200),
+              deadlineItem.isDone
+                  ? Icons.check_circle_rounded
+                  : Icons.circle_outlined,
+              color: const Color.fromARGB(255, 207, 200, 200),
             ),
           ),
           title: Text(
@@ -29,6 +35,8 @@ class DeadlineItems extends StatelessWidget {
             style: GoogleFonts.ubuntuMono(
               fontSize: 20,
               color: Colors.white,
+              decoration:
+                  deadlineItem.isDone ? TextDecoration.lineThrough : null,
             ),
           ),
           trailing: Padding(
