@@ -1,4 +1,4 @@
-package com.example.rating
+package com.ratingproject.rating
 
 import io.flutter.embedding.android.FlutterActivity
 
