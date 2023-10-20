@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
 
   AppBar _buildAppBar() {
     return AppBar(
-      title: const Text('RatingProject'),
+      title: const Text('Deadlines'),
       backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
       elevation: 0,
     );

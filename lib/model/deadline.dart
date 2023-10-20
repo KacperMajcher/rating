@@ -23,16 +23,19 @@ class DeadlineItem {
         id: 1,
         task: 'Improve drawer\'s look',
         deadline: 0,
+        isDone: true,
       ),
       DeadlineItem(
         id: 2,
         task: 'Add RatingPage',
         deadline: 0,
+        isDone: true,
       ),
       DeadlineItem(
         id: 3,
         task: 'Add Podcasters and Atists Page',
         deadline: 0,
+        isDone: true,
       ),
       DeadlineItem(
         id: 4,
@@ -43,6 +46,16 @@ class DeadlineItem {
         id: 4,
         task: 'Add user page',
         deadline: 1,
+      ),
+      DeadlineItem(
+        id: 4,
+        task: 'Implement Artists and Podcasters pages',
+        deadline: 1,
+      ),
+      DeadlineItem(
+        id: 4,
+        task: 'Improve Artists and Podcasters pages look',
+        deadline: 2,
       ),
     ];
   }
