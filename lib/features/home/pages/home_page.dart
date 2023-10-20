@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rating/features/widgets/deadline_item.dart';
+import 'package:rating/features/widgets/navigation_drawer.dart';
 import 'package:rating/model/deadline.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,28 +16,18 @@ class _HomePageState extends State<HomePage> {
   List<DeadlineItem> foundDeadlineItem = [];
 
   @override
-  void initState() {
-    foundDeadlineItem = deadlineItemsList;
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
-      drawer: const NavigationDrawer(),
+      drawer: navigationDrawer(context),
       backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: [
-            const SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15),
             searchBoxDeadlines(),
-            const SizedBox(
-              height: 23,
-            ),
+            const SizedBox(height: 23),
             Container(
               height: 120,
               color: const Color.fromRGBO(41, 41, 41, 1),
@@ -65,6 +56,20 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+    );
+  }
+
+  @override
+  void initState() {
+    foundDeadlineItem = deadlineItemsList;
+    super.initState();
+  }
+
+  AppBar _buildAppBar() {
+    return AppBar(
+      title: const Text('RatingProject'),
+      backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
+      elevation: 0,
     );
   }
 
@@ -121,67 +126,4 @@ class _HomePageState extends State<HomePage> {
       foundDeadlineItem = results;
     });
   }
-
-  AppBar _buildAppBar() {
-    return AppBar(
-      title: const Text('RatingProject'),
-      backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
-      elevation: 0,
-    );
-  }
-}
-
-class NavigationDrawer extends StatelessWidget {
-  const NavigationDrawer({super.key});
-
-  @override
-  Widget build(BuildContext context) => Drawer(
-        backgroundColor: const Color.fromRGBO(33, 37, 41, 1),
-        shadowColor: Colors.black,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              buildHeader(context),
-              buildMenuItems(context),
-            ],
-          ),
-        ),
-      );
-
-  Widget buildHeader(BuildContext context) => Container(
-        padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
-      );
-
-  Widget buildMenuItems(BuildContext context) => Wrap(
-        runSpacing: 16,
-        children: [
-          ListTile(
-            leading: Image.asset(
-              'assets/icons/rating.png',
-              color: Colors.white,
-              fit: BoxFit.cover,
-            ),
-            title: const Text(
-              'RATING',
-            ),
-            textColor: Colors.white,
-            onTap: () {},
-            contentPadding: const EdgeInsets.all(10),
-          ),
-          ListTile(
-            leading: Image.asset(
-              'assets/icons/user.png',
-              color: Colors.white,
-              fit: BoxFit.cover,
-            ),
-            title: const Text(
-              'User Page',
-            ),
-            textColor: Colors.white,
-            onTap: () {},
-            contentPadding: const EdgeInsets.all(10),
-          ),
-        ],
-      );
 }
