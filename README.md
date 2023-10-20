@@ -3,10 +3,12 @@
 
 # === Changes ===
 
-## Add searchbox functionality 
+## In the project, a drawer has been added to open a menu with screens
+## They have been described, and icons have been assigned to them
+## Icons have been imported into the project and placed in the 'assets' folder
+## New deadline tasks have also been added to the project
 
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/83954ac6-7f74-487a-b62b-50f15f17d43c)
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/cce3d248-2076-4c08-9521-1567b402aa3c)
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/d2b51a46-bca3-4595-b0d3-9b298d9493c4)
 
 
 

@@ -14,20 +14,36 @@ class DeadlineItem {
   static List<DeadlineItem> deadlineItemsList() {
     return [
       DeadlineItem(
-          id: 2,
-          task: 'Add checkBoxes functionality',
-          deadline: 0,
-          isDone: true),
+        id: 1,
+        task: 'Add navigation drawer to home page',
+        deadline: 0,
+        isDone: true,
+      ),
       DeadlineItem(
         id: 1,
-        task: 'Add firebase to the project',
+        task: 'Improve drawer\'s look',
         deadline: 0,
       ),
       DeadlineItem(
-          id: 2,
-          task: 'Add Searchbox functionality',
-          deadline: 0,
-          isDone: true),
+        id: 2,
+        task: 'Add RatingPage',
+        deadline: 0,
+      ),
+      DeadlineItem(
+        id: 3,
+        task: 'Add Podcasters and Atists Page',
+        deadline: 0,
+      ),
+      DeadlineItem(
+        id: 4,
+        task: 'Implement user login',
+        deadline: 1,
+      ),
+      DeadlineItem(
+        id: 4,
+        task: 'Add user page',
+        deadline: 1,
+      ),
     ];
   }
 }

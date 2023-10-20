@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _buildAppBar(),
+      drawer: const NavigationDrawer(),
       backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -128,4 +129,59 @@ class _HomePageState extends State<HomePage> {
       elevation: 0,
     );
   }
+}
+
+class NavigationDrawer extends StatelessWidget {
+  const NavigationDrawer({super.key});
+
+  @override
+  Widget build(BuildContext context) => Drawer(
+        backgroundColor: const Color.fromRGBO(33, 37, 41, 1),
+        shadowColor: Colors.black,
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              buildHeader(context),
+              buildMenuItems(context),
+            ],
+          ),
+        ),
+      );
+
+  Widget buildHeader(BuildContext context) => Container(
+        padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+      );
+
+  Widget buildMenuItems(BuildContext context) => Wrap(
+        runSpacing: 16,
+        children: [
+          ListTile(
+            leading: Image.asset(
+              'assets/icons/rating.png',
+              color: Colors.white,
+              fit: BoxFit.cover,
+            ),
+            title: const Text(
+              'RATING',
+            ),
+            textColor: Colors.white,
+            onTap: () {},
+            contentPadding: const EdgeInsets.all(10),
+          ),
+          ListTile(
+            leading: Image.asset(
+              'assets/icons/user.png',
+              color: Colors.white,
+              fit: BoxFit.cover,
+            ),
+            title: const Text(
+              'User Page',
+            ),
+            textColor: Colors.white,
+            onTap: () {},
+            contentPadding: const EdgeInsets.all(10),
+          ),
+        ],
+      );
 }
