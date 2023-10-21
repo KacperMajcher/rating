@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rating/features/widgets/deadline_item.dart';
 import 'package:rating/features/widgets/navigation_drawer.dart';
-import 'package:rating/model/deadline.dart';
+import 'package:rating/model/deadline_model.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

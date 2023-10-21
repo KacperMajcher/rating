@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:rating/features/pages/artists_page.dart';
-import 'package:rating/features/pages/podcasters_page.dart';
+import 'package:rating/features/artists/artists_page.dart';
+import 'package:rating/features/podcasters/podcasters_page.dart';
 
 
 Widget navigationDrawer(BuildContext context) => Drawer(
