@@ -1,9 +1,13 @@
 # RatingProject
 
-
 # === Changes ===
 
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/eb4ce211-060c-47e1-a979-90192e3eb163)
+## The application now features the capability to allow users to log in via email and Google accounts
+## The application utilizes the FlutterFire UI module
+## A user screen has been added, accessible by clicking the "your profile" button in the drawer
+
+
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/bdb9b1da-890c-47e3-abf4-9d78fc2c038b)
 
 
 --- Project Description ---
