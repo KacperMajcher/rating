@@ -3,7 +3,13 @@
 
 # === Changes ===
 
-## Install firebase core
+## Artists and Podcasters pages have been added to the project
+## Artists and Podcasters pages are accessible from the drawer by Navigator.push
+## The drawer has become the rating page
+## New tasks have been added to the deadline list
+
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/eb4ce211-060c-47e1-a979-90192e3eb163)
+
 
 --- Project Description ---
 
