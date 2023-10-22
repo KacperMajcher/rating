@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:rating/model/deadline.dart';
+import 'package:rating/model/deadline_model.dart';
 
 class DeadlineItems extends StatelessWidget {
   const DeadlineItems(

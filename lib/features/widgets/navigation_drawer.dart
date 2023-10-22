@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:rating/features/pages/artists_page.dart';
-import 'package:rating/features/pages/podcasters_page.dart';
+import 'package:rating/features/artists/artists_page.dart';
+import 'package:rating/features/auth/pages/user_profile.dart';
+import 'package:rating/features/podcasters/podcasters_page.dart';
 
 
 Widget navigationDrawer(BuildContext context) => Drawer(
@@ -85,7 +86,12 @@ Widget buildHeader(BuildContext context) => Container(
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 70),
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const UserProfile()),
+                );
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color.fromRGBO(173, 181, 189, 1),
               ),
