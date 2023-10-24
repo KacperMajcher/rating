@@ -27,11 +27,13 @@ class DeadlineRepository {
         id: 3,
         task: 'Implement BLoC',
         deadline: 0,
+        isDone: true,
       ),
       DeadlineItem(
         id: 4,
         task: 'Create BLoC for home',
         deadline: 0,
+        isDone: true,
       ),
       DeadlineItem(
         id: 5,
@@ -42,6 +44,7 @@ class DeadlineRepository {
         id: 6,
         task: 'Create deadline repository',
         deadline: 0,
+        isDone: true,
       ),
       DeadlineItem(
         id: 7,

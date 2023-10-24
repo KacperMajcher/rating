@@ -1,16 +1,49 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rating/features/home/cubit/home_cubit.dart';
 import 'package:rating/features/widgets/deadline_item.dart';
 import 'package:rating/features/widgets/navigation_drawer.dart';
 import 'package:rating/model/deadline_model.dart';
 import 'package:rating/repositories/deadline_repository.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomeStateTest extends StatelessWidget {
+  const HomeStateTest({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (context) => HomeCubit(),
+      child: BlocBuilder<HomeCubit, HomeState>(
+        builder: (context, state) {
+          return Scaffold(
+            appBar: _buildAppBar(),
+            body: Center(
+              child: Column(children: [
+                const SizedBox(
+                  height: 300,
+                ),
+                Text(state.task),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text('days left: '),
+                    Text(state.deadline.toString()),
+                  ],
+                ),
+              ]),
+            ),
+          );
+        },
+      ),
+    );
+  }
 }
+
+/*
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+  
 
 class _HomePageState extends State<HomePage> {
   final deadlineItemsList = DeadlineRepository().deadlineItemsList();
@@ -65,15 +98,15 @@ class _HomePageState extends State<HomePage> {
     foundDeadlineItem = deadlineItemsList;
     super.initState();
   }
-
-  AppBar _buildAppBar() {
-    return AppBar(
-      title: const Text('Deadlines'),
-      backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
-      elevation: 0,
-    );
-  }
-
+*/
+AppBar _buildAppBar() {
+  return AppBar(
+    title: const Text('Deadlines'),
+    backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
+    elevation: 0,
+  );
+}
+/*
   Widget searchBoxDeadlines() {
     return Container(
       height: 48,
@@ -127,4 +160,5 @@ class _HomePageState extends State<HomePage> {
       foundDeadlineItem = results;
     });
   }
-}
+  */
+// }

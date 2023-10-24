@@ -2,11 +2,10 @@
 
 # === Changes ===
 
-## Deadline repository has been added to the project, storing all the deadlines in the application
-## New deadlines have been added to the list
+## BLoC has been added to the project
+## The HomePage received a Cubit, and the first hardcoded data has been passed to a sample view
 
-
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/5467ae16-9e5a-417b-bae3-cf7d36c89bb8)
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/56e1334b-6f62-42f7-87ea-3035fd54a5cd)
 
 --- Project Description ---
 
