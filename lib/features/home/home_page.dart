@@ -12,25 +12,21 @@ class HomeStateTest extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => HomeCubit(),
+    return BlocProvider<HomeCubit>(
+      create: (context) {
+        return HomeCubit(
+          deadlineRepository: DeadlineRepository(),
+        )..getDeadlineItems();
+      },
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
           return Scaffold(
             appBar: _buildAppBar(),
             body: Center(
-              child: Column(children: [
-                const SizedBox(
-                  height: 300,
-                ),
-                Text(state.task),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text('days left: '),
-                    Text(state.deadline.toString()),
-                  ],
-                ),
+              child: ListView(children: [
+                for (final deadline in state.deadlineItem)
+                  DeadlineItems(
+                      onCheckBoxChange: deadline, deadlineItem: deadline)
               ]),
             ),
           );

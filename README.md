@@ -2,10 +2,9 @@
 
 # === Changes ===
 
-## BLoC has been added to the project
-## The HomePage received a Cubit, and the first hardcoded data has been passed to a sample view
+## Items from the repository were passed to the homepage through a block
 
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/56e1334b-6f62-42f7-87ea-3035fd54a5cd)
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/6b9c2aca-d97b-43ff-b645-9003de088d95)
 
 --- Project Description ---
 

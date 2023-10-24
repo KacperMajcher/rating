@@ -2,7 +2,8 @@
 part of 'home_cubit.dart';
 
 class HomeState {
-  HomeState();
-  final String task = 'Deadline no. 1 (test)';
-  final int deadline = 5;
+  const HomeState({
+    this.deadlineItem = const [],
+  });
+  final List<DeadlineItem> deadlineItem;
 }
