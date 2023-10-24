@@ -2,13 +2,11 @@
 
 # === Changes ===
 
-## The application now features the capability to allow users to log in via email and Google accounts
-## The application utilizes the FlutterFire UI module
-## A user screen has been added, accessible by clicking the "your profile" button in the drawer
+## Deadline repository has been added to the project, storing all the deadlines in the application
+## New deadlines have been added to the list
 
 
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/bdb9b1da-890c-47e3-abf4-9d78fc2c038b)
-
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/5467ae16-9e5a-417b-bae3-cf7d36c89bb8)
 
 --- Project Description ---
 
