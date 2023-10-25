@@ -3,7 +3,8 @@
 
 # === Changes ===
 
-## Display sample data on the artist page
+## Implement BLoC for articles page
+## Pass data from Cubit to the view
 
 ![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/57a86635-ae25-4cba-a7c7-ba2a64e1f042)
 
