@@ -9,9 +9,10 @@ class ArtistsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ArtistsCubit(),
+      create: (context) => ArtistsCubit()..getArtistItems(),
       child: BlocBuilder<ArtistsCubit, ArtistsState>(
         builder: (context, state) {
+          final artistModel = state.artistModel;
           return Scaffold(
             appBar: AppBar(
               title: const Text('Top Artists'),
@@ -30,8 +31,8 @@ class ArtistsPage extends StatelessWidget {
                   child: Center(
                     child: Column(
                       children: [
-                        Text('place: ${state.place.toString()}'),
-                        Text(state.name),
+                        Text('place: ${artistModel!.place.toString()}'),
+                        Text(artistModel.name),
                       ],
                     ),
                   ),

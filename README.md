@@ -3,8 +3,9 @@
 
 # === Changes ===
 
-## Implement BLoC for articles page
-## Pass data from Cubit to the view
+## An artist model was developed
+## This model is integrated into the Cubic system. More specifically, this model is used within the "getArtistItems" function, where particular author is assigned to the model
+## The model, along with its assigned author, is presented and showcased on a web page
 
 ![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/57a86635-ae25-4cba-a7c7-ba2a64e1f042)
 
