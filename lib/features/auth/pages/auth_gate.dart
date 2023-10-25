@@ -8,17 +8,17 @@ class AuthGate extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder<User?>(
-      stream: FirebaseAuth.instance.authStateChanges(),
-      initialData: FirebaseAuth.instance.currentUser,
-      builder: (context, snapshot) {
-        if (!snapshot.hasData) {
-          return const SignIn();
-        }
-        return const HomeStateTest();
-      },
-    );
-  }
+                return StreamBuilder<User?>(
+              stream: FirebaseAuth.instance.authStateChanges(),
+              initialData: FirebaseAuth.instance.currentUser,
+              builder: (context, snapshot) {
+                if (!snapshot.hasData) {
+                  return const SignIn();
+                }
+                return const HomePage();
+              },
+            );
+            }
 }
 
 class SignIn extends StatelessWidget {

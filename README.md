@@ -2,9 +2,10 @@
 
 # === Changes ===
 
-## Items from the repository were passed to the homepage through a block
+## The block has been integrated into the main application view (including the item filtering function and task completion value modification)
 
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/6b9c2aca-d97b-43ff-b645-9003de088d95)
+![Check-progress-here](https://github.com/adamsmaka/cantwait28/assets/142928291/3aaa30c0-3226-4aa9-8042-e2f6c503f93c)
+
 
 --- Project Description ---
 
