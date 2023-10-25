@@ -25,9 +25,16 @@ class _HomePageState extends State<HomePage> {
             margin: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                const SizedBox(height: 15),
-                searchBoxDeadlines(),
-                const SizedBox(height: 23),
+                Stack(
+                  alignment: AlignmentDirectional.center,
+                  children: <Widget>[
+                    Container(
+                      height: 80,
+                      color: const Color.fromRGBO(41, 41, 41, 1),
+                    ),
+                    searchBoxDeadlines(),
+                  ],
+                ),
                 Container(
                   height: 120,
                   color: const Color.fromRGBO(41, 41, 41, 1),

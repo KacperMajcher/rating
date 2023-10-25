@@ -4,24 +4,6 @@ class DeadlineRepository {
   List<DeadlineItem> deadlineItemsList() {
     return [
       DeadlineItem(
-        id: 1,
-        task: 'Implement BLoC',
-        deadline: -1,
-        isDone: true,
-      ),
-      DeadlineItem(
-        id: 2,
-        task: 'Create BLoC for home',
-        deadline: -1,
-        isDone: true,
-      ),
-      DeadlineItem(
-        id: 3,
-        task: 'Create deadline repository',
-        deadline: -1,
-        isDone: true,
-      ),
-      DeadlineItem(
         id: 4,
         task: 'Implement enums in the project',
         deadline: -1,
@@ -30,6 +12,7 @@ class DeadlineRepository {
         id: 5,
         task: 'Fix transparent searchbox background',
         deadline: -1,
+        isDone: true,
       ),
       DeadlineItem(
         id: 6,
