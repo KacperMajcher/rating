@@ -3,20 +3,9 @@
 
 # === Changes ===
 
-## Using the added enum, the switch function allows for controlling the states in the home
+## Display sample data on the artist page
 
-## status.initial
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/0ae090cf-10d6-4800-840c-e0ea37098745)
-
-## status.loading
-https://github.com/KacperMajcher/rating/assets/142928291/88892d6b-1db6-4c9d-9655-8b0b30a33226
-
-## status.error
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/4adf5173-b10b-49bc-a44a-850a5acda2ea)
-
-## status.success
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/6e28fadc-935a-4efe-8723-76ace2e6889f)
-
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/57a86635-ae25-4cba-a7c7-ba2a64e1f042)
 
 
 --- Project Description ---

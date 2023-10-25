@@ -9,12 +9,58 @@ class ArtistsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Top Artists'),
-        backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
+        backgroundColor: const Color(0xFF292929),
         elevation: 0,
       ),
       drawer: navigationDrawer(context),
-      body: const Center(
-        child: Text('This is ArtistsPage'),
+      body: Center(
+        child: Column(children: [
+          const SizedBox(
+            height: 250,
+          ),
+          Container(
+            color: Colors.red,
+            height: 70,
+            child: const Center(
+              child: Column(
+                children: [
+                  Text('place: 1'),
+                  Text('John Smith'),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Container(
+            height: 70,
+            color: Colors.green,
+            child: const Center(
+              child: Column(
+                children: [
+                  Text('place: 2'),
+                  Text('Emily Johnson'),
+                ],
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Container(
+            height: 70,
+            color: Colors.blue,
+            child: const Center(
+              child: Column(
+                children: [
+                  Text('place: 3'),
+                  Text('Michael Davis'),
+                ],
+              ),
+            ),
+          ),
+        ]),
       ),
     );
   }

@@ -17,8 +17,9 @@ class DeadlineRepository {
       ),
       DeadlineItem(
         id: 6,
-        task: 'Implement hard-coded data of artists and podcasters to pages',
+        task: 'Implement hard-coded data of artists to artistpage',
         deadline: -1,
+        isDone: true,
       ),
       DeadlineItem(
         id: 7,
