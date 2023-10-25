@@ -2,7 +2,7 @@ part of 'artists_cubit.dart';
 
 class ArtistsState {
   const ArtistsState({
-    this.artistModel,
+      this.artistModel = const [],
   });
-  final ArtistModel? artistModel;
+  final List<ArtistModel> artistModel;
 }

@@ -5,14 +5,12 @@ import 'package:rating/repositories/artist_repository.dart';
 part 'artists_state.dart';
 
 class ArtistsCubit extends Cubit<ArtistsState> {
-  ArtistsCubit(this._artistRepository) : super(const ArtistsState());
+  ArtistsCubit({required this.artistRepository}) : super(const ArtistsState());
+  final ArtistRepository artistRepository;
 
-  final ArtistRepository _artistRepository;
-
-  Future<void> getArtistModel() async {
-   
-    emit(const ArtistsState());
-    final artistModel = await _artistRepository.getArtistItems();
+  Future<void> getArtistModels() async {
+    emit(const ArtistsState(artistModel: []));
+    final artistModel = await artistRepository.getArtistModels();
     emit(
       ArtistsState(
         artistModel: artistModel,
