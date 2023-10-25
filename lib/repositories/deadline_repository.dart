@@ -7,6 +7,7 @@ class DeadlineRepository {
         id: 4,
         task: 'Implement enums in the project',
         deadline: -1,
+        isDone: true,
       ),
       DeadlineItem(
         id: 5,
