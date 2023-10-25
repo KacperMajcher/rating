@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rating/features/artists/cubit/artists_cubit.dart';
 import 'package:rating/features/widgets/navigation_drawer.dart';
+import 'package:rating/repositories/artist_repository.dart';
 
 class ArtistsPage extends StatelessWidget {
   const ArtistsPage({super.key});
@@ -9,7 +10,7 @@ class ArtistsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ArtistsCubit()..getArtistItems(),
+      create: (context) => ArtistsCubit(ArtistRepository())..getArtistModel(),
       child: BlocBuilder<ArtistsCubit, ArtistsState>(
         builder: (context, state) {
           final artistModel = state.artistModel;
@@ -30,9 +31,9 @@ class ArtistsPage extends StatelessWidget {
                   height: 70,
                   child: Center(
                     child: Column(
-                      children: [
-                        Text('place: ${artistModel!.place.toString()}'),
-                        Text(artistModel.name),
+                      children: [ 
+                        Text(artistModel?.place.toString() ?? ''),
+                        Text(artistModel?.name ?? ''),
                       ],
                     ),
                   ),
