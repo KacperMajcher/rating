@@ -37,6 +37,7 @@ class DeadlineRepository {
         id: 9,
         task: 'Create navigator to homepage in drawer',
         deadline: 0,
+        isDone: true,
       ),
       DeadlineItem(
         id: 10,
