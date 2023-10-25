@@ -23,12 +23,13 @@ class DeadlineRepository {
       ),
       DeadlineItem(
         id: 7,
-        task: 'Create prototype of Artists and Podcasters pages',
+        task: 'Create prototype of Artists page',
         deadline: -1,
+        isDone: true,
       ),
       DeadlineItem(
         id: 8,
-        task: 'Improve Artists and Podcasters pages look',
+        task: 'Improve Artists page look',
         deadline: -1,
       ),
       DeadlineItem(
@@ -38,14 +39,12 @@ class DeadlineRepository {
       ),
       DeadlineItem(
         id: 10,
-        task:
-            'Create new screen by inkwell on cards in podcasters and artists pages',
+        task: 'Create new screen by inkwell on cards in artist page',
         deadline: 1,
       ),
       DeadlineItem(
         id: 11,
-        task:
-            'Implement artist/podcaster page in that screen, show name, bio, top songs/podcasts',
+        task: 'Implement artist page in that screen, show name, bio, top songs',
         deadline: 1,
       ),
     ];

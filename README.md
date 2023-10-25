@@ -3,12 +3,11 @@
 
 # === Changes ===
 
-## The remote data source for the artist page has been added to the project
-## A list of sample artists has been included in the remote data source
-## Artists from the remote data source are displayed on the artist page
-## The artists on the homepage are displayed using the artistItemWidget in a listView
+## A prototype of the artist page has been created
+## The screen is divided into parts - there's a header, a search bar, and a list of containers where rankings are entered (each window represents one artist)
+## The data is fetched in the same way
 
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/16ab726d-d570-4b35-ab5a-5159ad6468c1)
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/4a973c64-cbd3-4528-9533-032b63a2f949)
 
 
 --- Project Description ---

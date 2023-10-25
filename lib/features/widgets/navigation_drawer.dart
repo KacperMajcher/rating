@@ -174,7 +174,9 @@ Widget buildMenuItems(BuildContext context) => Wrap(
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const ArtistsPage()),
+              MaterialPageRoute(
+                  builder: (context) => const ArtistsPage(),
+                  fullscreenDialog: true),
             );
           },
           contentPadding: const EdgeInsets.all(10),
@@ -198,7 +200,9 @@ Widget buildMenuItems(BuildContext context) => Wrap(
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const PodcastersPage()),
+              MaterialPageRoute(
+                  builder: (context) => const PodcastersPage(),
+                  fullscreenDialog: true),
             );
           },
           contentPadding: const EdgeInsets.all(10),
