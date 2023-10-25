@@ -3,11 +3,7 @@
 
 # === Changes ===
 
-## A prototype of the artist page has been created
-## The screen is divided into parts - there's a header, a search bar, and a list of containers where rankings are entered (each window represents one artist)
-## The data is fetched in the same way
-
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/4a973c64-cbd3-4528-9533-032b63a2f949)
+## The project has had AI-generated images added, which serve as avatars for artists in the listing
 
 
 --- Project Description ---
