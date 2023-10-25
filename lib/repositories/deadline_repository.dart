@@ -31,6 +31,7 @@ class DeadlineRepository {
         id: 8,
         task: 'Improve Artists page look',
         deadline: -1,
+        isDone: true,
       ),
       DeadlineItem(
         id: 9,

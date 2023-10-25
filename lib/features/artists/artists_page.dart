@@ -13,7 +13,7 @@ class ArtistsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
+        backgroundColor: const Color.fromRGBO(82, 82, 82, 1),
         elevation: 0,
       ),
       backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
@@ -27,85 +27,105 @@ class ArtistsPage extends StatelessWidget {
         },
         child: BlocBuilder<ArtistsCubit, ArtistsState>(
           builder: (context, state) {
-            return Column(
-              children: [
-                const SizedBox(
-                  height: 40,
-                  child: Center(
-                    child: Text(
-                      'Artists',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 40,
-                        fontWeight: FontWeight.w600,
-                        height: 0,
+            return SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    height: 280,
+                    decoration: const ShapeDecoration(
+                      color: Color.fromRGBO(82, 82, 82, 1),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          bottomLeft: Radius.circular(32),
+                          bottomRight: Radius.circular(32),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-                const SizedBox(height: 20),
-                Container(
-                  height: 120,
-                  width: 350,
-                  alignment: Alignment.bottomLeft,
-                  child: const Text(
-                    'Meet \nour winners!',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 40,
-                      fontWeight: FontWeight.w600,
+                    child: Column(
+                      children: [
+                        const SizedBox(
+                          height: 40,
+                          child: Center(
+                            child: Text(
+                              'Artists',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 40,
+                                fontWeight: FontWeight.w600,
+                                height: 0,
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 20),
+                        Container(
+                          height: 120,
+                          width: 350,
+                          alignment: Alignment.bottomLeft,
+                          child: const Text(
+                            'Meet \nour winners!',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 40,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            textAlign: TextAlign.left,
+                          ),
+                        ),
+                        const SizedBox(height: 23),
+                        Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: searchBox(),
+                        ),
+                      ],
                     ),
-                    textAlign: TextAlign.left,
                   ),
-                ),
-                const SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.all(12.0),
-                  child: searchBox(),
-                ),
-                SizedBox(
-                  height: 275,
-                  child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    padding: const EdgeInsets.all(12),
-                    itemCount: state.artistModel.length,
-                    separatorBuilder: (context, index) {
-                      return const SizedBox(width: 12);
-                    },
-                    itemBuilder: (context, index) {
-                      final artistModel = state.artistModel[index];
-                      return _ArtistItemWidget(
-                        artistModel: artistModel,
-                      );
-                    },
+                  const SizedBox(
+                    height: 20,
                   ),
-                ),
-                const SizedBox(height: 40),
-                Container(
-                  alignment: Alignment.center,
-                  child: const Text(
-                    'Did your favorite \nmake it into the top 5?',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
+                  SizedBox(
+                    height: 275,
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      padding: const EdgeInsets.all(12),
+                      itemCount: state.artistModel.length,
+                      separatorBuilder: (context, index) {
+                        return const SizedBox(width: 12);
+                      },
+                      itemBuilder: (context, index) {
+                        final artistModel = state.artistModel[index];
+                        return _ArtistItemWidget(
+                          artistModel: artistModel,
+                        );
+                      },
                     ),
-                    textAlign: TextAlign.center,
                   ),
-                ),
-                const SizedBox(height: 7),
-                Container(
-                  alignment: Alignment.center,
-                  child: const Text(
-                    "Isn't it? Give your vote to it!",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 10,
+                  const SizedBox(height: 40),
+                  Container(
+                    alignment: Alignment.center,
+                    child: const Text(
+                      'Did your favorite \nmake it into the top 5?',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 30,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
                   ),
-                ),
-                const Expanded(child: SizedBox())
-              ],
+                  const SizedBox(height: 7),
+                  Container(
+                    alignment: Alignment.center,
+                    child: const Text(
+                      "Isn't it? Give your vote to it!",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 10,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                ],
+              ),
             );
           },
         ),
@@ -127,26 +147,57 @@ class _ArtistItemWidget extends StatelessWidget {
     return Container(
       width: 250,
       height: 300,
-      decoration: const BoxDecoration(color: Colors.white),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Text(
-            'Place: ${artistModel.place.toString()}',
-            style: const TextStyle(
-              fontSize: 14,
-            ),
-          ),
-          Text(
-            artistModel.name,
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+      decoration: ShapeDecoration(
+        color: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30),
+        ),
+        shadows: const [
+          BoxShadow(color: Colors.white, blurRadius: 10, spreadRadius: 0),
         ],
       ),
+      child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(
+              height: 10,
+            ),
+            CircleAvatar(
+              radius: 90,
+              backgroundImage:
+                  AssetImage('assets/avatars/avatar${artistModel.place}.png'),
+            ),
+            const SizedBox(
+              height: 7,
+            ),
+            Container(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        '#${artistModel.place.toString()}',
+                        style: const TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'Jura',
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      Text(
+                        artistModel.name,
+                        style: const TextStyle(
+                          fontSize: 25,
+                          fontFamily: 'Jura',
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ]),
+              ),
+            ),
+            const Expanded(child: SizedBox())
+          ]),
     );
   }
 }
