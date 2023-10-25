@@ -3,13 +3,7 @@
 
 # === Changes ===
 
-## The semi-transparent tile color on the homepage behind the search bar has been concealed by a container using a stack
-### The issue was with the widgets in a ListView that extended beyond the expanded area. They have been covered by a container and are now invisible
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/c93b9f50-2749-4095-88c3-40179a553ce8)
-### After cutting the tile color
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/d46111dd-8f60-4607-b975-6553aef71f3c)
-## Final
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/714d99d4-bcc7-426d-9dee-f720ad148d60)
+## Enums has been added to the project
 
 
 --- Project Description ---
