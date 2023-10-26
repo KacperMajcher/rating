@@ -3,11 +3,9 @@
 
 # === Changes ===
 
-## Navigation to the main page in drawer is added
-
-![Check-for-changes](https://github.com/KacperMajcher/rating/assets/142928291/02c078e6-881e-4843-a8ec-849269f40c97)
-
-
+## An artist details page has been added to the project, which will store more information about the listed artist in the future
+## Using the onTap parameter in InkWell, clicking on an artist will navigate us to the artist details page screen
+## New deadlines have been added to the list
 
 
 --- Project Description ---
