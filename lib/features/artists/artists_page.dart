@@ -150,7 +150,9 @@ class _ArtistItemWidget extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const ArtistsDetailsPage(),
+            builder: (context) => ArtistsDetailsPage(
+              artistModel: artistModel,
+            ),
           ),
         );
       },
@@ -206,7 +208,6 @@ class _ArtistItemWidget extends StatelessWidget {
                       ]),
                 ),
               ),
-              const Expanded(child: SizedBox())
             ]),
       ),
     );
