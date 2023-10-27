@@ -3,9 +3,9 @@
 
 # === Changes ===
 
-## An artist details page has been added to the project, which will store more information about the listed artist in the future
-## Using the onTap parameter in InkWell, clicking on an artist will navigate us to the artist details page screen
-## New deadlines have been added to the list
+## The new data has been passed and displayed in the ArtistDetailsPage screen prototype
+
+![Check-for-changes](https://github.com/KacperMajcher/rating/assets/142928291/7a2ff67d-7a41-4475-b5d7-fb41a1c2ce09)
 
 
 --- Project Description ---
