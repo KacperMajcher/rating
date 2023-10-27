@@ -28,105 +28,103 @@ class ArtistsPage extends StatelessWidget {
         },
         child: BlocBuilder<ArtistsCubit, ArtistsState>(
           builder: (context, state) {
-            return SingleChildScrollView(
-              child: Column(
-                children: [
-                  Container(
-                    height: 280,
-                    decoration: const ShapeDecoration(
-                      color: Color.fromRGBO(82, 82, 82, 1),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(32),
-                          bottomRight: Radius.circular(32),
-                        ),
+            return Column(
+              children: [
+                Container(
+                  height: 280,
+                  decoration: const ShapeDecoration(
+                    color: Color.fromRGBO(82, 82, 82, 1),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(32),
+                        bottomRight: Radius.circular(32),
                       ),
                     ),
-                    child: Column(
-                      children: [
-                        const SizedBox(
-                          height: 40,
-                          child: Center(
-                            child: Text(
-                              'Artists',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 40,
-                                fontWeight: FontWeight.w600,
-                                height: 0,
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-                        Container(
-                          height: 120,
-                          width: 350,
-                          alignment: Alignment.bottomLeft,
-                          child: const Text(
-                            'Meet \nour winners!',
+                  ),
+                  child: Column(
+                    children: [
+                      const SizedBox(
+                        height: 40,
+                        child: Center(
+                          child: Text(
+                            'Artists',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 40,
                               fontWeight: FontWeight.w600,
+                              height: 0,
                             ),
-                            textAlign: TextAlign.left,
                           ),
                         ),
-                        const SizedBox(height: 23),
-                        Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: searchBox(),
+                      ),
+                      const SizedBox(height: 20),
+                      Container(
+                        height: 120,
+                        width: 350,
+                        alignment: Alignment.bottomLeft,
+                        child: const Text(
+                          'Meet \nour winners!',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 40,
+                            fontWeight: FontWeight.w600,
+                          ),
+                          textAlign: TextAlign.left,
                         ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  SizedBox(
-                    height: 275,
-                    child: ListView.separated(
-                      scrollDirection: Axis.horizontal,
-                      padding: const EdgeInsets.all(12),
-                      itemCount: state.artistModel.length,
-                      separatorBuilder: (context, index) {
-                        return const SizedBox(width: 12);
-                      },
-                      itemBuilder: (context, index) {
-                        final artistModel = state.artistModel[index];
-                        return _ArtistItemWidget(
-                          artistModel: artistModel,
-                        );
-                      },
-                    ),
-                  ),
-                  const SizedBox(height: 40),
-                  Container(
-                    alignment: Alignment.center,
-                    child: const Text(
-                      'Did your favorite \nmake it into the top 5?',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30,
                       ),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  const SizedBox(height: 7),
-                  Container(
-                    alignment: Alignment.center,
-                    child: const Text(
-                      "Isn't it? Give your vote to it!",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 10,
+                      const SizedBox(height: 23),
+                      Padding(
+                        padding: const EdgeInsets.all(12.0),
+                        child: searchBox(),
                       ),
-                      textAlign: TextAlign.center,
-                    ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                SizedBox(
+                  height: 275,
+                  child: ListView.separated(
+                    scrollDirection: Axis.horizontal,
+                    padding: const EdgeInsets.all(12),
+                    itemCount: state.artistModel.length,
+                    separatorBuilder: (context, index) {
+                      return const SizedBox(width: 12);
+                    },
+                    itemBuilder: (context, index) {
+                      final artistModel = state.artistModel[index];
+                      return _ArtistItemWidget(
+                        artistModel: artistModel,
+                      );
+                    },
+                  ),
+                ),
+                const SizedBox(height: 40),
+                Container(
+                  alignment: Alignment.center,
+                  child: const Text(
+                    'Did your favorite \nmake it into the top 5?',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                const SizedBox(height: 7),
+                Container(
+                  alignment: Alignment.center,
+                  child: const Text(
+                    "Isn't it? Give your vote to it!",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 10,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ],
             );
           },
         ),
