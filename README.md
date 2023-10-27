@@ -3,9 +3,8 @@
 
 # === Changes ===
 
-## An artist details page has been added to the project, which will store more information about the listed artist in the future
-## Using the onTap parameter in InkWell, clicking on an artist will navigate us to the artist details page screen
-## New deadlines have been added to the list
+## The ArtistModel has been updated with a new model called TopSongs
+## It contains data about the top 3 songs of the artist participating in the competition
 
 
 --- Project Description ---
