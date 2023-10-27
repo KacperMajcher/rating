@@ -49,7 +49,6 @@ class _HomePageState extends State<HomePage> {
               drawer: navigationDrawer(context),
               backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
               body: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 20),
                 child: Column(
                   children: [
                     Stack(
@@ -59,7 +58,10 @@ class _HomePageState extends State<HomePage> {
                           height: 80,
                           color: const Color.fromRGBO(41, 41, 41, 1),
                         ),
-                        searchBoxDeadlines(),
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: searchBoxDeadlines(),
+                        ),
                       ],
                     ),
                     Container(
@@ -67,12 +69,15 @@ class _HomePageState extends State<HomePage> {
                       color: const Color.fromRGBO(41, 41, 41, 1),
                       child: Align(
                         alignment: Alignment.center,
-                        child: Text(
-                          'App Planner: Upcoming Deadlines',
-                          style: GoogleFonts.sono(
-                            fontSize: 30,
-                            fontWeight: FontWeight.w500,
-                            color: const Color.fromRGBO(237, 237, 233, 1),
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Text(
+                            'App Planner: Upcoming Deadlines',
+                            style: GoogleFonts.sono(
+                              fontSize: 30,
+                              fontWeight: FontWeight.w500,
+                              color: const Color.fromRGBO(237, 237, 233, 1),
+                            ),
                           ),
                         ),
                       ),
@@ -80,8 +85,12 @@ class _HomePageState extends State<HomePage> {
                     Expanded(
                       child: ListView(children: [
                         for (final deadline in state.deadlineItem)
-                          DeadlineItemWidget(
-                            deadlineItem: deadline,
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 20.0),
+                            child: DeadlineItemWidget(
+                              deadlineItem: deadline,
+                            ),
                           ),
                       ]),
                     ),

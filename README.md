@@ -3,10 +3,7 @@
 
 # === Changes ===
 
-## The new data has been passed and displayed in the ArtistDetailsPage screen prototype
-
-![Check-for-changes](https://github.com/KacperMajcher/rating/assets/142928291/7a2ff67d-7a41-4475-b5d7-fb41a1c2ce09)
-
+## The display of deadlines has been improved
 
 --- Project Description ---
 
