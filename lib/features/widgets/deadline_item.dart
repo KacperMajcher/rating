@@ -60,28 +60,21 @@ class DeadlineItemWidget extends StatelessWidget {
                     textStyle: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
-                StreamBuilder<Object>(
-                    stream: null,
-                    builder: (context, snapshot) {
-                      if (deadlineItem.deadline.toString() == '1') {
-                        return Text(
-                          'day left',
-                          style: GoogleFonts.ubuntuMono(
-                              fontSize: 15,
-                              color: Colors.black,
-                              textStyle:
-                                  const TextStyle(fontWeight: FontWeight.bold)),
-                        );
-                      }
-                      return Text(
-                        'days left',
-                        style: GoogleFonts.ubuntuMono(
-                            fontSize: 15,
-                            color: Colors.black,
-                            textStyle:
-                                const TextStyle(fontWeight: FontWeight.bold)),
-                      );
-                    }),
+                Builder(
+                  builder: (context) {
+                    final suffix = deadlineItem.deadline.toString() == '1'
+                        ? 'day left'
+                        : 'days left';
+                    return Text(
+                      suffix,
+                      style: GoogleFonts.ubuntuMono(
+                        fontSize: 15,
+                        color: Colors.black,
+                        textStyle: const TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    );
+                  },
+                ),
               ],
             ),
           ),

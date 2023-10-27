@@ -15,6 +15,12 @@ class DeadlineRepository {
         task:
             'Create a suffix optimizing the display of "day(s) left" in the deadlineItemWidget',
         deadline: -1,
+        isDone: true,
+      ),
+      DeadlineItem(
+        id: 3,
+        task: 'Improve artists page look',
+        deadline: 1,
       ),
     ];
   }

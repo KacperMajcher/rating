@@ -3,7 +3,11 @@
 
 # === Changes ===
 
-## The display of deadlines has been improved
+## In the main screen of the application, a suffix has been added to improve code readability. It is responsible for displaying an appropriate phrase related to the remaining days to complete a task from the list.
+## The deadline list has been updated
+
+![Check-for-changes](https://github.com/KacperMajcher/rating/assets/142928291/d23a0471-eaf3-4bab-9705-8e0783a50c02)
+
 
 --- Project Description ---
 
