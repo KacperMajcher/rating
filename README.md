@@ -3,7 +3,7 @@
 
 # === Changes ===
 
-## A JSON API database has been added to the application in the ArtistsRemoteDioDataSource
+## Add Dio handling errors
 
 
 
