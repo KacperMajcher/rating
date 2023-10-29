@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rating/app/core/enums.dart';
 import 'package:rating/model/artist_model.dart';
 import 'package:rating/repositories/artist_repository.dart';
 
@@ -10,11 +11,20 @@ class ArtistsCubit extends Cubit<ArtistsState> {
 
   Future<void> getArtistModels() async {
     emit(const ArtistsState(artistModel: []));
-    final artistModel = await artistRepository.getArtistModels();
-    emit(
-      ArtistsState(
-        artistModel: artistModel,
-      ),
-    );
+    try {
+      final artistModel = await artistRepository.getArtistModels();
+      emit(
+        ArtistsState(
+          artistModel: artistModel,
+        ),
+      );
+    } catch (error) {
+      emit(
+        ArtistsState(
+          status: Status.error,
+          errorMessage: error.toString(),
+        ),
+      );
+    }
   }
 }
