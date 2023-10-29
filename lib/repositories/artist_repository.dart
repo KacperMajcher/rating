@@ -7,7 +7,10 @@ class ArtistRepository {
   final ArtistsMockedDataSource remoteDataSource;
 
   Future<List<ArtistModel>> getArtistModels() async {
-    final artists = await remoteDataSource.getArtists();
-    return artists;
+    final json = await remoteDataSource.getArtists();
+    if (json == null) {
+      return [];
+    }
+    return json.map((item) => ArtistModel.fromJson(item)).toList();
   }
 }

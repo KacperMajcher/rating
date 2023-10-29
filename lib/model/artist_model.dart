@@ -10,6 +10,14 @@ class ArtistModel {
   final String name;
   final String bio;
   final List<TopSongsModel> topSongs;
+
+  ArtistModel.fromJson(Map<String, dynamic> json)
+      : place = json['place'],
+        name = json['name'],
+        bio = json['bio'],
+        topSongs = (json['top_songs'] as List)
+            .map((songData) => TopSongsModel.fromJson(songData))
+            .toList();
 }
 
 class TopSongsModel {
@@ -19,5 +27,9 @@ class TopSongsModel {
   });
 
   final String title;
-  final int views;
+  final String views;
+
+  TopSongsModel.fromJson(Map<String, dynamic> json)
+      : title = json['title'],
+        views = json['views'];
 }
