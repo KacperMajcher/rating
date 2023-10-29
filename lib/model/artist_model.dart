@@ -27,7 +27,7 @@ class TopSongsModel {
   });
 
   final String title;
-  final String views;
+  final int views;
 
   TopSongsModel.fromJson(Map<String, dynamic> json)
       : title = json['title'],

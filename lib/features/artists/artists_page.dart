@@ -23,7 +23,7 @@ class ArtistsPage extends StatelessWidget {
         create: (context) {
           return ArtistsCubit(
             artistRepository: ArtistRepository(
-              remoteDataSource: ArtistsMockedDataSource(),
+              remoteDataSource: ArtistsRemoteDioDataSource(),
             ),
           )..getArtistModels();
         },
@@ -210,7 +210,7 @@ class _ArtistItemWidget extends StatelessWidget {
                         Text(
                           artistModel.name,
                           style: const TextStyle(
-                            fontSize: 25,
+                            fontSize: 20,
                             fontFamily: 'Jura',
                             fontWeight: FontWeight.w500,
                           ),

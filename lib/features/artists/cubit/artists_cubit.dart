@@ -12,7 +12,7 @@ class ArtistsCubit extends Cubit<ArtistsState> {
   Future<void> getArtistModels() async {
     emit(const ArtistsState(artistModel: []));
     try {
-      final artistModel = await artistRepository.getArtistModels();
+      final artistModel = await artistRepository.getArtistData();
       emit(
         ArtistsState(
           artistModel: artistModel,

@@ -3,8 +3,8 @@
 
 # === Changes ===
 
-## The model has been converted into a JSON list
-## The data is displayed using the .fromJson method
+## A JSON API database has been added to the application in the ArtistsRemoteDioDataSource
+
 
 
 --- Project Description ---
