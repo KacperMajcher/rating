@@ -3,7 +3,15 @@
 
 # === Changes ===
 
-## Add Dio handling errors
+## Json Serializable has been added to the project. It allows for the automatic generation of the .fromJson() method.
+## New deadlines with tasks related to generators have been added to the project
+
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/2732d66e-86f5-4527-b1d9-46774a561565)
+
+# Current appearance of the application
+
+https://github.com/KacperMajcher/rating/assets/142928291/31a2c3b7-c17f-4352-b702-b87e44c8721d
+
 
 
 

@@ -1,3 +1,8 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'artist_model.g.dart';
+
+@JsonSerializable()
 class ArtistModel {
   ArtistModel({
     required this.place,
@@ -9,17 +14,16 @@ class ArtistModel {
   final int place;
   final String name;
   final String bio;
+  @JsonKey(name: 'top_songs')
   final List<TopSongsModel> topSongs;
 
-  ArtistModel.fromJson(Map<String, dynamic> json)
-      : place = json['place'],
-        name = json['name'],
-        bio = json['bio'],
-        topSongs = (json['top_songs'] as List)
-            .map((songData) => TopSongsModel.fromJson(songData))
-            .toList();
+  factory ArtistModel.fromJson(Map<String, dynamic> json) =>
+      _$ArtistModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ArtistModelToJson(this);
 }
 
+@JsonSerializable()
 class TopSongsModel {
   TopSongsModel({
     required this.title,
@@ -29,7 +33,8 @@ class TopSongsModel {
   final String title;
   final int views;
 
-  TopSongsModel.fromJson(Map<String, dynamic> json)
-      : title = json['title'],
-        views = json['views'];
+  factory TopSongsModel.fromJson(Map<String, dynamic> json) =>
+      _$TopSongsModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TopSongsModelToJson(this);
 }
