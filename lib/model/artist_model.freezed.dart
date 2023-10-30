@@ -23,7 +23,6 @@ mixin _$ArtistModel {
   int get place => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get bio => throw _privateConstructorUsedError;
-  @JsonKey(name: 'top_songs')
   List<TopSongsModel> get topSongs => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,11 +37,7 @@ abstract class $ArtistModelCopyWith<$Res> {
           ArtistModel value, $Res Function(ArtistModel) then) =
       _$ArtistModelCopyWithImpl<$Res, ArtistModel>;
   @useResult
-  $Res call(
-      {int place,
-      String name,
-      String bio,
-      @JsonKey(name: 'top_songs') List<TopSongsModel> topSongs});
+  $Res call({int place, String name, String bio, List<TopSongsModel> topSongs});
 }
 
 /// @nodoc
@@ -92,11 +87,7 @@ abstract class _$$ArtistModelImplCopyWith<$Res>
       __$$ArtistModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int place,
-      String name,
-      String bio,
-      @JsonKey(name: 'top_songs') List<TopSongsModel> topSongs});
+  $Res call({int place, String name, String bio, List<TopSongsModel> topSongs});
 }
 
 /// @nodoc
@@ -137,10 +128,11 @@ class __$$ArtistModelImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$ArtistModelImpl implements _ArtistModel {
-  _$ArtistModelImpl(this.place, this.name, this.bio,
-      @JsonKey(name: 'top_songs') final List<TopSongsModel> topSongs)
+  _$ArtistModelImpl(
+      this.place, this.name, this.bio, final List<TopSongsModel> topSongs)
       : _topSongs = topSongs;
 
   factory _$ArtistModelImpl.fromJson(Map<String, dynamic> json) =>
@@ -154,7 +146,6 @@ class _$ArtistModelImpl implements _ArtistModel {
   final String bio;
   final List<TopSongsModel> _topSongs;
   @override
-  @JsonKey(name: 'top_songs')
   List<TopSongsModel> get topSongs {
     if (_topSongs is EqualUnmodifiableListView) return _topSongs;
     // ignore: implicit_dynamic_type
@@ -198,8 +189,7 @@ class _$ArtistModelImpl implements _ArtistModel {
 
 abstract class _ArtistModel implements ArtistModel {
   factory _ArtistModel(final int place, final String name, final String bio,
-          @JsonKey(name: 'top_songs') final List<TopSongsModel> topSongs) =
-      _$ArtistModelImpl;
+      final List<TopSongsModel> topSongs) = _$ArtistModelImpl;
 
   factory _ArtistModel.fromJson(Map<String, dynamic> json) =
       _$ArtistModelImpl.fromJson;
@@ -211,7 +201,6 @@ abstract class _ArtistModel implements ArtistModel {
   @override
   String get bio;
   @override
-  @JsonKey(name: 'top_songs')
   List<TopSongsModel> get topSongs;
   @override
   @JsonKey(ignore: true)

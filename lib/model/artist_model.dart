@@ -5,11 +5,12 @@ part 'artist_model.freezed.dart';
 
 @freezed
 class ArtistModel with _$ArtistModel {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   factory ArtistModel(
     int place,
     String name,
     String bio,
-    @JsonKey(name: 'top_songs') List<TopSongsModel> topSongs,
+    List<TopSongsModel> topSongs,
   ) = _ArtistModel;
 
   factory ArtistModel.fromJson(Map<String, dynamic> json) =>

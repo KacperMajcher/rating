@@ -3,9 +3,9 @@
 
 # === Changes ===
 
-## Automatic registration of elements to get_it has been added
+## Field rename has been added to the project. Due to its design, it automatically converts parameters in the factory constructor
 
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/23141112-f4f5-44dc-b839-c4b2f44b5c76)
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/245d2e35-2a66-4b8d-a091-b6d80dd72596)
 
 # Current appearance of the application
 

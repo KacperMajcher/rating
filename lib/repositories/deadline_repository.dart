@@ -43,6 +43,7 @@ class DeadlineRepository {
         id: 6,
         task: 'Add field rename to clear JsonKey\'s from code',
         deadline: 3,
+        isDone: true,
       ),
       DeadlineItem(
         id: 7,
