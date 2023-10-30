@@ -4,13 +4,9 @@ import 'package:rating/model/artist_model.dart';
 class ArtistRepository {
   ArtistRepository({required this.remoteDataSource});
 
-  final ArtistsRemoteDioDataSource remoteDataSource;
+  final ArtistsRemoteRetrofitDataSource remoteDataSource;
 
   Future<List<ArtistModel>> getArtistData() async {
-    final json = await remoteDataSource.getArtistData();
-    if (json == null) {
-      return [];
-    }
-    return json.map((item) => ArtistModel.fromJson(item)).toList();
+    return remoteDataSource.getArtistData();
   }
 }

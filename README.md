@@ -3,11 +3,11 @@
 
 # === Changes ===
 
-## Freezed implementation has been added to the project
-## This has simplified the code and made it printable
-## Freezed was used in both the artist model and bloc
+## Retrofit implementation has been added to the project
+## This has simplified the code. Retrofit returns the expected model.
+## Retrofit is a file generator for Dio. In the next commit, references to Dio from the UI layer of the application will be removed
 
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/92df829c-e169-456e-a955-11f3c407982f)
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/73423b12-2e11-458e-8179-c0b99286914c)
 
 # Current appearance of the application
 

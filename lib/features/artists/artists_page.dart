@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rating/app/core/enums.dart';
@@ -23,7 +24,7 @@ class ArtistsPage extends StatelessWidget {
         create: (context) {
           return ArtistsCubit(
             artistRepository: ArtistRepository(
-              remoteDataSource: ArtistsRemoteDioDataSource(),
+              remoteDataSource: ArtistsRemoteRetrofitDataSource(Dio()),
             ),
           )..getArtistModels();
         },

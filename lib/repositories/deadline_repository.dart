@@ -25,6 +25,7 @@ class DeadlineRepository {
         id: 3,
         task: 'Implement retrofit to the project',
         deadline: 1,
+        isDone: true,
       ),
       DeadlineItem(
         id: 4,
