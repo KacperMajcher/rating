@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rating/app/core/enums.dart';
+import 'package:rating/features/home/cubit/home_cubit.dart';
 import 'package:rating/features/widgets/deadline_item.dart';
 import 'package:rating/features/widgets/navigation_drawer.dart';
-import 'package:rating/model/deadline_model.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,57 +14,93 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final deadlineItemsList = DeadlineItem.deadlineItemsList();
-  List<DeadlineItem> foundDeadlineItem = [];
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: _buildAppBar(),
-      drawer: navigationDrawer(context),
-      backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
-      body: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          children: [
-            const SizedBox(height: 15),
-            searchBoxDeadlines(),
-            const SizedBox(height: 23),
-            Container(
-              height: 120,
-              color: const Color.fromRGBO(41, 41, 41, 1),
-              child: Align(
-                alignment: Alignment.center,
+    return BlocBuilder<HomeCubit, HomeState>(
+      builder: (context, state) {
+        switch (state.status) {
+          case Status.initial:
+            return const Scaffold(
+              body: Center(
                 child: Text(
-                  'App Planner: Upcoming Deadlines',
-                  style: GoogleFonts.sono(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w500,
-                    color: const Color.fromRGBO(237, 237, 233, 1),
+                    'Hello! Honestly speaking... you shouldn\'t be here 😬!'),
+              ),
+            );
+          case Status.loading:
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+
+          case Status.error:
+            return Scaffold(
+              body: Center(
+                child: Text(
+                  state.errorMessage ?? 'Unknown error',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.error,
                   ),
                 ),
               ),
-            ),
-            Expanded(
-              child: ListView(children: [
-                for (DeadlineItem deadlineItems in foundDeadlineItem)
-                  DeadlineItems(
-                    deadlineItem: deadlineItems,
-                    onCheckBoxChange: _checkBoxChanged,
-                  ),
-                const SizedBox(height: 30),
-              ]),
-            )
-          ],
-        ),
-      ),
-    );
-  }
+            );
 
-  @override
-  void initState() {
-    foundDeadlineItem = deadlineItemsList;
-    super.initState();
+          case Status.success:
+            return Scaffold(
+              appBar: _buildAppBar(),
+              drawer: navigationDrawer(context),
+              backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
+              body: Container(
+                child: Column(
+                  children: [
+                    Stack(
+                      alignment: AlignmentDirectional.center,
+                      children: <Widget>[
+                        Container(
+                          height: 80,
+                          color: const Color.fromRGBO(41, 41, 41, 1),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: searchBoxDeadlines(),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      height: 120,
+                      color: const Color.fromRGBO(41, 41, 41, 1),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Text(
+                            'App Planner: Upcoming Deadlines',
+                            style: GoogleFonts.sono(
+                              fontSize: 30,
+                              fontWeight: FontWeight.w500,
+                              color: const Color.fromRGBO(237, 237, 233, 1),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: ListView(children: [
+                        for (final deadline in state.deadlineItem)
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 20.0),
+                            child: DeadlineItemWidget(
+                              deadlineItem: deadline,
+                            ),
+                          ),
+                      ]),
+                    ),
+                  ],
+                ),
+              ),
+            );
+        }
+      },
+    );
   }
 
   AppBar _buildAppBar() {
@@ -84,7 +122,9 @@ class _HomePageState extends State<HomePage> {
         borderRadius: BorderRadius.circular(20),
       ),
       child: TextField(
-        onChanged: (value) => _filter(value),
+        onChanged: (value) {
+          context.read<HomeCubit>().filterItems(value);
+        },
         decoration: const InputDecoration(
           contentPadding: EdgeInsets.all(0),
           prefixIcon: Icon(
@@ -104,26 +144,5 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
-  }
-
-  void _checkBoxChanged(DeadlineItem deadlineItem) {
-    setState(() {
-      deadlineItem.isDone = !deadlineItem.isDone;
-    });
-  }
-
-  void _filter(String enteredKeyword) {
-    List<DeadlineItem> results = [];
-    if (enteredKeyword.isEmpty) {
-      results = deadlineItemsList;
-    } else {
-      results = deadlineItemsList
-          .where((item) =>
-              item.task!.toLowerCase().contains(enteredKeyword.toLowerCase()))
-          .toList();
-    }
-    setState(() {
-      foundDeadlineItem = results;
-    });
   }
 }

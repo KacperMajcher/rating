@@ -1,7 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rating/features/auth/pages/auth_gate.dart';
+import 'package:rating/features/home/cubit/home_cubit.dart';
 import 'package:rating/firebase_options.dart';
+import 'package:rating/repositories/deadline_repository.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,6 +17,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: AuthGate());
+    return BlocProvider(
+        create: (context) =>
+            HomeCubit(DeadlineRepository())..getDeadlineItems(),
+        child: const MaterialApp(home: AuthGate()));
   }
 }

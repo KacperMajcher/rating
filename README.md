@@ -1,13 +1,10 @@
 # RatingProject
 
+
 # === Changes ===
 
-## The application now features the capability to allow users to log in via email and Google accounts
-## The application utilizes the FlutterFire UI module
-## A user screen has been added, accessible by clicking the "your profile" button in the drawer
+## Add Dio handling errors
 
-
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/bdb9b1da-890c-47e3-abf4-9d78fc2c038b)
 
 
 --- Project Description ---
