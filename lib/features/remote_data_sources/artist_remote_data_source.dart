@@ -1,17 +1,17 @@
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
+import 'package:rating/model/artist_model.dart';
+import 'package:retrofit/http.dart';
 
-class ArtistsRemoteDioDataSource {
-  Future<List<Map<String, dynamic>>?> getArtistData() async {
-    try {
-      final response = await Dio().get<List<dynamic>>(
-          'https://my-json-server.typicode.com/KacperMajcher/FreeDataBaseForProjects/artists');
-      final listDynamic = response.data;
-      if (listDynamic == null) {
-        return null;
-      }
-      return listDynamic.map((e) => e as Map<String, dynamic>).toList();
-    } on DioException catch (error) {
-      throw Exception(error.response?.data['error'] ?? 'Unknown error');
-    }
-  }
+part 'artist_remote_data_source.g.dart';
+
+@injectable
+@RestApi()
+abstract class ArtistsRemoteRetrofitDataSource {
+  @factoryMethod
+  factory ArtistsRemoteRetrofitDataSource(Dio dio) =
+      _ArtistsRemoteRetrofitDataSource;
+
+  @GET('/artists')
+  Future<List<ArtistModel>> getArtistData();
 }

@@ -3,7 +3,14 @@
 
 # === Changes ===
 
-## Add Dio handling errors
+## Automatic registration for injectable has been added in both the cubit and repository
+
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/1f7b8892-8236-41c0-8b07-aaeca3e02d12)
+
+# Current appearance of the application
+
+https://github.com/KacperMajcher/rating/assets/142928291/31a2c3b7-c17f-4352-b702-b87e44c8721d
+
 
 
 

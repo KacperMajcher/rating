@@ -1,35 +1,29 @@
-class ArtistModel {
-  ArtistModel({
-    required this.place,
-    required this.name,
-    required this.bio,
-    required this.topSongs,
-  });
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  final int place;
-  final String name;
-  final String bio;
-  final List<TopSongsModel> topSongs;
+part 'artist_model.g.dart';
+part 'artist_model.freezed.dart';
 
-  ArtistModel.fromJson(Map<String, dynamic> json)
-      : place = json['place'],
-        name = json['name'],
-        bio = json['bio'],
-        topSongs = (json['top_songs'] as List)
-            .map((songData) => TopSongsModel.fromJson(songData))
-            .toList();
+@freezed
+class ArtistModel with _$ArtistModel {
+  @JsonSerializable(fieldRename: FieldRename.snake)
+  factory ArtistModel(
+    int place,
+    String name,
+    String bio,
+    List<TopSongsModel> topSongs,
+  ) = _ArtistModel;
+
+  factory ArtistModel.fromJson(Map<String, dynamic> json) =>
+      _$ArtistModelFromJson(json);
 }
 
-class TopSongsModel {
-  TopSongsModel({
-    required this.title,
-    required this.views,
-  });
+@freezed
+class TopSongsModel with _$TopSongsModel {
+  factory TopSongsModel(
+    String title,
+    int views,
+  ) = _TopSongsModel;
 
-  final String title;
-  final int views;
-
-  TopSongsModel.fromJson(Map<String, dynamic> json)
-      : title = json['title'],
-        views = json['views'];
+  factory TopSongsModel.fromJson(Map<String, dynamic> json) =>
+      _$TopSongsModelFromJson(json);
 }
