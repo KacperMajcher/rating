@@ -6,16 +6,17 @@ part of 'artist_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ArtistModel _$ArtistModelFromJson(Map<String, dynamic> json) => ArtistModel(
-      place: json['place'] as int,
-      name: json['name'] as String,
-      bio: json['bio'] as String,
-      topSongs: (json['top_songs'] as List<dynamic>)
+_$ArtistModelImpl _$$ArtistModelImplFromJson(Map<String, dynamic> json) =>
+    _$ArtistModelImpl(
+      json['place'] as int,
+      json['name'] as String,
+      json['bio'] as String,
+      (json['top_songs'] as List<dynamic>)
           .map((e) => TopSongsModel.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$ArtistModelToJson(ArtistModel instance) =>
+Map<String, dynamic> _$$ArtistModelImplToJson(_$ArtistModelImpl instance) =>
     <String, dynamic>{
       'place': instance.place,
       'name': instance.name,
@@ -23,13 +24,13 @@ Map<String, dynamic> _$ArtistModelToJson(ArtistModel instance) =>
       'top_songs': instance.topSongs,
     };
 
-TopSongsModel _$TopSongsModelFromJson(Map<String, dynamic> json) =>
-    TopSongsModel(
-      title: json['title'] as String,
-      views: json['views'] as int,
+_$TopSongsModelImpl _$$TopSongsModelImplFromJson(Map<String, dynamic> json) =>
+    _$TopSongsModelImpl(
+      json['title'] as String,
+      json['views'] as int,
     );
 
-Map<String, dynamic> _$TopSongsModelToJson(TopSongsModel instance) =>
+Map<String, dynamic> _$$TopSongsModelImplToJson(_$TopSongsModelImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'views': instance.views,

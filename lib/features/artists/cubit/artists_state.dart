@@ -1,14 +1,10 @@
 part of 'artists_cubit.dart';
 
-class ArtistsState {
-  const ArtistsState({
-    this.artistModel = const [],
-    this.topSongsModel = const [],
-    this.status = Status.initial,
-    this.errorMessage,
-  });
-  final List<ArtistModel> artistModel;
-  final List<TopSongsModel> topSongsModel;
-   final Status status;
-  final String? errorMessage;
+@freezed
+class ArtistsState with _$ArtistsState {
+  factory ArtistsState(
+      {@Default([]) List<ArtistModel> artistModel,
+      @Default([]) List<TopSongsModel> topSongsModel,
+      @Default(Status.initial) Status status,
+      String? errorMessage}) = _ArtistsState;
 }

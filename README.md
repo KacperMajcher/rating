@@ -3,10 +3,11 @@
 
 # === Changes ===
 
-## Json Serializable has been added to the project. It allows for the automatic generation of the .fromJson() method.
-## New deadlines with tasks related to generators have been added to the project
+## Freezed implementation has been added to the project
+## This has simplified the code and made it printable
+## Freezed was used in both the artist model and bloc
 
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/2732d66e-86f5-4527-b1d9-46774a561565)
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/92df829c-e169-456e-a955-11f3c407982f)
 
 # Current appearance of the application
 

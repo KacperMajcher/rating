@@ -19,6 +19,7 @@ class DeadlineRepository {
         id: 2,
         task: 'Implement freezed to the project',
         deadline: 1,
+        isDone: true,
       ),
       DeadlineItem(
         id: 3,
