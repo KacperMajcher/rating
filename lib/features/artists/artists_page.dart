@@ -1,13 +1,11 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rating/app/core/enums.dart';
+import 'package:rating/app/injection_container.dart';
 import 'package:rating/features/artists/cubit/artists_cubit.dart';
 import 'package:rating/features/details/artists/pages/artists_details_page.dart';
-import 'package:rating/features/remote_data_sources/artist_remote_data_source.dart';
 import 'package:rating/features/widgets/search_box.dart';
 import 'package:rating/model/artist_model.dart';
-import 'package:rating/repositories/artist_repository.dart';
 
 class ArtistsPage extends StatelessWidget {
   const ArtistsPage({super.key});
@@ -22,11 +20,7 @@ class ArtistsPage extends StatelessWidget {
       backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
       body: BlocProvider<ArtistsCubit>(
         create: (context) {
-          return ArtistsCubit(
-            artistRepository: ArtistRepository(
-              remoteDataSource: ArtistsRemoteRetrofitDataSource(Dio()),
-            ),
-          )..getArtistModels();
+          return getIt<ArtistsCubit>()..getArtistModels();
         },
         child: BlocConsumer<ArtistsCubit, ArtistsState>(
           listener: (context, state) {

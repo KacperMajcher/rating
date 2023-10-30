@@ -3,11 +3,9 @@
 
 # === Changes ===
 
-## Retrofit implementation has been added to the project
-## This has simplified the code. Retrofit returns the expected model.
-## Retrofit is a file generator for Dio. In the next commit, references to Dio from the UI layer of the application will be removed
+## References to Dio, repository, and data source have been removed from the ArtistPage (UI part of the application)
 
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/73423b12-2e11-458e-8179-c0b99286914c)
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/f5bd0279-759c-4e4a-a59b-e96b635e4ee4)
 
 # Current appearance of the application
 

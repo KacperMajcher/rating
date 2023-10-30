@@ -31,6 +31,7 @@ class DeadlineRepository {
         id: 4,
         task: 'Add get_it to the project',
         deadline: 2,
+        isDone: true,
       ),
       DeadlineItem(
         id: 5,
