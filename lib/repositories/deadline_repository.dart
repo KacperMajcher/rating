@@ -37,6 +37,7 @@ class DeadlineRepository {
         id: 5,
         task: 'Add  injectable to the project',
         deadline: 2,
+        isDone: true,
       ),
       DeadlineItem(
         id: 6,

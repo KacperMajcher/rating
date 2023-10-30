@@ -3,9 +3,9 @@
 
 # === Changes ===
 
-## References to Dio, repository, and data source have been removed from the ArtistPage (UI part of the application)
+## Automatic registration of elements to get_it has been added
 
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/f5bd0279-759c-4e4a-a59b-e96b635e4ee4)
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/23141112-f4f5-44dc-b839-c4b2f44b5c76)
 
 # Current appearance of the application
 

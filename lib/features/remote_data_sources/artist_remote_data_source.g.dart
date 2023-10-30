@@ -13,10 +13,7 @@ class _ArtistsRemoteRetrofitDataSource
   _ArtistsRemoteRetrofitDataSource(
     this._dio, {
     this.baseUrl,
-  }) {
-    baseUrl ??=
-        'https://my-json-server.typicode.com/KacperMajcher/FreeDataBaseForProjects';
-  }
+  });
 
   final Dio _dio;
 

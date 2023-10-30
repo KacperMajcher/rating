@@ -1,18 +1,19 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:rating/features/artists/cubit/artists_cubit.dart';
-import 'package:rating/features/remote_data_sources/artist_remote_data_source.dart';
-import 'package:rating/repositories/artist_repository.dart';
+import 'package:injectable/injectable.dart';
+import 'package:rating/app/injection_container.config.dart';
 
 final getIt = GetIt.instance;
 
-void configureDependencies() {
-  //Bloc (cubit)
-  getIt.registerFactory(() => ArtistsCubit(artistRepository: getIt()));
+@InjectableInit()
+void configureDependencies() => getIt.init();
 
-  //Repository
-  getIt.registerFactory(() => ArtistRepository(remoteDataSource: getIt()));
+@module
+abstract class RegisterModule {
+  @Named("BaseUrl")
+  String get baseUrl =>
+      'https://my-json-server.typicode.com/KacperMajcher/FreeDataBaseForProjects';
 
-  //DataSource
-  getIt.registerFactory(() => ArtistsRemoteRetrofitDataSource(Dio()));
+  @lazySingleton
+  Dio dio(@Named('BaseUrl') String url) => Dio(BaseOptions(baseUrl: url));
 }
