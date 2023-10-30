@@ -49,6 +49,7 @@ class DeadlineRepository {
         id: 7,
         task: 'Implement auto registering for injectable',
         deadline: 3,
+        isDone: true,
       ),
     ];
   }

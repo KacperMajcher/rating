@@ -3,9 +3,9 @@
 
 # === Changes ===
 
-## Field rename has been added to the project. Due to its design, it automatically converts parameters in the factory constructor
+## Automatic registration for injectable has been added in both the cubit and repository
 
-![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/245d2e35-2a66-4b8d-a091-b6d80dd72596)
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/1f7b8892-8236-41c0-8b07-aaeca3e02d12)
 
 # Current appearance of the application
 
