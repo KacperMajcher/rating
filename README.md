@@ -2,7 +2,19 @@
 ## Project description at the bottom
 
 > Commit
-> Test the getArtistModel method in the artists repository
+> Test ArtistCubit
+
+## The ArtistCubit has been equipped with its own set of tests
+## The bloc_test plugin has also been used to simplify the process of testing blocs
+
+## The tests for ArtistCubit within the project serve the following purposes:
+
+### 1. Verifying that the getArtistModel method is invoked precisely once.
+### 2. Confirming that the getArtistModel method emits the correct states when there is a success or error scenario.
+
+> Commit
+> [Test the getArtistModel method in the artists repository](https://github.com/KacperMajcher/rating/commit/90a8ac3aca8d6184095e2f82ef14a324a6d837ce)
+> Nov 6, 2023, 1:16 PM
 
 ## Tests for the artist repository have been added to the project
 ## Their role is to confirm the proper operation of the getArtistModel method. These tests aim to ensure that the method is invoked correctly and that it returns the expected list of artists
