@@ -2,6 +2,19 @@
 ## Project description at the bottom
 
 > Commit
+> Test ArtistModel .fromJson method
+> Nov 6, 2023, 12:59 AM
+
+## The test artist model has been added to the project
+## The test verifies whether the .fromJson method correctly transforms the provided map into a model.
+
+> Commit
+> [Create a complete project documentation](https://github.com/KacperMajcher/rating/commit/8765576bef5bfd5ba300507bcfdaff0dcbb17f65)
+> Nov 5, 2023, 4:07 PM
+
+## The detailed documentation has been added to the readme file
+
+> Commit
 > [Implement auto registering for injectable](https://github.com/KacperMajcher/rating/commit/2a2663155eaaad8d63655505d6b34a62c71efdb2)
 > Oct 30, 2023, 8:36 PM
 
