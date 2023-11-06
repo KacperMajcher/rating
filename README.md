@@ -2,7 +2,19 @@
 ## Project description at the bottom
 
 > Commit
-> Test ArtistCubit
+> Integrate the application with Firebase to display deadlines
+
+## The application has been integrated with Firebase Firestore, where deadlines are stored
+## The application retrieves them in real-time using StreamSubscription, and a newly created deadline data source operates on a stream
+## The fromJson method has been added to the DeadlineModel
+## Some minor adjustments have been applied to the DeadlineItemWidget
+## Many new deadlines have been added to the list
+
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/5680583b-29b8-4d77-b403-0c84556b46a1)
+
+> Commit
+> [Test ArtistCubit](https://github.com/KacperMajcher/rating/commit/cf4439fe5628a0bd42dee5a8724c3965a09f4e6e)
+> Nov 6, 2023, 2:25 PM
 
 ## The ArtistCubit has been equipped with its own set of tests
 ## The bloc_test plugin has also been used to simplify the process of testing blocs

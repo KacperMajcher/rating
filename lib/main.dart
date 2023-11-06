@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rating/app/injection_container.dart';
 import 'package:rating/features/auth/pages/auth_gate.dart';
 import 'package:rating/features/home/cubit/home_cubit.dart';
+import 'package:rating/features/remote_data_sources/deadline_remote_data_source.dart';
 import 'package:rating/firebase_options.dart';
 import 'package:rating/repositories/deadline_repository.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
         create: (context) =>
-            HomeCubit(DeadlineRepository())..getDeadlineItems(),
+            HomeCubit(DeadlineRepository(DeadlineRemoteDataSource()))..getDeadlineItems(),
         child: const MaterialApp(home: AuthGate()));
   }
 }

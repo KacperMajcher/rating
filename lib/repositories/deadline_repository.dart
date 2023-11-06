@@ -1,28 +1,13 @@
+import 'package:rating/features/remote_data_sources/deadline_remote_data_source.dart';
 import 'package:rating/model/deadline_model.dart';
 
 class DeadlineRepository {
-  List<DeadlineItem> deadlineItemsList() {
-    return [
-      DeadlineItem(
-        id: 0,
-        task: 'Add ArtistModel tests',
-        deadline: 7,
-      ),
-      DeadlineItem(
-        id: 1,
-        task: 'Add ArtistsRepository tests',
-        deadline: 7,
-      ),
-      DeadlineItem(
-        id: 2,
-        task: 'Add ArtistRemoteDataSource tests',
-        deadline: 7,
-      ),
-      DeadlineItem(
-        id: 3,
-        task: 'Add ArtistsCubit tests',
-        deadline: 7,
-      ),
-    ];
+  DeadlineRepository(this.remoteDataSource);
+  final DeadlineRemoteDataSource remoteDataSource;
+
+  Stream<List<DeadlineItem>> getDeadline() {
+    return remoteDataSource.getDeadlineData().map((items) {
+      return items.map((doc) => DeadlineItem.fromJson(doc)).toList();
+    });
   }
 }

@@ -13,15 +13,15 @@ class DeadlineItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 8),
+      margin: const EdgeInsets.symmetric(vertical: 4),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25),
+        color: const Color.fromRGBO(82, 82, 82, 1),
+      ),
       child: ListTile(
         onTap: () {
-         context.read<HomeCubit>().toggleCheckBox(deadlineItem: deadlineItem);
+          context.read<HomeCubit>().toggleCheckBox(deadlineItem: deadlineItem);
         },
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(25),
-        ),
-        tileColor: const Color.fromRGBO(82, 82, 82, 1),
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Icon(
@@ -31,13 +31,26 @@ class DeadlineItemWidget extends StatelessWidget {
             color: const Color.fromARGB(255, 207, 200, 200),
           ),
         ),
-        title: Text(
-          deadlineItem.task!,
-          style: GoogleFonts.ubuntuMono(
-            fontSize: 20,
-            color: Colors.white,
-            decoration: deadlineItem.isDone ? TextDecoration.lineThrough : null,
-          ),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              deadlineItem.task,
+              style: GoogleFonts.ubuntuMono(
+                fontSize: 19,
+                color: Colors.white,
+                decoration:
+                    deadlineItem.isDone ? TextDecoration.lineThrough : null,
+              ),
+            ),
+            Text(
+              deadlineItem.deadlineDateFormatted(),
+              style: GoogleFonts.ubuntuMono(
+                fontSize: 15,
+                color: Colors.white,
+              ),
+            ),
+          ],
         ),
         trailing: Padding(
           padding: const EdgeInsets.all(2.0),
@@ -53,7 +66,7 @@ class DeadlineItemWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  deadlineItem.deadline.toString(),
+                  deadlineItem.daysLeft(),
                   style: GoogleFonts.ubuntuMono(
                     fontSize: 22,
                     color: Colors.black,
@@ -62,7 +75,7 @@ class DeadlineItemWidget extends StatelessWidget {
                 ),
                 Builder(
                   builder: (context) {
-                    final suffix = deadlineItem.deadline.toString() == '1'
+                    final suffix = deadlineItem.daysLeft() == '1'
                         ? 'day left'
                         : 'days left';
                     return Text(
