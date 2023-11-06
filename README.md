@@ -2,8 +2,16 @@
 ## Project description at the bottom
 
 > Commit
-> Test ArtistModel .fromJson method
-> Nov 6, 2023, 12:59 AM
+> Test the getArtistModel method in the artists repository
+
+## Tests for the artist repository have been added to the project
+## Their role is to confirm the proper operation of the getArtistModel method. These tests aim to ensure that the method is invoked correctly and that it returns the expected list of artists
+## These tests need to work offline to ensure consistent results, so an expectedArtists list was created, containing mock data that is used in the test
+## In the code, you can also notice a separation into three parts. This ensures that in the first part of the test, we provide the appropriate data, in the second part, we call the method we want to test, and in the third part, we use expect to make assertions
+
+> Commit
+> [Test ArtistModel .fromJson method](https://github.com/KacperMajcher/rating/commit/28406a8ecf96f64ea606720403b46949776982f8)
+> Nov 6, 2023, 12:59 PM
 
 ## The test artist model has been added to the project
 ## The test verifies whether the .fromJson method correctly transforms the provided map into a model.

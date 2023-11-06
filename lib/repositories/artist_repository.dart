@@ -6,7 +6,7 @@ class ArtistRepository {
 
   final ArtistsRemoteRetrofitDataSource remoteDataSource;
 
-  Future<List<ArtistModel>> getArtistData() async {
+  Future<List<ArtistModel>> getArtistModel() async {
     return remoteDataSource.getArtistData();
   }
 }
