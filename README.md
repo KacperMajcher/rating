@@ -2,12 +2,21 @@
 ## Project description at the bottom
 
 > Commit
-> Add Add Page
+> The color palette of the date picker
+
+## The color palette of the date picker has been changed to match the application's visual style
+
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/1811db21-0030-41ea-8ab0-210159e154b3)
+
+> Commit
+> [Add Add Page](https://github.com/KacperMajcher/rating/commit/f31bbce0ff2bb140d2515476bd7adb34752a5968)
+> Nov 7, 2023, 2:19 PM
 
 ## An "Add Page" has been added to the application, accessible via an Elevated Button on the Home Page
 ## The tasks added in it are connected to the Firebase database, which refreshes after each action
 ## The "isDone" parameter for task completion is set to false by default
 ## The ability to confirm adding a task is only possible when both a deadline date and a task have been provided. In that case, the check icon button changes color and becomes clickable
+## The deadline date can be set up to a maximum of 5 years in advance
 
 https://github.com/KacperMajcher/rating/assets/142928291/3fcc11ea-e39c-4bc0-87af-03436857b3b9
 

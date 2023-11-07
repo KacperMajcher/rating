@@ -113,6 +113,19 @@ class _AddPageBody extends StatelessWidget {
               lastDate: DateTime.now().add(
                 const Duration(days: 365 * 5),
               ),
+              builder: (context, child) {
+                return Theme(
+                  data: ThemeData(
+                    colorScheme: const ColorScheme.dark(
+                      primary: Color(0xFFE85D04),
+                      onPrimary: Colors.white,
+                      surface: Colors.black,
+                      onSurface: Colors.white,
+                    ),
+                  ),
+                  child: child ?? const Text('Choose date'),
+                );
+              },
             );
             onDateChanged(selectedDate);
           },
