@@ -2,7 +2,18 @@
 ## Project description at the bottom
 
 > Commit
-> Add Dismissible to the deadlines
+> Add Add Page
+
+## An "Add Page" has been added to the application, accessible via an Elevated Button on the Home Page
+## The tasks added in it are connected to the Firebase database, which refreshes after each action
+## The "isDone" parameter for task completion is set to false by default
+## The ability to confirm adding a task is only possible when both a deadline date and a task have been provided. In that case, the check icon button changes color and becomes clickable
+
+https://github.com/KacperMajcher/rating/assets/142928291/3fcc11ea-e39c-4bc0-87af-03436857b3b9
+
+> Commit
+> [Add Dismissible to the deadlines](https://github.com/KacperMajcher/rating/commit/f9f2a20051c04a37a2593be06c327f9e1b046163)
+> Nov 7, 2023, 10:59 AM
 
 ## A dismissible feature has been added to manage deadlines
 ## It is linked to the "remove" function, which communicates with the Firebase database and immediately removes the corresponding item from the list

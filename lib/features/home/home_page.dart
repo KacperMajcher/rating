@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rating/app/core/enums.dart';
+import 'package:rating/features/home/add/add_page.dart';
 import 'package:rating/features/home/cubit/home_cubit.dart';
 import 'package:rating/features/widgets/deadline_item.dart';
 import 'package:rating/features/widgets/navigation_drawer.dart';
@@ -45,6 +46,7 @@ class _HomePageState extends State<HomePage> {
 
           case Status.success:
             return Scaffold(
+              floatingActionButton: _floatingActionButton(),
               appBar: _buildAppBar(),
               drawer: navigationDrawer(context),
               backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
@@ -161,6 +163,23 @@ class _HomePageState extends State<HomePage> {
               color: Color.fromRGBO(155, 155, 149, 1),
               fontStyle: FontStyle.normal),
         ),
+      ),
+    );
+  }
+
+  Widget _floatingActionButton() {
+    return FloatingActionButton(
+      backgroundColor: const Color(0xFFE85D04),
+      onPressed: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const AddPage(),
+            fullscreenDialog: true,
+          ),
+        );
+      },
+      child: const Icon(
+        Icons.add,
       ),
     );
   }
