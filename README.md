@@ -2,7 +2,41 @@
 ## Project description at the bottom
 
 > Commit
-> Add Dismissible to the deadlines
+> Pop-up add page screen after saving
+
+## The screen is popped up after saving thanks to the Bloc Consumer
+
+> Commit
+> [Change the date display format](https://github.com/KacperMajcher/rating/commit/cd5cbf8b5df471439b1db2324b1222712078f1a8)
+> Nov 7, 2023, 2:51 PM
+
+## The date display format in the Add Page has been changed to be more readable
+
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/bea8cf92-5312-4b6c-b84d-bae4617b0ea2)
+
+> Commit
+> [Change the color palette of the date picker](https://github.com/KacperMajcher/rating/commit/cf3cb4bb8572bc5c6fccf4a81fe4bbd71c797306)
+> Nov 7, 2023, 2:45 PM
+
+## The color palette of the date picker has been changed to match the application's visual style
+
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/1811db21-0030-41ea-8ab0-210159e154b3)
+
+> Commit
+> [Add Add Page](https://github.com/KacperMajcher/rating/commit/f31bbce0ff2bb140d2515476bd7adb34752a5968)
+> Nov 7, 2023, 2:19 PM
+
+## An "Add Page" has been added to the application, accessible via an Elevated Button on the Home Page
+## The tasks added in it are connected to the Firebase database, which refreshes after each action
+## The "isDone" parameter for task completion is set to false by default
+## The ability to confirm adding a task is only possible when both a deadline date and a task have been provided. In that case, the check icon button changes color and becomes clickable
+## The deadline date can be set up to a maximum of 5 years in advance
+
+https://github.com/KacperMajcher/rating/assets/142928291/3fcc11ea-e39c-4bc0-87af-03436857b3b9
+
+> Commit
+> [Add Dismissible to the deadlines](https://github.com/KacperMajcher/rating/commit/f9f2a20051c04a37a2593be06c327f9e1b046163)
+> Nov 7, 2023, 10:59 AM
 
 ## A dismissible feature has been added to manage deadlines
 ## It is linked to the "remove" function, which communicates with the Firebase database and immediately removes the corresponding item from the list
