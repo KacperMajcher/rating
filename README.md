@@ -2,7 +2,18 @@
 ## Project description at the bottom
 
 > Commit
-> Integrate the application with Firebase to display deadlines
+> Add Dismissible to the deadlines
+
+## A dismissible feature has been added to manage deadlines
+## It is linked to the "remove" function, which communicates with the Firebase database and immediately removes the corresponding item from the list
+## An interesting aspect is that the task is only deleted when it is swiped to the left; otherwise, it won't work
+## In the background, on the left side of the screen, a trash can icon appears to indicate that this action will result in the removal of the task from the list
+
+https://github.com/KacperMajcher/rating/assets/142928291/6bd10009-ea74-4a58-a374-4ce3e9eafa86
+
+> Commit
+> [Integrate the application with Firebase to display deadlines](https://github.com/KacperMajcher/rating/commit/cc99967fe57f149ea9e78ee06b59838f440eefad)
+> Nov 6, 2023, 5:39 PM
 
 ## The application has been integrated with Firebase Firestore, where deadlines are stored
 ## The application retrieves them in real-time using StreamSubscription, and a newly created deadline data source operates on a stream

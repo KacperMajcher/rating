@@ -37,6 +37,17 @@ class HomeCubit extends Cubit<HomeState> {
     );
   }
 
+  Future<void> remove({required String documentID}) async {
+    try {
+      await remoteDataSource.delete(id: documentID);
+    } catch (error) {
+      emit(
+        const HomeState(removingErrorOccured: true),
+      );
+      getDeadlineItems();
+    }
+  }
+
   Future<void> toggleCheckBox({required DeadlineItem deadlineItem}) async {
     emit(const HomeState(status: Status.loading));
     try {

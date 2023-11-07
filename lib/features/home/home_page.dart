@@ -48,54 +48,73 @@ class _HomePageState extends State<HomePage> {
               appBar: _buildAppBar(),
               drawer: navigationDrawer(context),
               backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
-              body: Container(
-                child: Column(
-                  children: [
-                    Stack(
-                      alignment: AlignmentDirectional.center,
-                      children: <Widget>[
-                        Container(
-                          height: 80,
-                          color: const Color.fromRGBO(41, 41, 41, 1),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: searchBoxDeadlines(),
-                        ),
-                      ],
-                    ),
-                    Container(
-                      height: 120,
-                      color: const Color.fromRGBO(41, 41, 41, 1),
-                      child: Align(
-                        alignment: Alignment.center,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: Text(
-                            'App Planner: Upcoming Deadlines',
-                            style: GoogleFonts.sono(
-                              fontSize: 30,
-                              fontWeight: FontWeight.w500,
-                              color: const Color.fromRGBO(237, 237, 233, 1),
-                            ),
+              body: Column(
+                children: [
+                  Stack(
+                    alignment: AlignmentDirectional.center,
+                    children: <Widget>[
+                      Container(
+                        height: 80,
+                        color: const Color.fromRGBO(41, 41, 41, 1),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: searchBoxDeadlines(),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    height: 120,
+                    color: const Color.fromRGBO(41, 41, 41, 1),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: Text(
+                          'App Planner: Upcoming Deadlines',
+                          style: GoogleFonts.sono(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w500,
+                            color: const Color.fromRGBO(237, 237, 233, 1),
                           ),
                         ),
                       ),
                     ),
-                    Expanded(
-                      child: ListView(children: [
+                  ),
+                  Expanded(
+                    child: ListView(
+                      children: [
                         for (final deadline in state.deadlineItem)
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 20.0),
-                            child: DeadlineItemWidget(
-                              deadlineItem: deadline,
+                          Dismissible(
+                            key: ValueKey(deadline.id),
+                            onDismissed: (direction) {
+                              context
+                                  .read<HomeCubit>()
+                                  .remove(documentID: deadline.id);
+                            },
+                            confirmDismiss: (direction) async {
+                              // only from right to left
+                              return direction == DismissDirection.endToStart;
+                            },
+                            background: Container(
+                              alignment: Alignment.centerRight,
+                              child: const Padding(
+                                padding: EdgeInsets.only(right: 35),
+                                child: Icon(Icons.delete, color: Colors.white),
+                              ),
+                            ),
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 20),
+                              child: DeadlineItemWidget(
+                                deadlineItem: deadline,
+                              ),
                             ),
                           ),
-                      ]),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             );
         }
