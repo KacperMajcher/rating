@@ -2,7 +2,13 @@
 ## Project description at the bottom
 
 > Commit
-> Change the date display format
+> Pop-up add page screen after saving
+
+## The screen is popped up after saving thanks to the Bloc Consumer
+
+> Commit
+> [Change the date display format](https://github.com/KacperMajcher/rating/commit/cd5cbf8b5df471439b1db2324b1222712078f1a8)
+> Nov 7, 2023, 2:51 PM
 
 ## The date display format in the Add Page has been changed to be more readable
 
