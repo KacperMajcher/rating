@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:rating/features/home/add/cubit/add_cubit.dart';
 
 class AddPage extends StatefulWidget {
@@ -54,7 +55,9 @@ class _AddPageState extends State<AddPage> {
                   _deadline = newValue;
                 });
               },
-              selectedDateFormatted: _deadline?.toIso8601String(),
+              selectedDateFormatted: _deadline == null
+                  ? null
+                  : DateFormat.yMMMMEEEEd().format(_deadline!),
             ),
           );
         },

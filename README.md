@@ -2,7 +2,15 @@
 ## Project description at the bottom
 
 > Commit
-> The color palette of the date picker
+> Change the date display format
+
+## The date display format in the Add Page has been changed to be more readable
+
+![Check-progress-here](https://github.com/KacperMajcher/rating/assets/142928291/bea8cf92-5312-4b6c-b84d-bae4617b0ea2)
+
+> Commit
+> [Change the color palette of the date picker](https://github.com/KacperMajcher/rating/commit/cf3cb4bb8572bc5c6fccf4a81fe4bbd71c797306)
+> Nov 7, 2023, 2:45 PM
 
 ## The color palette of the date picker has been changed to match the application's visual style
 
