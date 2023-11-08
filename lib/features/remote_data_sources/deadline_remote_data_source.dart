@@ -16,11 +16,7 @@ class DeadlineRemoteDataSource {
     });
   }
 
-  Future<void> delete({required String id}) {
-    return FirebaseFirestore.instance.collection('items').doc(id).delete();
-  }
-
-  Future<void> addDeadline(
+Future<void> addDeadline(
     String task,
     bool isDone,
     DateTime deadline,
@@ -32,5 +28,25 @@ class DeadlineRemoteDataSource {
         'deadline': deadline,
       },
     );
+  }
+
+  Future<void> updateIsDone(String itemId) async {
+    final query =
+        await FirebaseFirestore.instance.collection('items').doc(itemId).get();
+
+    if (query.exists) {
+      final isDoneField = query.data()!['is_done'] as bool;
+
+      await FirebaseFirestore.instance
+          .collection('items')
+          .doc(itemId)
+          .update({'is_done': !isDoneField});
+    } else {
+      throw (Exception('Unknown error'));
+    }
+  }
+
+  Future<void> delete({required String id}) {
+    return FirebaseFirestore.instance.collection('items').doc(id).delete();
   }
 }

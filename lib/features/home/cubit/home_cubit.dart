@@ -49,27 +49,8 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   Future<void> toggleCheckBox({required DeadlineItem deadlineItem}) async {
-    emit(const HomeState(status: Status.loading));
     try {
-      List<DeadlineItem> list = state.deadlineItem;
-      final index = list.indexWhere((element) => element.id == deadlineItem.id);
-      list.replaceRange(
-        index,
-        index + 1,
-        [
-          DeadlineItem(
-              id: deadlineItem.id,
-              task: deadlineItem.task,
-              deadline: deadlineItem.deadline,
-              isDone: !deadlineItem.isDone)
-        ],
-      );
-      emit(
-        HomeState(
-          status: Status.success,
-          deadlineItem: list,
-        ),
-      );
+      await deadlineRepository.updateIsDone(deadlineItem.id);
     } catch (error) {
       emit(
         HomeState(

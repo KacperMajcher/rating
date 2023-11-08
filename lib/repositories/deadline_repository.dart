@@ -10,7 +10,12 @@ class DeadlineRepository {
       return items.map((doc) => DeadlineItem.fromJson(doc)).toList();
     });
   }
+  
   Future<void> add(String task, bool isDone, DateTime deadline) async {
     await remoteDataSource.addDeadline(task, isDone, deadline);
+  }
+
+  Future<void> updateIsDone(String id) async {
+    await remoteDataSource.updateIsDone(id);
   }
 }

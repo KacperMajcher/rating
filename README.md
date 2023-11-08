@@ -2,7 +2,15 @@
 ## Project description at the bottom
 
 > Commit
-> Move the method of adding tasks to data source
+> Add real-time checkbox toggler
+
+## The method responsible for changing the state of deadlines has been updated
+## The method now sends a signal directly to Firebase
+## Cubit retrieves a method from the data source
+
+> Commit
+> [Move the method of adding tasks to data source](https://github.com/KacperMajcher/rating/commit/5f50989ef0712cc9b701efcae7c493a7330b9fd2)
+> Nov 8, 2023, 5:00 PM
 
 ## The method for adding a new task to the Firebase database has been moved to the deadline data source file
 
