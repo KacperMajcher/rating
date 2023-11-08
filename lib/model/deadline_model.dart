@@ -23,8 +23,10 @@ class DeadlineItem {
   }
 
   String daysLeft() {
-    int minutesDifference = deadline.difference(DateTime.now()).inMinutes;
-    return (minutesDifference / 1440).ceil().toString();
+    DateTime now = DateTime.now();
+    DateTime date = DateTime(now.year, now.month, now.day);
+    int daysDifference = deadline.difference(date).inDays;
+    return daysDifference.toString();
   }
 
   String deadlineDateFormatted() {

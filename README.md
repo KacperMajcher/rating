@@ -2,7 +2,15 @@
 ## Project description at the bottom
 
 > Commit
-> Optimize the performance of the 'remove' method
+> Improve the functionality of the daysLeft() function
+
+## The function daysLeft() has been improved
+## It now correctly displays the number of days remaining until the deadline
+
+
+> Commit
+> [Optimize the performance of the 'remove' method](https://github.com/KacperMajcher/rating/commit/10cf5ffd6f791eb1695eb4fa855fc698c761a6d5)
+> Nov 8, 2023, 7:16 PM
 
 > Commit
 > [Fix searchBar in DeadlinePage](https://github.com/KacperMajcher/rating/commit/2cd60e624f1dd8845febb15caf743c8bee986adb)
