@@ -46,6 +46,19 @@ Future<void> addDeadline(
     }
   }
 
+  Future<List<Map<String, dynamic>>> filterItems() async {
+    final query = await FirebaseFirestore.instance
+        .collection('items')
+        .orderBy('deadline')
+        .get();
+
+    return query.docs.map((doc) {
+      final data = doc.data();
+      data['id'] = doc.id;
+      return data;
+    }).toList();
+  }
+
   Future<void> delete({required String id}) {
     return FirebaseFirestore.instance.collection('items').doc(id).delete();
   }

@@ -18,4 +18,11 @@ class DeadlineRepository {
   Future<void> updateIsDone(String id) async {
     await remoteDataSource.updateIsDone(id);
   }
+
+  Future<List<DeadlineItem>> filterItems() async {
+    final results = await remoteDataSource.filterItems();
+    return results.map((items) {
+      return DeadlineItem.fromJson(items);
+    }).toList();
+  }
 }

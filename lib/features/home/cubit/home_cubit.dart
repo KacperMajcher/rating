@@ -62,31 +62,21 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   Future<void> filterItems(String enteredKeyword) async {
-    emit(const HomeState(status: Status.loading));
-    try {
-      List<DeadlineItem> results = [];
-      final list = await deadlineRepository.getDeadline().first;
-      if (enteredKeyword.isEmpty) {
-        results = list;
-      } else {
-        results = list
-            .where((item) =>
-                item.task.toLowerCase().contains(enteredKeyword.toLowerCase()))
-            .toList();
-      }
+    final allItems = await deadlineRepository.filterItems();
+    List<DeadlineItem> filteredItems = [];
 
-      emit(HomeState(
-        status: Status.success,
-        deadlineItem: results,
-      ));
-    } catch (error) {
-      emit(
-        HomeState(
-          status: Status.error,
-          errorMessage: error.toString(),
-        ),
-      );
+    if (enteredKeyword.isEmpty) {
+      filteredItems = allItems;
+    } else {
+      filteredItems = allItems
+          .where((item) =>
+              item.task.toLowerCase().contains(enteredKeyword.toLowerCase()))
+          .toList();
     }
+    emit(HomeState(
+      status: Status.success,
+      deadlineItem: filteredItems,
+    ));
   }
 
   @override
