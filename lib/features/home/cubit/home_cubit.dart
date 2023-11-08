@@ -44,7 +44,6 @@ class HomeCubit extends Cubit<HomeState> {
       emit(
         const HomeState(removingErrorOccured: true),
       );
-      getDeadlineItems();
     }
   }
 

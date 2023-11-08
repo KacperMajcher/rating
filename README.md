@@ -2,7 +2,11 @@
 ## Project description at the bottom
 
 > Commit
-> Fix searchBar in DeadlinePage
+> Optimize the performance of the 'remove' method
+
+> Commit
+> [Fix searchBar in DeadlinePage](https://github.com/KacperMajcher/rating/commit/2cd60e624f1dd8845febb15caf743c8bee986adb)
+> Nov 8, 2023, 5:43 PM
 
 ## The search bar on the deadline page has been fixed
 ## Cubit retrieves a method from the data source
