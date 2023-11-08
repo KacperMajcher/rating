@@ -2,7 +2,13 @@
 ## Project description at the bottom
 
 > Commit
-> Pop-up add page screen after saving
+> Move the method of adding tasks to data source
+
+## The method for adding a new task to the Firebase database has been moved to the deadline data source file
+
+> Commit
+> [Pop-up add page screen after saving](https://github.com/KacperMajcher/rating/commit/4c9d16cb41297d5cdda6301989b67183b41e3e32)
+> Nov 7, 2023, 3:03 PM
 
 ## The screen is popped up after saving thanks to the Bloc Consumer
 

@@ -19,4 +19,18 @@ class DeadlineRemoteDataSource {
   Future<void> delete({required String id}) {
     return FirebaseFirestore.instance.collection('items').doc(id).delete();
   }
+
+  Future<void> addDeadline(
+    String task,
+    bool isDone,
+    DateTime deadline,
+  ) async {
+    await FirebaseFirestore.instance.collection('items').add(
+      {
+        'task': task,
+        'is_done': isDone,
+        'deadline': deadline,
+      },
+    );
+  }
 }

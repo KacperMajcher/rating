@@ -1,25 +1,20 @@
-import 'dart:async';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rating/repositories/deadline_repository.dart';
 
 part 'add_state.dart';
 
 class AddCubit extends Cubit<AddState> {
-  AddCubit() : super(const AddState());
+  AddCubit(this.deadlineRepository) : super(const AddState());
 
-  Future<void> add(
+  final DeadlineRepository deadlineRepository;
+
+  void add(
     String task,
     bool isDone,
     DateTime deadline,
   ) async {
     try {
-      await FirebaseFirestore.instance.collection('items').add(
-        {
-          'task': task,
-          'is_done': isDone = false,
-          'deadline': deadline,
-        },
-      );
+      await deadlineRepository.add(task, isDone, deadline);
       emit(const AddState(saved: true));
     } catch (error) {
       emit(
