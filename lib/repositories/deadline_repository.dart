@@ -15,8 +15,8 @@ class DeadlineRepository {
     await remoteDataSource.addDeadline(task, isDone, deadline);
   }
 
-  Future<void> updateIsDone(String id) async {
-    await remoteDataSource.updateIsDone(id);
+  Future<void> setAsDone(String id) async {
+    await remoteDataSource.setAsDone(id);
   }
 
   Future<List<DeadlineItem>> filterItems() async {

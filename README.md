@@ -2,7 +2,15 @@
 ## Project description at the bottom
 
 > Commit
-> Add flavors
+> Wrap deadlines in generators
+
+## To the home/deadlines part, the following features have been added: freezed, json serializable and injectable
+## This has resulted in the creation of generating and simplifying code methods
+## Thanks to freezed, I will also be able to start testing this part of the application
+
+> Commit
+> [Add flavors](https://github.com/KacperMajcher/rating/commit/eeb71050e7c7535a9547737e73a62823445c9285)
+> Nov 9, 2023, 9:59 AM
 
 ## Various configuration options (flavors) have been added to the application
 ## Currently, their functionality supports production and development configurations

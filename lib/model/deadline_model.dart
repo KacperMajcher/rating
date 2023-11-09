@@ -1,26 +1,32 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:intl/intl.dart';
 
-class DeadlineItem {
-  DeadlineItem({
-    required this.id,
-    required this.task,
-    required this.deadline,
-    required this.isDone,
-  });
+part 'deadline_model.freezed.dart';
+part 'deadline_model.g.dart';
 
-  String id;
-  String task;
-  DateTime deadline;
-  bool isDone;
+class TimeStampSerializer implements JsonConverter<DateTime, dynamic> {
+  const TimeStampSerializer();
 
-  factory DeadlineItem.fromJson(Map<String, dynamic> json) {
-    return DeadlineItem(
-      id: json['id'],
-      task: json['task'],
-      deadline: json['deadline'].toDate(),
-      isDone: json['is_done'],
-    );
-  }
+  @override
+  DateTime fromJson(dynamic timestamp) => timestamp as DateTime;
+
+  @override
+  toJson(DateTime date) => date;
+}
+
+@freezed
+class DeadlineItem with _$DeadlineItem {
+  DeadlineItem._();
+  @JsonSerializable(fieldRename: FieldRename.snake)
+  factory DeadlineItem({
+    required String id,
+    required String task,
+    @TimeStampSerializer() required DateTime deadline,
+    @Default(false) bool isDone,
+  }) = _DeadlineItem;
+
+  factory DeadlineItem.fromJson(Map<String, Object?> json) =>
+      _$DeadlineItemFromJson(json);
 
   String daysLeft() {
     DateTime now = DateTime.now();

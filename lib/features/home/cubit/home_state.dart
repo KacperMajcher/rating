@@ -1,14 +1,11 @@
 part of 'home_cubit.dart';
 
-class HomeState {
-  const HomeState({
-    this.deadlineItem = const [],
-    this.status = Status.initial,
-    this.errorMessage,
-    this.removingErrorOccured = false,
-  });
-  final List<DeadlineItem> deadlineItem;
-  final Status status;
-  final String? errorMessage;
-  final bool removingErrorOccured;
+@freezed
+class HomeState with _$HomeState {
+  factory HomeState({
+    @Default([]) List<DeadlineItem> deadlineItem,
+    @Default(Status.initial) Status status,
+    @Default(false) bool removingErrorOccured,
+    String? errorMessage,
+  }) = _HomeState;
 }

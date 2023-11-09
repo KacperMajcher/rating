@@ -1,21 +1,23 @@
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:rating/app/core/enums.dart';
 import 'package:rating/features/remote_data_sources/deadline_remote_data_source.dart';
 import 'package:rating/model/deadline_model.dart';
 import 'package:rating/repositories/deadline_repository.dart';
 
 part 'home_state.dart';
+part 'home_cubit.freezed.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit(DeadlineRepository deadlineRepository) : super(const HomeState());
+  HomeCubit(DeadlineRepository deadlineRepository) : super(HomeState());
 
   final deadlineRepository = DeadlineRepository(DeadlineRemoteDataSource());
   final remoteDataSource = DeadlineRemoteDataSource();
   StreamSubscription? _streamSubscription;
 
   void getDeadlineItems() {
-    emit(const HomeState(status: Status.loading));
+    emit(HomeState(status: Status.loading));
 
     _streamSubscription = deadlineRepository.getDeadline().listen(
       (deadlineItems) {
@@ -42,14 +44,14 @@ class HomeCubit extends Cubit<HomeState> {
       await remoteDataSource.delete(id: documentID);
     } catch (error) {
       emit(
-        const HomeState(removingErrorOccured: true),
+        HomeState(removingErrorOccured: true),
       );
     }
   }
 
   Future<void> toggleCheckBox({required DeadlineItem deadlineItem}) async {
     try {
-      await deadlineRepository.updateIsDone(deadlineItem.id);
+      await deadlineRepository.setAsDone(deadlineItem.id);
     } catch (error) {
       emit(
         HomeState(
