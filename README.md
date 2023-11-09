@@ -2,7 +2,17 @@
 ## Project description at the bottom
 
 > Commit
-> Improve the functionality of the daysLeft() function
+> Add flavors
+
+## Various configuration options (flavors) have been added to the application
+## Currently, their functionality supports production and development configurations
+## A new file, 'main_production.dart,' has been created, which is invoked when the production version is launched
+## Notably, this file does not include the 'debug' bar in the upper right corner of the screen
+## Regardless of the chosen flavor, we have also implemented a hardcoded link to the API server for different application flavors. If necessary, these links can be modified in one central location, ensuring the correct functioning of the entire application
+
+> Commit
+> [Improve the functionality of the daysLeft() function](https://github.com/KacperMajcher/rating/commit/cb893fe119c0e3db6b733db101fbf7ba7e373590)
+> Nov 8, 2023, 7:26 PM
 
 ## The function daysLeft() has been improved
 ## It now correctly displays the number of days remaining until the deadline
