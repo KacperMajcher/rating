@@ -13,7 +13,6 @@ class HomeCubit extends Cubit<HomeState> {
   HomeCubit(DeadlineRepository deadlineRepository) : super(HomeState());
 
   final deadlineRepository = DeadlineRepository(DeadlineRemoteDataSource());
-  final remoteDataSource = DeadlineRemoteDataSource();
   StreamSubscription? _streamSubscription;
 
   void getDeadlineItems() {
@@ -41,7 +40,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> remove({required String documentID}) async {
     try {
-      await remoteDataSource.delete(id: documentID);
+      await deadlineRepository.remove(documentID);
     } catch (error) {
       emit(
         HomeState(removingErrorOccured: true),

@@ -2,7 +2,11 @@
 ## Project description at the bottom
 
 > Commit
-> Wrap deadlines in generators
+> Remove the reference to remoteDataSource from Cubit for the remove method
+
+> Commit
+> [Wrap deadlines in generators](https://github.com/KacperMajcher/rating/commit/7324f576b59cf3709e945d6c82d28ffe2e9ad33e)
+> Nov 9, 2023, 4:59 PM
 
 ## To the home/deadlines part, the following features have been added: freezed, json serializable and injectable
 ## This has resulted in the creation of generating and simplifying code methods
