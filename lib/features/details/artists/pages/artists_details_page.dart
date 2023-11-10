@@ -41,7 +41,7 @@ class ArtistsDetailsPage extends StatelessWidget {
                   height: 200,
                   width: 200,
                   image: AssetImage(
-                      'assets/avatars/avatar${artistModel.place}.png'),
+                      'assets/graphics/artists_avatars/artist${artistModel.place}.png'),
                   fit: BoxFit.fill,
                 ),
                 const SizedBox(
@@ -113,6 +113,8 @@ class ArtistsDetailsPage extends StatelessWidget {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: artistModel.topSongs.map((song) {
+                          final imagePath =
+                              'assets/graphics/artists_avatars/artist_cover_${artistModel.place}/${song.coverNumber}.png';
                           return Row(
                             children: [
                               Padding(
@@ -120,8 +122,8 @@ class ArtistsDetailsPage extends StatelessWidget {
                                 child: Image(
                                   height: 40,
                                   width: 40,
-                                  image: AssetImage(
-                                      'assets/album_covers/album_cover${artistModel.place}.png'),
+                                  image: AssetImage(imagePath),
+                                  fit: BoxFit.fill,
                                 ),
                               ),
                               Text(

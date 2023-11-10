@@ -182,8 +182,8 @@ class _ArtistItemWidget extends StatelessWidget {
               ),
               CircleAvatar(
                 radius: 90,
-                backgroundImage:
-                    AssetImage('assets/avatars/avatar${artistModel.place}.png'),
+                backgroundImage: AssetImage(
+                    'assets/graphics/artists_avatars/artist${artistModel.place}.png'),
               ),
               const SizedBox(
                 height: 7,

@@ -28,10 +28,12 @@ _$TopSongsModelImpl _$$TopSongsModelImplFromJson(Map<String, dynamic> json) =>
     _$TopSongsModelImpl(
       json['title'] as String,
       json['views'] as int,
+      json['coverNumber'] as int,
     );
 
 Map<String, dynamic> _$$TopSongsModelImplToJson(_$TopSongsModelImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'views': instance.views,
+      'coverNumber': instance.coverNumber,
     };

@@ -216,6 +216,7 @@ TopSongsModel _$TopSongsModelFromJson(Map<String, dynamic> json) {
 mixin _$TopSongsModel {
   String get title => throw _privateConstructorUsedError;
   int get views => throw _privateConstructorUsedError;
+  int get coverNumber => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -229,7 +230,7 @@ abstract class $TopSongsModelCopyWith<$Res> {
           TopSongsModel value, $Res Function(TopSongsModel) then) =
       _$TopSongsModelCopyWithImpl<$Res, TopSongsModel>;
   @useResult
-  $Res call({String title, int views});
+  $Res call({String title, int views, int coverNumber});
 }
 
 /// @nodoc
@@ -247,6 +248,7 @@ class _$TopSongsModelCopyWithImpl<$Res, $Val extends TopSongsModel>
   $Res call({
     Object? title = null,
     Object? views = null,
+    Object? coverNumber = null,
   }) {
     return _then(_value.copyWith(
       title: null == title
@@ -256,6 +258,10 @@ class _$TopSongsModelCopyWithImpl<$Res, $Val extends TopSongsModel>
       views: null == views
           ? _value.views
           : views // ignore: cast_nullable_to_non_nullable
+              as int,
+      coverNumber: null == coverNumber
+          ? _value.coverNumber
+          : coverNumber // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
   }
@@ -269,7 +275,7 @@ abstract class _$$TopSongsModelImplCopyWith<$Res>
       __$$TopSongsModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String title, int views});
+  $Res call({String title, int views, int coverNumber});
 }
 
 /// @nodoc
@@ -285,6 +291,7 @@ class __$$TopSongsModelImplCopyWithImpl<$Res>
   $Res call({
     Object? title = null,
     Object? views = null,
+    Object? coverNumber = null,
   }) {
     return _then(_$TopSongsModelImpl(
       null == title
@@ -295,6 +302,10 @@ class __$$TopSongsModelImplCopyWithImpl<$Res>
           ? _value.views
           : views // ignore: cast_nullable_to_non_nullable
               as int,
+      null == coverNumber
+          ? _value.coverNumber
+          : coverNumber // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -302,7 +313,7 @@ class __$$TopSongsModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$TopSongsModelImpl implements _TopSongsModel {
-  _$TopSongsModelImpl(this.title, this.views);
+  _$TopSongsModelImpl(this.title, this.views, this.coverNumber);
 
   factory _$TopSongsModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$TopSongsModelImplFromJson(json);
@@ -311,10 +322,12 @@ class _$TopSongsModelImpl implements _TopSongsModel {
   final String title;
   @override
   final int views;
+  @override
+  final int coverNumber;
 
   @override
   String toString() {
-    return 'TopSongsModel(title: $title, views: $views)';
+    return 'TopSongsModel(title: $title, views: $views, coverNumber: $coverNumber)';
   }
 
   @override
@@ -323,12 +336,14 @@ class _$TopSongsModelImpl implements _TopSongsModel {
         (other.runtimeType == runtimeType &&
             other is _$TopSongsModelImpl &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.views, views) || other.views == views));
+            (identical(other.views, views) || other.views == views) &&
+            (identical(other.coverNumber, coverNumber) ||
+                other.coverNumber == coverNumber));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, title, views);
+  int get hashCode => Object.hash(runtimeType, title, views, coverNumber);
 
   @JsonKey(ignore: true)
   @override
@@ -345,7 +360,8 @@ class _$TopSongsModelImpl implements _TopSongsModel {
 }
 
 abstract class _TopSongsModel implements TopSongsModel {
-  factory _TopSongsModel(final String title, final int views) =
+  factory _TopSongsModel(
+          final String title, final int views, final int coverNumber) =
       _$TopSongsModelImpl;
 
   factory _TopSongsModel.fromJson(Map<String, dynamic> json) =
@@ -355,6 +371,8 @@ abstract class _TopSongsModel implements TopSongsModel {
   String get title;
   @override
   int get views;
+  @override
+  int get coverNumber;
   @override
   @JsonKey(ignore: true)
   _$$TopSongsModelImplCopyWith<_$TopSongsModelImpl> get copyWith =>

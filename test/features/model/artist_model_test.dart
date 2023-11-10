@@ -25,8 +25,8 @@ void main() {
       'test-name',
       'test-bio',
       [
-        TopSongsModel('test-title-one', 9),
-        TopSongsModel('test-title-two', 100),
+        TopSongsModel('test-title-one', 9, 1),
+        TopSongsModel('test-title-two', 100, 2),
       ],
     );
     //2

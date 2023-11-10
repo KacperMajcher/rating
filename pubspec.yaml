@@ -41,6 +41,17 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+   - assets/graphics/
    - assets/icons/
-   - assets/avatars/
-   - assets/album_covers/
+   - assets/graphics/artists_avatars/
+   - assets/graphics/artists_avatars/
+   - assets/graphics/artists_avatars/artist_cover_1/ 
+   - assets/graphics/artists_avatars/artist_cover_2/
+   - assets/graphics/artists_avatars/artist_cover_3/
+   - assets/graphics/artists_avatars/artist_cover_4/
+   - assets/graphics/artists_avatars/artist_cover_5/
+   - assets/graphics/podcasters_avatars/podcaster_cover_1/
+   - assets/graphics/podcasters_avatars/podcaster_cover_2/
+   - assets/graphics/podcasters_avatars/podcaster_cover_3/
+   - assets/graphics/podcasters_avatars/podcaster_cover_4/
+   - assets/graphics/podcasters_avatars/podcaster_cover_5/

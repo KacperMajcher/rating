@@ -32,10 +32,10 @@ void main() {
         when(() => repository.getArtistModel()).thenAnswer(
           (_) async => [
             ArtistModel(1, 'Ariana Grande', 'bio', [
-              TopSongsModel('Song 1', 10000),
+              TopSongsModel('Song 1', 10000, 1),
             ]),
             ArtistModel(2, 'Justin Bieber', 'bio', [
-              TopSongsModel('Song 2', 200000),
+              TopSongsModel('Song 2', 200000, 2),
             ]),
           ],
         );
@@ -54,10 +54,10 @@ void main() {
                   status: Status.success,
                   artistModel: [
                     ArtistModel(1, 'Ariana Grande', 'bio', [
-                      TopSongsModel('Song 1', 10000),
+                      TopSongsModel('Song 1', 10000, 1),
                     ]),
                     ArtistModel(2, 'Justin Bieber', 'bio', [
-                      TopSongsModel('Song 2', 200000),
+                      TopSongsModel('Song 2', 200000, 2),
                     ]),
                   ],
                 ),

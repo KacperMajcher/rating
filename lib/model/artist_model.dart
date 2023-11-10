@@ -22,6 +22,7 @@ class TopSongsModel with _$TopSongsModel {
   factory TopSongsModel(
     String title,
     int views,
+    int coverNumber,
   ) = _TopSongsModel;
 
   factory TopSongsModel.fromJson(Map<String, dynamic> json) =>

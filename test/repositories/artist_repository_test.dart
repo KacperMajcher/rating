@@ -13,16 +13,16 @@ void main() {
  
   final expectedArtists = [
     ArtistModel(1, 'name1', 'bio', [
-      TopSongsModel('Song 1', 999),
+      TopSongsModel('Song 1', 999, 1),
     ]),
     ArtistModel(2, 'name2', 'bio', [
-      TopSongsModel('Song 2', 888),
+      TopSongsModel('Song 2', 888, 2),
     ]),
     ArtistModel(3, 'name3', 'bio', [
-      TopSongsModel('Song 3', 777),
+      TopSongsModel('Song 3', 777,3 ),
     ]),
     ArtistModel(4, 'name4', 'bio', [
-      TopSongsModel('Song 4', 555),
+      TopSongsModel('Song 4', 555, 1),
     ]),
   ];
 
