@@ -2,7 +2,11 @@
 ## Project description at the bottom
 
 > Commit
-> Test PodcasterRepository 
+> Implement getIt in add page
+
+> Commit
+> [Test PodcasterRepository](https://github.com/KacperMajcher/rating/commit/11b3d1fd7c44eee2d066523e467a199d834295c0)
+> Nov 11, 2023, 2:40 PM
 
 ## The PodcasterRepository tests have been added
 ### The getPodcasterModel() function has received tests:
