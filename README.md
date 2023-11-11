@@ -3,7 +3,16 @@
 
 
 > Commit
-> Test PodcastersCubit 
+> Test PodcasterModel 
+
+## The PodcasterModel tests have been added
+### The PodcasterModel.fromJson() method has received tests:
+- Checking if the provided map supplies the desired PodcasterModel.
+  - Verifies that the expected PodcasterModel is correctly created from the provided map.
+
+> Commit
+> [Test PodcastersCubit](https://github.com/KacperMajcher/rating/commit/54f80c01641686614c9bc77dd43dac77001b3f6a)
+> Nov 11, 2023, 2:06 PM
 
 ## The PodcastersCubit tests have been added
 ### The getPodcasterModels() function has received tests:
