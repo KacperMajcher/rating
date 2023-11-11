@@ -1,8 +1,29 @@
 # RatingProject
 ## Project description at the bottom
 
+
 > Commit
-> Update ArtistModel Tests
+> Test DeadlineModel
+
+## The DeadlineModel tests have been added
+### Test scopes:
+### Constructor and Serialization
+- Verify that the constructor creates a DeadlineItem with correct data.
+- Confirm that serialized data matches expectations.
+### Default Values
+- Check if default values are set correctly.
+### daysLeft() Method
+- Ensure the daysLeft method returns the correct number of days.
+### deadlineDateFormatted() Method
+- Check if the deadlineDateFormatted method returns a correctly formatted date.
+### TimeStampSerializer Tests
+- Test serialization/deserialization with TimeStampSerializer.
+- Confirm that fromJson converts a timestamp to DateTime.
+- Confirm that toJson converts DateTime to a timestamp.
+
+> Commit
+> [Update ArtistModel Tests](https://github.com/KacperMajcher/rating/commit/d510607ed5919379c50d168d8b81d1cc853e9616)
+> Nov 11, 2023, 10:31 AM
 
 > Commit
 > [Test DeadlineRepository](https://github.com/KacperMajcher/rating/commit/5bfbe8b8eddd434ee57f3770510d411a5b453975)
