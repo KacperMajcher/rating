@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:rating/app/core/enums.dart';
-import 'package:rating/features/remote_data_sources/deadline_remote_data_source.dart';
 import 'package:rating/model/deadline_model.dart';
 import 'package:rating/repositories/deadline_repository.dart';
 
@@ -10,9 +9,9 @@ part 'home_state.dart';
 part 'home_cubit.freezed.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit(DeadlineRepository deadlineRepository) : super(HomeState());
+  HomeCubit({required this.deadlineRepository}) : super(HomeState());
 
-  final deadlineRepository = DeadlineRepository(DeadlineRemoteDataSource());
+  final DeadlineRepository deadlineRepository;
   StreamSubscription? _streamSubscription;
 
   void getDeadlineItems() {
@@ -43,8 +42,11 @@ class HomeCubit extends Cubit<HomeState> {
       await deadlineRepository.remove(documentID);
     } catch (error) {
       emit(
-        HomeState(removingErrorOccured: true),
-      );
+          HomeState(
+            status: Status.error,
+            errorMessage: error.toString(),
+          ),
+        );
     }
   }
 

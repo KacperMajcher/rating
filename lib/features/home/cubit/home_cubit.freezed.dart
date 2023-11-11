@@ -18,7 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$HomeState {
   List<DeadlineItem> get deadlineItem => throw _privateConstructorUsedError;
   Status get status => throw _privateConstructorUsedError;
-  bool get removingErrorOccured => throw _privateConstructorUsedError;
   String? get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -32,10 +31,7 @@ abstract class $HomeStateCopyWith<$Res> {
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
   $Res call(
-      {List<DeadlineItem> deadlineItem,
-      Status status,
-      bool removingErrorOccured,
-      String? errorMessage});
+      {List<DeadlineItem> deadlineItem, Status status, String? errorMessage});
 }
 
 /// @nodoc
@@ -53,7 +49,6 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   $Res call({
     Object? deadlineItem = null,
     Object? status = null,
-    Object? removingErrorOccured = null,
     Object? errorMessage = freezed,
   }) {
     return _then(_value.copyWith(
@@ -65,10 +60,6 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
-      removingErrorOccured: null == removingErrorOccured
-          ? _value.removingErrorOccured
-          : removingErrorOccured // ignore: cast_nullable_to_non_nullable
-              as bool,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -86,10 +77,7 @@ abstract class _$$HomeStateImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<DeadlineItem> deadlineItem,
-      Status status,
-      bool removingErrorOccured,
-      String? errorMessage});
+      {List<DeadlineItem> deadlineItem, Status status, String? errorMessage});
 }
 
 /// @nodoc
@@ -105,7 +93,6 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   $Res call({
     Object? deadlineItem = null,
     Object? status = null,
-    Object? removingErrorOccured = null,
     Object? errorMessage = freezed,
   }) {
     return _then(_$HomeStateImpl(
@@ -117,10 +104,6 @@ class __$$HomeStateImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as Status,
-      removingErrorOccured: null == removingErrorOccured
-          ? _value.removingErrorOccured
-          : removingErrorOccured // ignore: cast_nullable_to_non_nullable
-              as bool,
       errorMessage: freezed == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -135,7 +118,6 @@ class _$HomeStateImpl implements _HomeState {
   _$HomeStateImpl(
       {final List<DeadlineItem> deadlineItem = const [],
       this.status = Status.initial,
-      this.removingErrorOccured = false,
       this.errorMessage})
       : _deadlineItem = deadlineItem;
 
@@ -152,14 +134,11 @@ class _$HomeStateImpl implements _HomeState {
   @JsonKey()
   final Status status;
   @override
-  @JsonKey()
-  final bool removingErrorOccured;
-  @override
   final String? errorMessage;
 
   @override
   String toString() {
-    return 'HomeState(deadlineItem: $deadlineItem, status: $status, removingErrorOccured: $removingErrorOccured, errorMessage: $errorMessage)';
+    return 'HomeState(deadlineItem: $deadlineItem, status: $status, errorMessage: $errorMessage)';
   }
 
   @override
@@ -170,19 +149,13 @@ class _$HomeStateImpl implements _HomeState {
             const DeepCollectionEquality()
                 .equals(other._deadlineItem, _deadlineItem) &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.removingErrorOccured, removingErrorOccured) ||
-                other.removingErrorOccured == removingErrorOccured) &&
             (identical(other.errorMessage, errorMessage) ||
                 other.errorMessage == errorMessage));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_deadlineItem),
-      status,
-      removingErrorOccured,
-      errorMessage);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_deadlineItem), status, errorMessage);
 
   @JsonKey(ignore: true)
   @override
@@ -195,15 +168,12 @@ abstract class _HomeState implements HomeState {
   factory _HomeState(
       {final List<DeadlineItem> deadlineItem,
       final Status status,
-      final bool removingErrorOccured,
       final String? errorMessage}) = _$HomeStateImpl;
 
   @override
   List<DeadlineItem> get deadlineItem;
   @override
   Status get status;
-  @override
-  bool get removingErrorOccured;
   @override
   String? get errorMessage;
   @override

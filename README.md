@@ -2,7 +2,13 @@
 ## Project description at the bottom
 
 > Commit
-> Add podcasters section
+> Standardize error handling
+
+## Error handling has been standardized. The entire application now utilizes a single method
+
+> Commit
+> [Add podcasters section](https://github.com/KacperMajcher/rating/commit/3debc05d5e54121306ebce0be613458dea71aad6)
+> Nov 10, 2023, 1:38 PM
 
 ## A top podcasters section has been added to the project
 ## Users can now confidently discover which of their favorites have made it to the top rankings and explore details about other creators. Within the application, they can access biographies, top songs/podcasts, and titles for each artist. Additionally, visually appealing graphics are showcased throughout the application for a more immersive experience!
