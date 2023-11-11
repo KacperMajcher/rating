@@ -1,9 +1,17 @@
 # RatingProject
 ## Project description at the bottom
 
+> Commit
+> Test PodcasterRepository 
+
+## The PodcasterRepository tests have been added
+### The getPodcasterModel() function has received tests:
+- Checking if the remoteDataSource.getPodcasterData() method is called.
+- Checking the return of the list of podcasters.
 
 > Commit
-> Test PodcasterModel 
+> [Test PodcasterModel](https://github.com/KacperMajcher/rating/commit/1ac341e83d8c6efc65f266fe42b069a225cd3970)
+> Nov 11, 2023, 2:26 PM
 
 ## The PodcasterModel tests have been added
 ### The PodcasterModel.fromJson() method has received tests:
