@@ -2,7 +2,15 @@
 ## Project description at the bottom
 
 > Commit
-> Test HomeCubit
+> Test DeadlineRepository
+
+## The DeadlineRepository test have been added
+ ### The getDeadlineData() function has received test:
+- Checking the correct list of deadlines is returned
+
+> Commit
+> [Test HomeCubit](https://github.com/KacperMajcher/rating/commit/9d550866c0a4368ca0ee772b38916b880f12c373)
+> Nov 11, 2023, 9:41 AM
 
 ## The HomeCubit tests have been added
 ### Test scopes:

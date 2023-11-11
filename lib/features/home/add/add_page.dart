@@ -23,7 +23,7 @@ class _AddPageState extends State<AddPage> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          AddCubit(DeadlineRepository(DeadlineRemoteDataSource())),
+          AddCubit(DeadlineRepository(remoteDataSource: DeadlineRemoteDataSource())),
       child: BlocConsumer<AddCubit, AddState>(
         listener: (context, state) {
           if (state.saved) {
