@@ -43,7 +43,7 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i4.DeadlineRepository>(
         () => _i4.DeadlineRepository(gh<_i3.DeadlineRemoteDataSource>()));
     gh.factory<_i5.HomeCubit>(
-        () => _i5.HomeCubit(gh<_i4.DeadlineRepository>()));
+        () => _i5.HomeCubit(deadlineRepository: gh<_i4.DeadlineRepository>()));
     gh.factory<String>(
       () => registerModule.baseUrl,
       instanceName: 'BaseUrl',

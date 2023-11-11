@@ -2,7 +2,22 @@
 ## Project description at the bottom
 
 > Commit
-> Standardize error handling
+> Test HomeCubit
+
+## The HomeCubit tests have been added
+### Test scopes:
+### The filterItems() function has received tests:
+-  Checking the return of deadlines when no keyword is entered.
+-  Checking the return of filtered deadlines when a keyword is entered.
+-  Checking the return of filtered deadlines when no items match the keyword.
+### The remove() function has received tests:
+- Checking the correct removal of an element from the list.
+ ### The toggleCheckBox() function has received tests:
+- Checking the success status after calling the setAsDone method.
+
+> Commit
+> [Standardize error handling](https://github.com/KacperMajcher/rating/commit/37f52caffe83861d0afb1264af9ccfcefd998297)
+> Nov 11, 2023, 9:27 AM
 
 ## Error handling has been standardized. The entire application now utilizes a single method
 
