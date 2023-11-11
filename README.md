@@ -3,7 +3,17 @@
 
 
 > Commit
-> Test AddCubit
+> Test PodcastersCubit 
+
+## The PodcastersCubit tests have been added
+### The getPodcasterModels() function has received tests:
+- Checking the method call to getPodcasterModel() once at the start.
+- Checking the successful emission of Status.loading followed by Status.success with results.
+- Checking the emission of Status.loading followed by Status.error with an error message.
+
+> Commit
+> [Test AddCubit](https://github.com/KacperMajcher/rating/commit/fc7017658216ce6258bc45a86847006a99ba088c)
+> Nov 11, 2023, 12:17 PM
 
 ## The AddCubit tests have been added
 ### The AddCubit has been tested for:
