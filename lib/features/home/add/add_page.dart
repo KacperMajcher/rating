@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:rating/app/core/enums.dart';
 import 'package:rating/features/home/add/cubit/add_cubit.dart';
 import 'package:rating/features/remote_data_sources/deadline_remote_data_source.dart';
 import 'package:rating/repositories/deadline_repository.dart';
@@ -22,11 +23,13 @@ class _AddPageState extends State<AddPage> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          AddCubit(DeadlineRepository(remoteDataSource: DeadlineRemoteDataSource())),
+      create: (context) => AddCubit(
+        deadlineRepository:
+            DeadlineRepository(remoteDataSource: DeadlineRemoteDataSource()),
+      ),
       child: BlocConsumer<AddCubit, AddState>(
         listener: (context, state) {
-          if (state.saved) {
+           if (state.status == Status.success) {
             Navigator.of(context).pop();
           }
         },

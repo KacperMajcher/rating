@@ -3,7 +3,16 @@
 
 
 > Commit
-> Test DeadlineModel
+> Test AddCubit
+
+## The AddCubit tests have been added
+### The AddCubit has been tested for:
+- Successful addition, returning Status.success after adding a deadline.
+- Unsuccessful addition, returning Status.error and the appropriate error message after a failed attempt to add a deadline.
+
+> Commit
+> [Test DeadlineModel](https://github.com/KacperMajcher/rating/commit/f2336f68043e9406b30659cc6d5dddb40a64759b)
+> Nov 11, 2023, 11:28 AM
 
 ## The DeadlineModel tests have been added
 ### Test scopes:

@@ -48,7 +48,8 @@ extension GetItInjectableX on _i1.GetIt {
       () => registerModule.baseUrl,
       instanceName: 'BaseUrl',
     );
-    gh.factory<_i6.AddCubit>(() => _i6.AddCubit(gh<_i4.DeadlineRepository>()));
+    gh.factory<_i6.AddCubit>(
+        () => _i6.AddCubit(deadlineRepository: gh<_i4.DeadlineRepository>()));
     gh.lazySingleton<_i7.Dio>(
         () => registerModule.dio(gh<String>(instanceName: 'BaseUrl')));
     gh.factory<_i8.PodcastersRemoteRetrofitDataSource>(
