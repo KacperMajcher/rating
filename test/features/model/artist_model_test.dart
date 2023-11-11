@@ -10,10 +10,12 @@ void main() {
       {
         'title': 'test-title-one',
         'views': 9,
+        'coverNumber': 1,
       },
       {
         'title': 'test-title-two',
         'views': 100,
+        'coverNumber': 2,
       },
     ],
   };

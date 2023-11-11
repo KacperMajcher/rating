@@ -8,7 +8,7 @@ part 'artists_state.dart';
 part 'artists_cubit.freezed.dart';
 
 class ArtistsCubit extends Cubit<ArtistsState> {
-  ArtistsCubit({required this.artistRepository}) : super( ArtistsState());
+  ArtistsCubit({required this.artistRepository}) : super(ArtistsState());
   final ArtistRepository artistRepository;
 
   Future<void> getArtistModels() async {

@@ -2,7 +2,11 @@
 ## Project description at the bottom
 
 > Commit
-> Test DeadlineRepository
+> Update ArtistModel Tests
+
+> Commit
+> [Test DeadlineRepository](https://github.com/KacperMajcher/rating/commit/5bfbe8b8eddd434ee57f3770510d411a5b453975)
+> Nov 11, 2023, 10:26 AM
 
 ## The DeadlineRepository test have been added
  ### The getDeadlineData() function has received test:
