@@ -2,7 +2,36 @@
 ## Project description at the bottom
 
 > Commit
-> Implement getIt in add page
+> Add new HomeCubit tests
+
+# HomeCubit Tests Documentation
+
+## Test Scopes
+### 1. **getDeadlineItems() Function**
+   - **Test 1:** Checking the loading and success states with valid deadline items.
+    - Verifies that the `getDeadlineItems` function emits loading and success states when valid deadline items are fetched.
+   - **Test 2:** Checking the loading and error states when an error occurs during fetching.
+    - Ensures that the `getDeadlineItems` function emits loading and error states when an error occurs during the fetch operation.
+
+### 2. **filterItems() Function**
+   - **Test 1:** Checking the return of deadlines when no keyword is entered.
+    - Verifies that the `filterItems` function returns all deadlines when no keyword is provided.
+   - **Test 2:** Checking the return of filtered deadlines when a keyword is entered.
+    - Ensures that the `filterItems` function returns the correct filtered deadlines when a keyword is provided.
+   - **Test 3:** Checking the return of filtered deadlines when no items match the keyword.
+    - Verifies that the `filterItems` function returns an empty list when no deadlines match the provided keyword.
+
+### 3. **remove() Function**
+   - **Test 1:** Checking the correct removal of an element from the list.
+    - Ensures that the `remove` function removes the specified deadline from the list.
+
+### 4. **toggleCheckBox() Function**
+   - **Test 1:** Checking the success status after calling the `setAsDone` method.
+    - Verifies that the `toggleCheckBox` function emits a success status after successfully calling the `setAsDone` method.
+
+> Commit
+> [Implement getIt in add page](https://github.com/KacperMajcher/rating/commit/930ad4afda3d2946be0724a5ce0e978715b31eb9)
+> Nov 11, 2023, 3:54 PM
 
 > Commit
 > [Test PodcasterRepository](https://github.com/KacperMajcher/rating/commit/11b3d1fd7c44eee2d066523e467a199d834295c0)
