@@ -34,5 +34,66 @@ void main() {
         expect(result, emits(testDeadlines));
       });
     });
+    group('add', () {
+      test('should call addDeadline once with provided parameters', () {
+        when(() => dataSource.addDeadline('Task 1', false, DateTime(2023)))
+            .thenAnswer((_) async {});
+
+        sut.add('Task 1', false, DateTime(2023));
+
+        verify(() => dataSource.addDeadline('Task 1', false, DateTime(2023)))
+            .called(1);
+      });
+
+      test('should throw exception if addDeadline on remote data source throws',
+          () async {
+        when(() => dataSource.addDeadline('Task 1', false, DateTime(2023)))
+            .thenThrow(Exception());
+
+        expect(() => sut.add('Task 1', false, DateTime(2023)), throwsException);
+      });
+    });
+    group('setAsDone', () {
+      test(
+        'should call setAsDonewith() with ID once',
+        () {
+          when(() => dataSource.setAsDone('x')).thenAnswer((_) async {});
+
+          sut.setAsDone('x');
+
+          verify(() => dataSource.setAsDone('x')).called(1);
+        },
+      );
+    });
+    group('filterItems()', () {
+      test('filterItems returns a list of DeadlineItems', () async {
+        final testItems = [
+          {'id': '1', 'task': 'Task 1', 'deadline': DateTime(2023)},
+          {'id': '2', 'task': 'Task 2', 'deadline': DateTime(2023)},
+        ];
+
+        when(() => dataSource.filterItems()).thenAnswer((_) async {
+          return testItems;
+        });
+
+        final result = await sut.filterItems();
+
+        final expectedItems =
+            testItems.map((item) => DeadlineItem.fromJson(item)).toList();
+        expect(result, expectedItems);
+      });
+      group('remove', () {
+        test(
+          'should call delete () with ID once',
+          () {
+            when(() => dataSource.delete(id: 'x')).thenAnswer((_) async {});
+
+            sut.remove('x');
+
+            verify(() => dataSource.delete(id: 'x')).called(1);
+          },
+        );
+      });
+    });
   });
 }

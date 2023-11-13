@@ -2,7 +2,36 @@
 ## Project description at the bottom
 
 > Commit
-> Add new HomeCubit tests
+> Add new DeadlineRepository tests
+
+# DeadlineRepository Tests Documentation
+
+## Test Scopes
+### 1. **getDeadlineData() Function**
+   - **Test 1:** Retrieving a stream of DeadlineItems.
+    - Verifies that the `getDeadlineData` function returns a stream of DeadlineItems when valid data is provided.
+  
+### 2. **add() Function**
+   - **Test 1:** Calling addDeadline once with provided parameters.
+    - Ensures that the `add` function calls `addDeadline` on the remote data source once with the provided parameters.
+   - **Test 2:** Throwing exception if addDeadline on remote data source throws.
+    - Verifies that the `add` function throws an exception if `addDeadline` on the remote data source throws.
+
+### 3. **setAsDone() Function**
+   - **Test 1:** Calling setAsDone with ID once.
+    - Ensures that the `setAsDone` function calls `setAsDone` with the provided ID once.
+
+### 4. **filterItems() Function**
+   - **Test 1:** Retrieving a list of DeadlineItems.
+    - Verifies that the `filterItems` function returns a list of DeadlineItems when valid data is provided.
+   
+### 5. **remove() Function**
+   - **Test 1:** Calling delete() with ID once.
+    - Ensures that the `remove` function calls `delete` with the provided ID once.
+
+> Commit
+> [Add new HomeCubit tests](https://github.com/KacperMajcher/rating/commit/e4ab4afff915b3422c86785e20a96b27833c0ad6)
+> Nov 13, 2023, 10:07 AM
 
 # HomeCubit Tests Documentation
 
