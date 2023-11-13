@@ -2,7 +2,22 @@
 ## Project description at the bottom
 
 > Commit
-> Add new DeadlineRepository tests
+> Test Coverage
+
+## Test Coverage
+
+After conscientiously creating tests for the application, my focus shifted towards establishing thorough "test coverage." This metric measures the percentage of the source code covered by unit tests. Its significance lies in its ability to identify sections of untested code and evaluate the overall quality and stability of the application.
+
+### Result:
+
+Exciting news! Project has successfully achieved a flawless `100% test coverage`. This milestone underscores my dedication to producing a resilient and top-tier software product.
+
+![Test-Coverage](https://github.com/KacperMajcher/rating/assets/142928291/b3a7cf94-122a-4d98-ac94-732eff5870a8)
+![Tests](https://github.com/KacperMajcher/rating/assets/142928291/47d52dee-73fc-4cac-aeaf-d056ac283e6b)
+
+> Commit
+> [Add new DeadlineRepository tests](https://github.com/KacperMajcher/rating/commit/4fcb2659af31df3fc5c8f076535bbc860c6755b8)
+> Nov 13, 2023, 10:59 AM
 
 # DeadlineRepository Tests Documentation
 
