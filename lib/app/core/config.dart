@@ -6,7 +6,7 @@ enum Flavor {
 }
 
 class Config {
-  static Flavor appFlavor = Flavor.development;
+  static Flavor appFlavor = Flavor.production;
 
   static String get baseUrl {
     switch (appFlavor) {

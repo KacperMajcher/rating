@@ -2,7 +2,11 @@
 ## Project description at the bottom
 
 > Commit
-> Add an application preview to the documentation
+> Change deafoult Flavor to production
+
+> Commit
+> [Add an application preview to the documentation](https://github.com/KacperMajcher/rating/commit/371d79c5877dc7025e7e93e69f63c2e77819d3dd)
+> Nov 14, 2023, 1:28 PM
 
 https://github.com/KacperMajcher/kacpermajcher/assets/142928291/c7a08c0d-cbf6-4857-bb21-475c16355684
 
