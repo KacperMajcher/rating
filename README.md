@@ -2,7 +2,11 @@
 ## Project description at the bottom
 
 > Commit
-> Test Coverage
+> Move MyApp class to app.dart
+
+> Commit
+> [Test Coverage](https://github.com/KacperMajcher/rating/commit/f74206fbae410694bd86f1599e9612ac6645d3e2)
+> Nov 13, 2023, 11:24 AM
 
 ## Test Coverage
 
