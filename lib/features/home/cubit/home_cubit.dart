@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:rating/app/core/config.dart';
 import 'package:rating/app/core/enums.dart';
 import 'package:rating/model/deadline_model.dart';
 import 'package:rating/repositories/deadline_repository.dart';
@@ -38,15 +39,19 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   Future<void> remove({required String documentID}) async {
-    try {
-      await deadlineRepository.remove(documentID);
-    } catch (error) {
-      emit(
+    if (Config.removePermission) {
+      try {
+        await deadlineRepository.remove(documentID);
+      } catch (error) {
+        emit(
           HomeState(
             status: Status.error,
             errorMessage: error.toString(),
           ),
         );
+      }
+    } else {
+      emit(HomeState(status: Status.success, deadlineItem: []));
     }
   }
 

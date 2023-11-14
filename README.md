@@ -2,7 +2,31 @@
 ## Project description at the bottom
 
 > Commit
-> Move MyApp class to app.dart
+> Add custom snackbars for Flavors
+
+## Changes
+### Add custom snackbars for Flavors
+   - A custom snackbar has been added to the application, which is displayed after adding a task
+
+https://github.com/KacperMajcher/rating/assets/142928291/317f385d-4544-427c-8a70-aee07d642be8
+
+   - For the production flavor, a snackbar has been added that prevents the removal of tasks from the list. This functionality is only enabled for the development flavor.
+  ###  `Flavor.production`
+    
+https://github.com/KacperMajcher/rating/assets/142928291/ef6c5efa-3880-40a5-a235-b946c159d1d9
+
+  ### `Flavor.development`
+
+https://github.com/KacperMajcher/rating/assets/142928291/d7b5d8a3-0422-4d11-8149-35dcc2c46f98
+  
+
+> Commit
+> [Add app icon](https://github.com/KacperMajcher/rating/commit/3fe46a5800b590acf8f584fe08a21dccb0a67b65)
+> Nov 14, 2023, 8:23 AM
+
+> Commit
+> [Move MyApp class to app.dart](https://github.com/KacperMajcher/rating/commit/139a46d791b31201b1f249ff4936de68897fa206)
+> Nov 14, 2023, 7:57 AM
 
 > Commit
 > [Test Coverage](https://github.com/KacperMajcher/rating/commit/f74206fbae410694bd86f1599e9612ac6645d3e2)

@@ -28,7 +28,7 @@ class _AddPageState extends State<AddPage> {
       child: BlocConsumer<AddCubit, AddState>(
         listener: (context, state) {
           if (state.status == Status.success) {
-            Navigator.of(context).pop();
+            Navigator.of(context).pop(true);
           }
         },
         builder: (context, state) {

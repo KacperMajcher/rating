@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:rating/app/core/config.dart';
 import 'package:rating/app/core/enums.dart';
 import 'package:rating/features/home/add/add_page.dart';
 import 'package:rating/features/home/cubit/home_cubit.dart';
@@ -89,14 +90,35 @@ class _HomePageState extends State<HomePage> {
                         for (final deadline in state.deadlineItem)
                           Dismissible(
                             key: ValueKey(deadline.id),
-                            onDismissed: (direction) {
-                              context
+                            onDismissed: (direction) async {
+                              await context
                                   .read<HomeCubit>()
                                   .remove(documentID: deadline.id);
+                              if (mounted) {
+                                final snackBarBackgroundColor =
+                                    Config.snackBarOnRemoveColor;
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  buildSnackBar(
+                                    message: Config.showSnackBarOnRemove,
+                                    backgroundColor: snackBarBackgroundColor,
+                                  ),
+                                );
+                              }
                             },
                             confirmDismiss: (direction) async {
-                              // only from right to left
-                              return direction == DismissDirection.endToStart;
+                              if (Config.removePermission) {
+                                return direction == DismissDirection.endToStart;
+                              } else {
+                                final snackBarBackgroundColor =
+                                    Config.snackBarOnRemoveColor;
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  buildSnackBar(
+                                    message: Config.showSnackBarOnRemove,
+                                    backgroundColor: snackBarBackgroundColor,
+                                  ),
+                                );
+                              }
+                              return null;
                             },
                             background: Container(
                               alignment: Alignment.centerRight,
@@ -170,17 +192,52 @@ class _HomePageState extends State<HomePage> {
   Widget _floatingActionButton() {
     return FloatingActionButton(
       backgroundColor: const Color(0xFFE85D04),
-      onPressed: () {
-        Navigator.of(context).push(
+      onPressed: () async {
+        final result = await Navigator.of(context).push<bool>(
           MaterialPageRoute(
             builder: (context) => const AddPage(),
             fullscreenDialog: true,
           ),
         );
+
+        if (result == true && mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Row(
+                children: [
+                  Icon(
+                    Icons.tag_faces_rounded,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text('Alright, let\'s get to it, dude!'),
+                ],
+              ),
+              backgroundColor: Colors.green,
+            ),
+          );
+        }
       },
       child: const Icon(
         Icons.add,
       ),
+    );
+  }
+
+  SnackBar buildSnackBar({
+    required String message,
+    required Color backgroundColor,
+  }) {
+    return SnackBar(
+      content: Row(
+        children: [
+          const SizedBox(width: 10),
+          Text(message),
+        ],
+      ),
+      backgroundColor: backgroundColor,
     );
   }
 }
