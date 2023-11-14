@@ -2,7 +2,13 @@
 ## Project description at the bottom
 
 > Commit
-> Add custom snackbars for Flavors
+> Add an application preview to the documentation
+
+https://github.com/KacperMajcher/kacpermajcher/assets/142928291/c7a08c0d-cbf6-4857-bb21-475c16355684
+
+> Commit
+> [Add custom snackbars for Flavors](https://github.com/KacperMajcher/rating/commit/f97091e3eb2255653f4f0d6f8609bda6b3cc79dd)
+> Nov 14, 2023, 12:27 PM
 
 ## Changes
 ### Add custom snackbars for Flavors
