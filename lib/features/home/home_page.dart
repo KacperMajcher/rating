@@ -9,7 +9,7 @@ import 'package:rating/features/home/widgets/search_box_deadlines.dart';
 import 'package:rating/features/home/widgets/snack_bar.dart';
 import 'package:rating/features/widgets/app_bar.dart';
 import 'package:rating/features/widgets/deadline_item.dart';
-import 'package:rating/features/widgets/navigation_drawer.dart';
+import 'package:rating/features/widgets/navigation_drawer/navigation_drawer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
             return Scaffold(
               floatingActionButton: PlusButton(mounted: mounted),
               appBar: const CustomAppBar(),
-              drawer: navigationDrawer(context),
+              drawer: const CustomDrawer(),
               backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
               body: Column(
                 children: [

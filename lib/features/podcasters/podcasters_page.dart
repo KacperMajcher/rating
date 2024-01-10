@@ -4,7 +4,7 @@ import 'package:rating/app/core/enums.dart';
 import 'package:rating/app/injection_container.dart';
 import 'package:rating/features/details/podcasters/pages/podcasters_details_page.dart';
 import 'package:rating/features/podcasters/cubit/podcasters_cubit.dart';
-import 'package:rating/features/widgets/search_box.dart';
+import 'package:rating/features/widgets/search_box2.dart';
 import 'package:rating/model/podcaster_model.dart';
 
 class PodcastersPage extends StatelessWidget {
@@ -80,9 +80,9 @@ class PodcastersPage extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 23),
-                      Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: searchBox(),
+                      const Padding(
+                        padding: EdgeInsets.all(12.0),
+                        child: CustomSearchBox2(),
                       ),
                     ],
                   ),
