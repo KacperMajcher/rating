@@ -54,12 +54,12 @@ class ArtistsPage extends StatelessWidget {
                     children: [
                       SizedBox(
                         height: dh * 0.05,
-                        child: const Center(
+                        child: Center(
                           child: Text(
                             'Artists',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 40,
+                              fontSize: dh * 0.045,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
@@ -71,11 +71,11 @@ class ArtistsPage extends StatelessWidget {
                         alignment: Alignment.bottomLeft,
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: dw * 0.06),
-                          child: const Text(
+                          child: Text(
                             'Meet \nour winners!',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 40,
+                              fontSize: dh * 0.05,
                               fontWeight: FontWeight.w600,
                             ),
                             textAlign: TextAlign.left,
@@ -111,11 +111,11 @@ class ArtistsPage extends StatelessWidget {
                 SizedBox(height: dh * 0.03),
                 Container(
                   alignment: Alignment.center,
-                  child: const Text(
+                  child: Text(
                     'Did your favorite \nmake it into the top 5?',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 30,
+                      fontSize: dh * 0.039,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -123,11 +123,11 @@ class ArtistsPage extends StatelessWidget {
                 SizedBox(height: dh * 0.01),
                 Container(
                   alignment: Alignment.center,
-                  child: const Text(
+                  child: Text(
                     "Isn't it? Give your vote to it!",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 10,
+                      fontSize: dh * 0.013,
                     ),
                     textAlign: TextAlign.center,
                   ),
