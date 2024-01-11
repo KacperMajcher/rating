@@ -2,7 +2,18 @@
 ## Project description at the bottom
 
 > Commit
+> Code cleanup
+
+## Changes
+### Code cleanup
+   - The applications have been cleaned and optimized. 
+   - A stateless widget has been applied to handle widgets.
+   - One of the faulty tests has been fixed.
+   - Unnecessary records have been removed.
+
+> Commit
 > Change deafoult Flavor to production
+> Nov 14, 2023, 2:39 PM
 
 > Commit
 > [Add an application preview to the documentation](https://github.com/KacperMajcher/rating/commit/371d79c5877dc7025e7e93e69f63c2e77819d3dd)
