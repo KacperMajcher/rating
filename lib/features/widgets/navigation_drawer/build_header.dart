@@ -96,6 +96,7 @@ class BuildHeader extends StatelessWidget {
                     const Icon(
                       Icons.person,
                       color: Colors.white,
+                      size: 17,
                     ),
                   ],
                 ),
@@ -110,5 +111,3 @@ class BuildHeader extends StatelessWidget {
     );
   }
 }
-
-
