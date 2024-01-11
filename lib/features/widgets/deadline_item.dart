@@ -5,11 +5,10 @@ import 'package:rating/features/home/cubit/home_cubit.dart';
 import 'package:rating/model/deadline_model.dart';
 
 class DeadlineItemWidget extends StatelessWidget {
-  const DeadlineItemWidget(
-      {super.key, required this.deadlineItem});
+  const DeadlineItemWidget({super.key, required this.deadlineItem});
 
   final DeadlineItem deadlineItem;
-  
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -56,7 +55,6 @@ class DeadlineItemWidget extends StatelessWidget {
           padding: const EdgeInsets.all(2.0),
           child: Container(
             margin: const EdgeInsets.all(3),
-            height: 110,
             width: 100,
             decoration: BoxDecoration(
               color: const Color.fromRGBO(214, 204, 194, 1),
@@ -68,7 +66,7 @@ class DeadlineItemWidget extends StatelessWidget {
                 Text(
                   deadlineItem.daysLeft(),
                   style: GoogleFonts.ubuntuMono(
-                    fontSize: 22,
+                    fontSize: 20,
                     color: Colors.black,
                     textStyle: const TextStyle(fontWeight: FontWeight.bold),
                   ),
@@ -81,7 +79,7 @@ class DeadlineItemWidget extends StatelessWidget {
                     return Text(
                       suffix,
                       style: GoogleFonts.ubuntuMono(
-                        fontSize: 15,
+                        fontSize: 12,
                         color: Colors.black,
                         textStyle: const TextStyle(fontWeight: FontWeight.bold),
                       ),
