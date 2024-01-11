@@ -72,8 +72,15 @@ void main() {
       'should remove deadline from the list',
       build: () => sut,
       act: (cubit) => cubit.remove(documentID: 'x'),
-      expect: () => [],
+      expect: () => [
+        HomeState(
+          deadlineItem: [],
+          status: Status.success,
+          errorMessage: null,
+        ),
+      ],
     );
+
     blocTest<HomeCubit, HomeState>(
       'emits Status.error on error during remove',
       build: () => sut,
@@ -118,8 +125,7 @@ void main() {
       'should emit Status.error when setAsDone throws an error',
       build: () => sut,
       act: (cubit) async {
-        when(() => deadlineRepository.setAsDone('1'))
-            .thenThrow(testError);
+        when(() => deadlineRepository.setAsDone('1')).thenThrow(testError);
         await cubit.toggleCheckBox(deadlineItem: testDeadlineItem);
       },
       expect: () => [

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:rating/app/core/app.dart';
 import 'package:rating/app/core/config.dart';
 import 'package:rating/app/injection_container.dart';
-import 'package:rating/firebase_options.dart';
+import 'package:rating/app/firebase_options.dart';
 
 void main() async {
   Config.appFlavor = Flavor.production;

@@ -3,10 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rating/app/core/config.dart';
 import 'package:rating/app/core/enums.dart';
-import 'package:rating/features/home/add/add_page.dart';
 import 'package:rating/features/home/cubit/home_cubit.dart';
+import 'package:rating/features/home/widgets/plus_button.dart';
+import 'package:rating/features/home/widgets/search_box_deadlines.dart';
+import 'package:rating/features/home/widgets/snack_bar.dart';
+import 'package:rating/features/widgets/app_bar.dart';
 import 'package:rating/features/widgets/deadline_item.dart';
-import 'package:rating/features/widgets/navigation_drawer.dart';
+import 'package:rating/features/widgets/navigation_drawer/navigation_drawer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -47,9 +50,9 @@ class _HomePageState extends State<HomePage> {
 
           case Status.success:
             return Scaffold(
-              floatingActionButton: _floatingActionButton(),
-              appBar: _buildAppBar(),
-              drawer: navigationDrawer(context),
+              floatingActionButton: PlusButton(mounted: mounted),
+              appBar: const CustomAppBar(),
+              drawer: const CustomDrawer(),
               backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
               body: Column(
                 children: [
@@ -60,9 +63,9 @@ class _HomePageState extends State<HomePage> {
                         height: 80,
                         color: const Color.fromRGBO(41, 41, 41, 1),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: searchBoxDeadlines(),
+                      const Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: SearchBoxDeadlines(),
                       ),
                     ],
                   ),
@@ -98,10 +101,10 @@ class _HomePageState extends State<HomePage> {
                                 final snackBarBackgroundColor =
                                     Config.snackBarOnRemoveColor;
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  buildSnackBar(
+                                  CustomSnackBar(
                                     message: Config.showSnackBarOnRemove,
                                     backgroundColor: snackBarBackgroundColor,
-                                  ),
+                                  ) as SnackBar,
                                 );
                               }
                             },
@@ -112,10 +115,10 @@ class _HomePageState extends State<HomePage> {
                                 final snackBarBackgroundColor =
                                     Config.snackBarOnRemoveColor;
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  buildSnackBar(
+                                  CustomSnackBar(
                                     message: Config.showSnackBarOnRemove,
                                     backgroundColor: snackBarBackgroundColor,
-                                  ),
+                                  ) as SnackBar,
                                 );
                               }
                               return null;
@@ -143,101 +146,6 @@ class _HomePageState extends State<HomePage> {
             );
         }
       },
-    );
-  }
-
-  AppBar _buildAppBar() {
-    return AppBar(
-      title: const Text('Deadlines'),
-      backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
-      elevation: 0,
-    );
-  }
-
-  Widget searchBoxDeadlines() {
-    return Container(
-      height: 48,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 15,
-      ),
-      decoration: BoxDecoration(
-        color: const Color.fromRGBO(61, 61, 61, 1),
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: TextField(
-        onChanged: (value) {
-          context.read<HomeCubit>().filterItems(value);
-        },
-        decoration: const InputDecoration(
-          contentPadding: EdgeInsets.all(0),
-          prefixIcon: Icon(
-            Icons.search,
-            color: Color.fromRGBO(232, 93, 4, 1),
-            size: 20,
-          ),
-          prefixIconConstraints: BoxConstraints(
-            maxHeight: 20,
-            minWidth: 25,
-          ),
-          border: InputBorder.none,
-          hintText: 'Search',
-          hintStyle: TextStyle(
-              color: Color.fromRGBO(155, 155, 149, 1),
-              fontStyle: FontStyle.normal),
-        ),
-      ),
-    );
-  }
-
-  Widget _floatingActionButton() {
-    return FloatingActionButton(
-      backgroundColor: const Color(0xFFE85D04),
-      onPressed: () async {
-        final result = await Navigator.of(context).push<bool>(
-          MaterialPageRoute(
-            builder: (context) => const AddPage(),
-            fullscreenDialog: true,
-          ),
-        );
-
-        if (result == true && mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Row(
-                children: [
-                  Icon(
-                    Icons.tag_faces_rounded,
-                    color: Colors.white,
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text('Alright, let\'s get to it, dude!'),
-                ],
-              ),
-              backgroundColor: Colors.green,
-            ),
-          );
-        }
-      },
-      child: const Icon(
-        Icons.add,
-      ),
-    );
-  }
-
-  SnackBar buildSnackBar({
-    required String message,
-    required Color backgroundColor,
-  }) {
-    return SnackBar(
-      content: Row(
-        children: [
-          const SizedBox(width: 10),
-          Text(message),
-        ],
-      ),
-      backgroundColor: backgroundColor,
     );
   }
 }
