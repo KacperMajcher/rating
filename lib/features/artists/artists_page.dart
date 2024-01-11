@@ -188,30 +188,28 @@ class _ArtistItemWidget extends StatelessWidget {
               const SizedBox(
                 height: 7,
               ),
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 18.0),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          '#${artistModel.place.toString()}',
-                          style: const TextStyle(
-                            fontSize: 30,
-                            fontFamily: 'Jura',
-                            fontWeight: FontWeight.w700,
-                          ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        '#${artistModel.place.toString()}',
+                        style: const TextStyle(
+                          fontSize: 30,
+                          fontFamily: 'Jura',
+                          fontWeight: FontWeight.w700,
                         ),
-                        Text(
-                          artistModel.name,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontFamily: 'Jura',
-                            fontWeight: FontWeight.w500,
-                          ),
+                      ),
+                      Text(
+                        artistModel.name,
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontFamily: 'Jura',
+                          fontWeight: FontWeight.w500,
                         ),
-                      ]),
-                ),
+                      ),
+                    ]),
               ),
             ]),
       ),

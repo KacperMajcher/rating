@@ -188,30 +188,26 @@ class _PodcasterItemWidget extends StatelessWidget {
               const SizedBox(
                 height: 7,
               ),
-              Container(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 18.0),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Text(
-                          '#${podcasterModel.place.toString()}',
-                          style: const TextStyle(
-                            fontSize: 30,
-                            fontFamily: 'Jura',
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                        Text(
-                          podcasterModel.name,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            fontFamily: 'Jura',
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ]),
-                ),
+              Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    '#${podcasterModel.place.toString()}',
+                    style: const TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  Text(
+                    podcasterModel.name,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ]),
               ),
             ]),
       ),

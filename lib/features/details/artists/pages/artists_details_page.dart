@@ -18,16 +18,14 @@ class ArtistsDetailsPage extends StatelessWidget {
           const SizedBox(
             height: 85,
           ),
-          Container(
-            child: Center(
-              child: Text(
-                artistModel.name,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 35,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w600,
-                ),
+          Center(
+            child: Text(
+              artistModel.name,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 35,
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w600,
               ),
             ),
           ),
@@ -80,33 +78,29 @@ class ArtistsDetailsPage extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      Container(
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 15.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Best songs',
-                                style: TextStyle(
-                                  color: Color(0xFF5C3F06),
-                                  fontSize: 15,
-                                  fontFamily: 'Mukta',
-                                  fontWeight: FontWeight.w600,
-                                ),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 15.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Best songs',
+                              style: TextStyle(
+                                color: Color(0xFF5C3F06),
+                                fontSize: 15,
+                                fontWeight: FontWeight.w600,
                               ),
-                              Text(
-                                'Views',
-                                textAlign: TextAlign.right,
-                                style: TextStyle(
-                                  color: Color(0xFF5C3F06),
-                                  fontSize: 15,
-                                  fontFamily: 'Mukta',
-                                  fontWeight: FontWeight.w600,
-                                ),
+                            ),
+                            Text(
+                              'Views',
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                color: Color(0xFF5C3F06),
+                                fontSize: 15,
+                                fontWeight: FontWeight.w600,
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                       const SizedBox(height: 15),

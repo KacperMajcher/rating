@@ -18,19 +18,17 @@ class PodcastersDetailsPage extends StatelessWidget {
           const SizedBox(
             height: 85,
           ),
-          Container(
-            child: Center(
-              child: Text(
-                podcasterModel.name,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 35,
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
+          Center(
+          child: Text(
+            podcasterModel.name,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 35,
+              fontFamily: 'Poppins',
+              fontWeight: FontWeight.w600,
             ),
           ),
+                    ),
           const SizedBox(
             height: 15,
           ),
@@ -42,6 +40,7 @@ class PodcastersDetailsPage extends StatelessWidget {
                   width: 200,
                   image: AssetImage(
                       'assets/graphics/podcasters_avatars/podcaster${podcasterModel.place}.png'),
+                       
                   fit: BoxFit.fill,
                 ),
                 const SizedBox(
@@ -80,41 +79,38 @@ class PodcastersDetailsPage extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      Container(
-                        child: const Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 15.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                'Best podcasts',
-                                style: TextStyle(
-                                  color: Color(0xFF5C3F06),
-                                  fontSize: 15,
-                                  fontFamily: 'Mukta',
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                              Text(
-                                'Listens',
-                                textAlign: TextAlign.right,
-                                style: TextStyle(
-                                  color: Color(0xFF5C3F06),
-                                  fontSize: 15,
-                                  fontFamily: 'Mukta',
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ],
+                      const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 15.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Best podcasts',
+                            style: TextStyle(
+                              color: Color(0xFF5C3F06),
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
-                        ),
+                          Text(
+                            'Listens',
+                            textAlign: TextAlign.right,
+                            style: TextStyle(
+                              color: Color(0xFF5C3F06),
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
                       ),
+                                            ),
                       const SizedBox(height: 15),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: podcasterModel.topPodcasts.map((podcast) {
                           final imagePath =
                               'assets/graphics/podcasters_avatars/podcaster_cover_${podcasterModel.place}/${podcast.coverNumber}.png';
+                             
                           return Row(
                             children: [
                               Padding(
