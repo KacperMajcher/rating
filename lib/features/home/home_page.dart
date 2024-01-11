@@ -207,6 +207,7 @@ class PlusButton extends StatelessWidget {
       },
       child: const Icon(
         Icons.add,
+        color: Colors.white,
       ),
     );
   }
