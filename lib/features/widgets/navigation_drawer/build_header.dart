@@ -88,7 +88,7 @@ class BuildHeader extends StatelessWidget {
                       style: GoogleFonts.inconsolata(
                         textStyle: const TextStyle(
                           color: Colors.white,
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: FontWeight.w800,
                         ),
                       ),
@@ -96,6 +96,7 @@ class BuildHeader extends StatelessWidget {
                     const Icon(
                       Icons.person,
                       color: Colors.white,
+                      size: 20,
                     ),
                   ],
                 ),
@@ -110,5 +111,3 @@ class BuildHeader extends StatelessWidget {
     );
   }
 }
-
-

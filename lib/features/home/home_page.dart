@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rating/app/core/config.dart';
 import 'package:rating/app/core/enums.dart';
+import 'package:rating/features/home/add/add_page.dart';
 import 'package:rating/features/home/cubit/home_cubit.dart';
-import 'package:rating/features/home/widgets/plus_button.dart';
 import 'package:rating/features/home/widgets/search_box_deadlines.dart';
 import 'package:rating/features/home/widgets/snack_bar.dart';
 import 'package:rating/features/widgets/app_bar.dart';
@@ -12,8 +12,7 @@ import 'package:rating/features/widgets/deadline_item.dart';
 import 'package:rating/features/widgets/navigation_drawer/navigation_drawer.dart';
 
 class HomePage extends StatefulWidget {
-  static final GlobalKey<_HomePageState> homePageKey =
-      GlobalKey<_HomePageState>();
+  static final homePageKey = GlobalKey<_HomePageState>();
 
   const HomePage({super.key});
 
@@ -54,7 +53,7 @@ class _HomePageState extends State<HomePage> {
           case Status.success:
             return Scaffold(
               key: HomePage.homePageKey,
-              floatingActionButton: const PlusButton(),
+              floatingActionButton: _floatingActionButton(),
               appBar: const CustomAppBar(),
               drawer: const CustomDrawer(),
               backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
@@ -119,10 +118,10 @@ class _HomePageState extends State<HomePage> {
                                 final snackBarBackgroundColor =
                                     Config.snackBarOnRemoveColor;
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  CustomSnackBar(
+                                  buildSnackBar(
                                     message: Config.showSnackBarOnRemove,
                                     backgroundColor: snackBarBackgroundColor,
-                                  ) as SnackBar,
+                                  ),
                                 );
                               }
                               return null;
@@ -152,4 +151,58 @@ class _HomePageState extends State<HomePage> {
       },
     );
   }
+
+  Widget _floatingActionButton() {
+    return FloatingActionButton(
+      shape: const CircleBorder(),
+      backgroundColor: const Color(0xFFE85D04),
+      onPressed: () async {
+        final result = await Navigator.of(context).push<bool>(
+          MaterialPageRoute(
+            builder: (context) => const AddPage(),
+            fullscreenDialog: true,
+          ),
+        );
+
+        if (result == true && mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Row(
+                children: [
+                  Icon(
+                    Icons.tag_faces_rounded,
+                    color: Colors.white,
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text('Alright, let\'s get to it, dude!'),
+                ],
+              ),
+              backgroundColor: Colors.green,
+            ),
+          );
+        }
+      },
+      child: const Icon(
+        Icons.add,
+        color: Colors.white,
+      ),
+    );
+  }
+}
+
+SnackBar buildSnackBar({
+  required String message,
+  required Color backgroundColor,
+}) {
+  return SnackBar(
+    content: Row(
+      children: [
+        const SizedBox(width: 10),
+        Text(message),
+      ],
+    ),
+    backgroundColor: backgroundColor,
+  );
 }
