@@ -6,7 +6,6 @@ import 'package:rating/app/core/enums.dart';
 import 'package:rating/features/home/add/add_page.dart';
 import 'package:rating/features/home/cubit/home_cubit.dart';
 import 'package:rating/features/home/widgets/search_box_deadlines.dart';
-import 'package:rating/features/home/widgets/snack_bar.dart';
 import 'package:rating/features/widgets/app_bar.dart';
 import 'package:rating/features/widgets/deadline_item.dart';
 import 'package:rating/features/widgets/navigation_drawer/navigation_drawer.dart';
@@ -101,10 +100,10 @@ class _HomePageState extends State<HomePage> {
                                 final snackBarBackgroundColor =
                                     Config.snackBarOnRemoveColor;
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  CustomSnackBar(
+                                  buildSnackBar(
                                     message: Config.showSnackBarOnRemove,
                                     backgroundColor: snackBarBackgroundColor,
-                                  ) as SnackBar,
+                                  ),
                                 );
                               }
                             },
