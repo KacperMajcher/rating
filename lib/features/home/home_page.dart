@@ -12,6 +12,9 @@ import 'package:rating/features/widgets/deadline_item.dart';
 import 'package:rating/features/widgets/navigation_drawer/navigation_drawer.dart';
 
 class HomePage extends StatefulWidget {
+  static final GlobalKey<_HomePageState> homePageKey =
+      GlobalKey<_HomePageState>();
+
   const HomePage({super.key});
 
   @override
@@ -50,7 +53,8 @@ class _HomePageState extends State<HomePage> {
 
           case Status.success:
             return Scaffold(
-              floatingActionButton: PlusButton(mounted: mounted),
+              key: HomePage.homePageKey,
+              floatingActionButton: const PlusButton(),
               appBar: const CustomAppBar(),
               drawer: const CustomDrawer(),
               backgroundColor: const Color.fromRGBO(41, 41, 41, 1),

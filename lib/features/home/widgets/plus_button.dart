@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:rating/features/home/add/add_page.dart';
+import 'package:rating/features/home/home_page.dart';
 
 class PlusButton extends StatelessWidget {
-  const PlusButton({super.key, required this.mounted});
-
-  final bool mounted;
+  const PlusButton({super.key});
 
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
+      shape: const CircleBorder(),
       backgroundColor: const Color(0xFFE85D04),
       onPressed: () async {
         final result = await Navigator.of(context).push<bool>(
@@ -18,7 +18,9 @@ class PlusButton extends StatelessWidget {
           ),
         );
 
-        if (result == true && mounted) {
+        if (result == true &&
+            HomePage.homePageKey.currentState?.mounted == true) {
+          //allows to get mounted value in the widget
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Row(
