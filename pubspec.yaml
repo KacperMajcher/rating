@@ -54,12 +54,12 @@ flutter:
    - assets/graphics/
    - assets/icons/
    - assets/graphics/artists_avatars/
-   - assets/graphics/artists_avatars/
    - assets/graphics/artists_avatars/artist_cover_1/ 
    - assets/graphics/artists_avatars/artist_cover_2/
    - assets/graphics/artists_avatars/artist_cover_3/
    - assets/graphics/artists_avatars/artist_cover_4/
    - assets/graphics/artists_avatars/artist_cover_5/
+   - assets/graphics/podcasters_avatars/
    - assets/graphics/podcasters_avatars/podcaster_cover_1/
    - assets/graphics/podcasters_avatars/podcaster_cover_2/
    - assets/graphics/podcasters_avatars/podcaster_cover_3/
