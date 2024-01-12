@@ -6,8 +6,10 @@ class RatingLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double dw = MediaQuery.of(context).size.width;
+    final double dh = MediaQuery.of(context).size.height;
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 32.0),
+      padding: EdgeInsets.symmetric(horizontal: dw * 0.11),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -15,14 +17,14 @@ class RatingLogo extends StatelessWidget {
             'assets/icons/rating.png',
             color: Colors.white,
             fit: BoxFit.cover,
-            width: 70,
+            width: dw * 0.16,
           ),
           Text(
             'RATING',
             style: GoogleFonts.inconsolata(
-              textStyle: const TextStyle(
+              textStyle: TextStyle(
                   color: Colors.white,
-                  fontSize: 35,
+                  fontSize: dh * 0.039,
                   fontWeight: FontWeight.w600),
             ),
           )

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rating/features/widgets/navigation_drawer/build_header.dart';
-import 'package:rating/features/widgets/navigation_drawer/build_logo.dart';
+import 'package:rating/features/widgets/navigation_drawer/rating_logo.dart';
 import 'package:rating/features/widgets/navigation_drawer/build_menu_items.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -8,18 +8,20 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Drawer(
-      backgroundColor: Color.fromRGBO(33, 37, 41, 1),
+    final double dh = MediaQuery.of(context).size.height;
+
+    return Drawer(
+      backgroundColor: const Color(0xFF212529),
       shadowColor: Colors.black,
       child: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            BuildHeader(),
-            SizedBox(height: 20),
-            RatingLogo(),
-            SizedBox(height: 20),
-            MenuItems(),
+            const BuildHeader(),
+            SizedBox(height: dh * 0.023),
+            const RatingLogo(),
+            SizedBox(height: dh * 0.023),
+            const MenuItems(),
           ],
         ),
       ),

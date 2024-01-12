@@ -11,6 +11,9 @@ class ArtistsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double dw = MediaQuery.of(context).size.width;
+    final double dh = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(82, 82, 82, 1),
@@ -37,7 +40,7 @@ class ArtistsPage extends StatelessWidget {
             return Column(
               children: [
                 Container(
-                  height: 280,
+                  height: dh * 0.33,
                   decoration: const ShapeDecoration(
                     color: Color.fromRGBO(82, 82, 82, 1),
                     shape: RoundedRectangleBorder(
@@ -49,36 +52,37 @@ class ArtistsPage extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      const SizedBox(
-                        height: 40,
+                      SizedBox(
+                        height: dh * 0.05,
                         child: Center(
                           child: Text(
                             'Artists',
                             style: TextStyle(
                               color: Colors.white,
-                              fontSize: 40,
+                              fontSize: dh * 0.045,
                               fontWeight: FontWeight.w600,
-                              height: 0,
                             ),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 20),
+                      SizedBox(height: dh * 0.02),
                       Container(
-                        height: 120,
-                        width: 350,
+                        height: dh * 0.142,
                         alignment: Alignment.bottomLeft,
-                        child: const Text(
-                          'Meet \nour winners!',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 40,
-                            fontWeight: FontWeight.w600,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: dw * 0.06),
+                          child: Text(
+                            'Meet \nour winners!',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: dh * 0.05,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            textAlign: TextAlign.left,
                           ),
-                          textAlign: TextAlign.left,
                         ),
                       ),
-                      const SizedBox(height: 23),
+                      SizedBox(height: dh * 0.028),
                       const Padding(
                         padding: EdgeInsets.all(12.0),
                         child: CustomSearchBox2(),
@@ -86,17 +90,15 @@ class ArtistsPage extends StatelessWidget {
                     ],
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                SizedBox(height: dh * 0.028),
                 SizedBox(
-                  height: 275,
+                  height: dh * 0.33,
                   child: ListView.separated(
                     scrollDirection: Axis.horizontal,
                     padding: const EdgeInsets.all(12),
                     itemCount: state.artistModel.length,
                     separatorBuilder: (context, index) {
-                      return const SizedBox(width: 12);
+                      return SizedBox(width: dw * 0.03);
                     },
                     itemBuilder: (context, index) {
                       final artistModel = state.artistModel[index];
@@ -106,26 +108,26 @@ class ArtistsPage extends StatelessWidget {
                     },
                   ),
                 ),
-                const SizedBox(height: 40),
+                SizedBox(height: dh * 0.03),
                 Container(
                   alignment: Alignment.center,
-                  child: const Text(
+                  child: Text(
                     'Did your favorite \nmake it into the top 5?',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 30,
+                      fontSize: dh * 0.039,
                     ),
                     textAlign: TextAlign.center,
                   ),
                 ),
-                const SizedBox(height: 7),
+                SizedBox(height: dh * 0.01),
                 Container(
                   alignment: Alignment.center,
-                  child: const Text(
+                  child: Text(
                     "Isn't it? Give your vote to it!",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 10,
+                      fontSize: dh * 0.013,
                     ),
                     textAlign: TextAlign.center,
                   ),

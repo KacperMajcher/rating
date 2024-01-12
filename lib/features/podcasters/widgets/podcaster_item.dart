@@ -12,6 +12,8 @@ class PodcasterItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double dw = MediaQuery.of(context).size.width;
+    final double dh = MediaQuery.of(context).size.height;
     return InkWell(
       onTap: () {
         Navigator.push(
@@ -24,8 +26,7 @@ class PodcasterItemWidget extends StatelessWidget {
         );
       },
       child: Container(
-        width: 250,
-        height: 300,
+        width: dw * 0.6,
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
@@ -39,37 +40,33 @@ class PodcasterItemWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 10,
-              ),
+              SizedBox(height: dh * 0.005),
               CircleAvatar(
                 radius: 90,
                 backgroundImage: AssetImage(
                     'assets/graphics/podcasters_avatars/podcaster${podcasterModel.place}.png'),
               ),
-              const SizedBox(
-                height: 7,
-              ),
+              SizedBox(height: dh * 0.005),
               Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 18.0),
-                            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text(
-                    '#${podcasterModel.place.toString()}',
-                    style: const TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                  Text(
-                    podcasterModel.name,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ]),
+                padding: EdgeInsets.symmetric(horizontal: dw * 0.04),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Text(
+                        '#${podcasterModel.place.toString()}',
+                        style: TextStyle(
+                          fontSize: dh * 0.03,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      Text(
+                        podcasterModel.name,
+                        style: TextStyle(
+                          fontSize: dh * 0.023,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ]),
               ),
             ]),
       ),

@@ -12,6 +12,8 @@ class ArtistItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double dw = MediaQuery.of(context).size.width;
+    final double dh = MediaQuery.of(context).size.height;
     return InkWell(
       onTap: () {
         Navigator.push(
@@ -24,8 +26,7 @@ class ArtistItemWidget extends StatelessWidget {
         );
       },
       child: Container(
-        width: 250,
-        height: 300,
+        width: dw * 0.6,
         decoration: ShapeDecoration(
           color: Colors.white,
           shape: RoundedRectangleBorder(
@@ -39,35 +40,29 @@ class ArtistItemWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 10,
-              ),
+              SizedBox(height: dh * 0.005),
               CircleAvatar(
                 radius: 90,
                 backgroundImage: AssetImage(
                     'assets/graphics/artists_avatars/artist${artistModel.place}.png'),
               ),
-              const SizedBox(
-                height: 7,
-              ),
+              SizedBox(height: dh * 0.005),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                padding: EdgeInsets.symmetric(horizontal: dw * 0.04),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
                         '#${artistModel.place.toString()}',
-                        style: const TextStyle(
-                          fontSize: 30,
-                          fontFamily: 'Jura',
+                        style: TextStyle(
+                          fontSize: dh * 0.03,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
                       Text(
                         artistModel.name,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          fontFamily: 'Jura',
+                        style: TextStyle(
+                          fontSize: dh * 0.023,
                           fontWeight: FontWeight.w500,
                         ),
                       ),

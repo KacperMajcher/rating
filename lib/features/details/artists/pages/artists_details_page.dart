@@ -11,62 +11,54 @@ class ArtistsDetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double dw = MediaQuery.of(context).size.width;
+    final double dh = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: const Color(0xFF0A0A0A),
       body: Column(
         children: [
-          const SizedBox(
-            height: 85,
-          ),
+          SizedBox(height: dh * 0.1),
           Center(
             child: Text(
               artistModel.name,
-              style: const TextStyle(
+              style: TextStyle(
                 color: Colors.white,
-                fontSize: 35,
-                fontFamily: 'Poppins',
+                fontSize: dh * .0415,
                 fontWeight: FontWeight.w600,
               ),
             ),
           ),
-          const SizedBox(
-            height: 15,
-          ),
+          SizedBox(height: dh * 0.018),
           Expanded(
             child: Column(
               children: [
                 Image(
-                  height: 200,
-                  width: 200,
+                  width: dw * .485,
                   image: AssetImage(
                       'assets/graphics/artists_avatars/artist${artistModel.place}.png'),
                   fit: BoxFit.fill,
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
+                SizedBox(height: dh * .035),
                 SizedBox(
                   child: Padding(
-                    padding: const EdgeInsets.all(30.0),
+                    padding: EdgeInsets.all(dh * .035),
                     child: Text(
                       artistModel.bio,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Colors.white,
-                        fontSize: 16,
-                        fontFamily: 'Mukta',
+                        fontSize: dh * .019,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
                 ),
-                const Expanded(
-                  child: SizedBox(),
-                ),
+                const Spacer(),
                 Container(
                   alignment: Alignment.bottomCenter,
-                  padding: const EdgeInsets.all(20),
-                  height: 245,
+                  padding: EdgeInsets.all(dh * .024),
+                  height: dh * .29,
                   decoration: const ShapeDecoration(
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -78,16 +70,16 @@ class ArtistsDetailsPage extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 15.0),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: dw * .036),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
                               'Best songs',
                               style: TextStyle(
-                                color: Color(0xFF5C3F06),
-                                fontSize: 15,
+                                color: const Color(0xFF5C3F06),
+                                fontSize: dh * .017,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -95,15 +87,15 @@ class ArtistsDetailsPage extends StatelessWidget {
                               'Views',
                               textAlign: TextAlign.right,
                               style: TextStyle(
-                                color: Color(0xFF5C3F06),
-                                fontSize: 15,
+                                color: const Color(0xFF5C3F06),
+                                fontSize: dh * .017,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
                           ],
                         ),
                       ),
-                      const SizedBox(height: 15),
+                      SizedBox(height: dh * .017),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: artistModel.topSongs.map((song) {
@@ -112,32 +104,29 @@ class ArtistsDetailsPage extends StatelessWidget {
                           return Row(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(dh * 0.009),
                                 child: Image(
-                                  height: 40,
-                                  width: 40,
+                                  height: dh * .047,
                                   image: AssetImage(imagePath),
                                   fit: BoxFit.fill,
                                 ),
                               ),
                               Text(
                                 song.title,
-                                style: const TextStyle(
+                                style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 18,
-                                  fontFamily: 'Mukta',
+                                  fontSize: dh * .021,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
-                              const Expanded(child: SizedBox()),
+                              const Spacer(),
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(dh * 0.009),
                                 child: Text(
                                   song.views.toString(),
                                   textAlign: TextAlign.right,
-                                  style: const TextStyle(
-                                    fontSize: 13,
-                                    fontFamily: 'Poppins',
+                                  style: TextStyle(
+                                    fontSize: dh * .0155,
                                     fontWeight: FontWeight.w700,
                                   ),
                                 ),

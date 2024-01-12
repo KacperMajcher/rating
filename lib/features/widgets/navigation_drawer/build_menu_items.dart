@@ -9,8 +9,11 @@ class MenuItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double dw = MediaQuery.of(context).size.width;
+    final double dh = MediaQuery.of(context).size.height;
+    
     return Wrap(
-      runSpacing: 16,
+      runSpacing: dw * 0.039,
       children: [
         const Divider(
           color: Colors.white30,
@@ -25,9 +28,9 @@ class MenuItems extends StatelessWidget {
             'Top Artists',
           ),
           titleTextStyle: GoogleFonts.inconsolata(
-            textStyle: const TextStyle(
+            textStyle: TextStyle(
               color: Colors.white,
-              fontSize: 25,
+              fontSize: dh * 0.03,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -39,7 +42,7 @@ class MenuItems extends StatelessWidget {
                   fullscreenDialog: true),
             );
           },
-          contentPadding: const EdgeInsets.all(10),
+          contentPadding: EdgeInsets.all(dh * 0.012),
         ),
         ListTile(
           leading: Image.asset(
@@ -51,9 +54,9 @@ class MenuItems extends StatelessWidget {
             'Top Podcasters',
           ),
           titleTextStyle: GoogleFonts.inconsolata(
-            textStyle: const TextStyle(
+            textStyle: TextStyle(
               color: Colors.white,
-              fontSize: 25,
+              fontSize: dh * 0.03,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -65,7 +68,7 @@ class MenuItems extends StatelessWidget {
                   fullscreenDialog: true),
             );
           },
-          contentPadding: const EdgeInsets.all(10),
+          contentPadding: EdgeInsets.all(dh * 0.012),
         ),
         const Divider(
           color: Colors.white30,
@@ -80,9 +83,9 @@ class MenuItems extends StatelessWidget {
             'Deadlines',
           ),
           titleTextStyle: GoogleFonts.inconsolata(
-            textStyle: const TextStyle(
+            textStyle: TextStyle(
               color: Colors.white,
-              fontSize: 20,
+              fontSize: dh * 0.024,
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -94,8 +97,8 @@ class MenuItems extends StatelessWidget {
               ),
             );
           },
-          contentPadding:
-              const EdgeInsets.symmetric(horizontal: 60, vertical: 10),
+          contentPadding: EdgeInsets.symmetric(
+              horizontal: dw * 0.145, vertical: dh * 0.012),
         ),
       ],
     );
