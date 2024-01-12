@@ -5,30 +5,31 @@ class CustomSearchBox2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double dw = MediaQuery.of(context).size.width;
+    final double dh = MediaQuery.of(context).size.height;
     return Container(
-      height: 48,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 15,
+      height: dh * 0.058,
+      padding: EdgeInsets.symmetric(
+        horizontal: dw * 0.04,
       ),
       decoration: BoxDecoration(
-        color: const Color.fromRGBO(61, 61, 61, 1),
+        color: const Color(0xFF3D3D3D),
         borderRadius: BorderRadius.circular(20),
       ),
-      child: const TextField(
+      child: TextField(
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.all(0),
           prefixIcon: Icon(
             Icons.search,
-            color: Color.fromRGBO(232, 93, 4, 1),
-            size: 20,
+            color: const Color.fromRGBO(232, 93, 4, 1),
+            size: dh * 0.024,
           ),
           prefixIconConstraints: BoxConstraints(
-            maxHeight: 20,
-            minWidth: 25,
+            maxHeight: dh * 0.024,
+            minWidth: dw * 0.06,
           ),
           border: InputBorder.none,
           hintText: 'Search',
-          hintStyle: TextStyle(
+          hintStyle: const TextStyle(
               color: Color.fromRGBO(155, 155, 149, 1),
               fontStyle: FontStyle.normal),
         ),
