@@ -7,9 +7,13 @@ class BuildHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double dw = MediaQuery.of(context).size.width;
+    final double dh = MediaQuery.of(context).size.height;
+    
+
     return Container(
       decoration: const ShapeDecoration(
-        color: Color.fromRGBO(82, 82, 82, 1),
+        color: Color(0xFF525252),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(32),
@@ -17,15 +21,13 @@ class BuildHeader extends StatelessWidget {
           ),
         ),
       ),
-      padding: const EdgeInsets.only(top: 40),
+      padding: EdgeInsets.only(top: dh * 0.047),
       child: Column(
         children: [
-          const SizedBox(
-            height: 30,
-          ),
+          SizedBox(height: dh * 0.038),
           Container(
-            width: 130,
-            height: 130,
+            width: dw * 0.315,
+            height: dh * 0.16,
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
@@ -34,41 +36,35 @@ class BuildHeader extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(
-            height: 20,
-          ),
+          SizedBox(height: dh * .024),
           Center(
             child: Text(
               'What\'s up, (user_name)?',
               style: GoogleFonts.inconsolata(
-                textStyle: const TextStyle(
+                textStyle: TextStyle(
                   color: Colors.white,
-                  fontSize: 17,
+                  fontSize: dh * 0.02,
                   fontWeight: FontWeight.w400,
                 ),
               ),
             ),
           ),
-          const SizedBox(
-            height: 10,
-          ),
+          SizedBox(height: dh * .012),
           Center(
             child: Text(
               'Welcome in RatingProject!',
               style: GoogleFonts.inconsolata(
-                textStyle: const TextStyle(
+                textStyle: TextStyle(
                   color: Colors.white,
-                  fontSize: 20,
+                  fontSize: dh * .024,
                   fontWeight: FontWeight.w600,
                 ),
               ),
             ),
           ),
-          const SizedBox(
-            height: 10,
-          ),
+          SizedBox(height: dh * .012),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 70),
+            padding: EdgeInsets.symmetric(horizontal: dw * 0.17),
             child: ElevatedButton(
               onPressed: () {
                 Navigator.push(
@@ -77,7 +73,7 @@ class BuildHeader extends StatelessWidget {
                 );
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color.fromRGBO(173, 181, 189, 1),
+                backgroundColor: const Color(0xFFADB5BD),
               ),
               child: Center(
                 child: Row(
@@ -86,26 +82,24 @@ class BuildHeader extends StatelessWidget {
                     Text(
                       'Your profile ',
                       style: GoogleFonts.inconsolata(
-                        textStyle: const TextStyle(
+                        textStyle: TextStyle(
                           color: Colors.white,
-                          fontSize: 15,
+                          fontSize: dh * 0.0175,
                           fontWeight: FontWeight.w800,
                         ),
                       ),
                     ),
-                    const Icon(
+                    Icon(
                       Icons.person,
                       color: Colors.white,
-                      size: 17,
+                      size: dh * 0.019,
                     ),
                   ],
                 ),
               ),
             ),
           ),
-          const SizedBox(
-            height: 20,
-          ),
+          SizedBox(height: dh * .024),
         ],
       ),
     );
