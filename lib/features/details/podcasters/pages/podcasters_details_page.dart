@@ -11,63 +11,54 @@ class PodcastersDetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double dw = MediaQuery.of(context).size.width;
+    final double dh = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: const Color(0xFF0A0A0A),
       body: Column(
         children: [
-          const SizedBox(
-            height: 85,
-          ),
+          SizedBox(height: dh * 0.1),
           Center(
-          child: Text(
-            podcasterModel.name,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 35,
-              fontFamily: 'Poppins',
-              fontWeight: FontWeight.w600,
+            child: Text(
+              podcasterModel.name,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: dh * .0415,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ),
-                    ),
-          const SizedBox(
-            height: 15,
-          ),
+          SizedBox(height: dh * 0.018),
           Expanded(
             child: Column(
               children: [
                 Image(
-                  height: 200,
-                  width: 200,
+                  width: dw * .485,
                   image: AssetImage(
                       'assets/graphics/podcasters_avatars/podcaster${podcasterModel.place}.png'),
-                       
                   fit: BoxFit.fill,
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
+                SizedBox(height: dh * .035),
                 SizedBox(
                   child: Padding(
-                    padding: const EdgeInsets.all(30.0),
+                    padding: EdgeInsets.all(dh * .035),
                     child: Text(
                       podcasterModel.bio,
                       textAlign: TextAlign.center,
-                      style: const TextStyle(
+                      style: TextStyle(
                         color: Colors.white,
-                        fontSize: 16,
-                        fontFamily: 'Mukta',
+                        fontSize: dh * .019,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                   ),
                 ),
-                const Expanded(
-                  child: SizedBox(),
-                ),
+                const Spacer(),
                 Container(
                   alignment: Alignment.bottomCenter,
-                  padding: const EdgeInsets.all(20),
-                  height: 245,
+                  padding: EdgeInsets.all(dh * .024),
+                  height: dh * .29,
                   decoration: const ShapeDecoration(
                     color: Colors.white,
                     shape: RoundedRectangleBorder(
@@ -79,65 +70,63 @@ class PodcastersDetailsPage extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Best podcasts',
-                            style: TextStyle(
-                              color: Color(0xFF5C3F06),
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600,
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: dw * .036),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              'Best podcasts',
+                              style: TextStyle(
+                                color: const Color(0xFF5C3F06),
+                                fontSize: dh * .017,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
-                          ),
-                          Text(
-                            'Listens',
-                            textAlign: TextAlign.right,
-                            style: TextStyle(
-                              color: Color(0xFF5C3F06),
-                              fontSize: 15,
-                              fontWeight: FontWeight.w600,
+                            Text(
+                              'Listens',
+                              textAlign: TextAlign.right,
+                              style: TextStyle(
+                                color: const Color(0xFF5C3F06),
+                                fontSize: dh * .017,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                                            ),
-                      const SizedBox(height: 15),
+                      SizedBox(height: dh * .017),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: podcasterModel.topPodcasts.map((podcast) {
                           final imagePath =
                               'assets/graphics/podcasters_avatars/podcaster_cover_${podcasterModel.place}/${podcast.coverNumber}.png';
-                             
+
                           return Row(
                             children: [
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(dh * 0.009),
                                 child: Image(
-                                  height: 40,
-                                  width: 40,
+                                  height: dh * .047,
                                   image: AssetImage(imagePath),
                                 ),
                               ),
                               Text(
                                 podcast.title,
-                                style: const TextStyle(
+                                style: TextStyle(
                                   color: Colors.black,
-                                  fontSize: 18,
-                                  fontFamily: 'Mukta',
+                                  fontSize: dh * .021,
                                   fontWeight: FontWeight.w600,
                                 ),
                               ),
-                              const Expanded(child: SizedBox()),
+                              const Spacer(),
                               Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding: EdgeInsets.all(dh * 0.009),
                                 child: Text(
                                   podcast.listeners.toString(),
                                   textAlign: TextAlign.right,
-                                  style: const TextStyle(
-                                    fontSize: 13,
+                                  style: TextStyle(
+                                    fontSize: dh * .0155,
                                     fontFamily: 'Poppins',
                                     fontWeight: FontWeight.w700,
                                   ),
