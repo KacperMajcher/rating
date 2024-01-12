@@ -11,20 +11,21 @@ class UserProfile extends StatefulWidget {
 class _UserProfileState extends State<UserProfile> {
   @override
   Widget build(BuildContext context) {
+    final double dh = MediaQuery.of(context).size.height;
     return ProfileScreen(
       providerConfigs: const [
         EmailProviderConfiguration(),
         GoogleProviderConfiguration(
-              clientId:
-                  '445629305702-gmso4m92le7fc1gtpg1ppdd3sh9b40gv.apps.googleusercontent.com',
-            )
+          clientId:
+              '445629305702-gmso4m92le7fc1gtpg1ppdd3sh9b40gv.apps.googleusercontent.com',
+        )
       ],
       actions: [
         SignedOutAction((context) {
           Navigator.of(context).pop();
         }),
       ],
-      avatarSize: 24,
+      avatarSize: dh * 0.1,
     );
   }
 }

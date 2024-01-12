@@ -38,8 +38,8 @@ class SignIn extends StatelessWidget {
             padding: MaterialStateProperty.all<EdgeInsets>(
               const EdgeInsets.all(24),
             ),
-            backgroundColor: MaterialStateProperty.all<Color>(
-                const Color.fromRGBO(41, 41, 41, 1)),
+            backgroundColor:
+                MaterialStateProperty.all<Color>(const Color(0xFF292929)),
             foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
           ),
         ),
