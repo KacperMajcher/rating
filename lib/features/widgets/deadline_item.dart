@@ -11,23 +11,25 @@ class DeadlineItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double dw = MediaQuery.of(context).size.width;
+    final double dh = MediaQuery.of(context).size.height;
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 4),
+      margin: EdgeInsets.symmetric(vertical: dh * 0.005),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
-        color: const Color.fromRGBO(82, 82, 82, 1),
+        color: const Color(0xFF525252),
       ),
       child: ListTile(
         onTap: () {
           context.read<HomeCubit>().toggleCheckBox(deadlineItem: deadlineItem);
         },
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(dh * 0.006),
           child: Icon(
             deadlineItem.isDone
                 ? Icons.check_circle_rounded
                 : Icons.circle_outlined,
-            color: const Color.fromARGB(255, 207, 200, 200),
+            color: const Color(0xFFCFC8C8),
           ),
         ),
         title: Column(
@@ -36,7 +38,7 @@ class DeadlineItemWidget extends StatelessWidget {
             Text(
               deadlineItem.task,
               style: GoogleFonts.ubuntuMono(
-                fontSize: 19,
+                fontSize: dh * .022,
                 color: Colors.white,
                 decoration:
                     deadlineItem.isDone ? TextDecoration.lineThrough : null,
@@ -45,19 +47,19 @@ class DeadlineItemWidget extends StatelessWidget {
             Text(
               deadlineItem.deadlineDateFormatted(),
               style: GoogleFonts.ubuntuMono(
-                fontSize: 15,
+                fontSize: dh * .018,
                 color: Colors.white,
               ),
             ),
           ],
         ),
         trailing: Padding(
-          padding: const EdgeInsets.all(2.0),
+          padding: EdgeInsets.all(dh * 0.002),
           child: Container(
-            margin: const EdgeInsets.all(3),
-            width: 100,
+            margin: EdgeInsets.all(dh * 0.002),
+            width: dw * 0.24,
             decoration: BoxDecoration(
-              color: const Color.fromRGBO(214, 204, 194, 1),
+              color: const Color(0xFFD6CCC2),
               borderRadius: BorderRadius.circular(5),
             ),
             child: Column(
@@ -66,7 +68,7 @@ class DeadlineItemWidget extends StatelessWidget {
                 Text(
                   deadlineItem.daysLeft(),
                   style: GoogleFonts.ubuntuMono(
-                    fontSize: 20,
+                    fontSize: dh * .024,
                     color: Colors.black,
                     textStyle: const TextStyle(fontWeight: FontWeight.bold),
                   ),
@@ -79,7 +81,7 @@ class DeadlineItemWidget extends StatelessWidget {
                     return Text(
                       suffix,
                       style: GoogleFonts.ubuntuMono(
-                        fontSize: 12,
+                        fontSize: dh * .015,
                         color: Colors.black,
                         textStyle: const TextStyle(fontWeight: FontWeight.bold),
                       ),
