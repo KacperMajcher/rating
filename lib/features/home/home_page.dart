@@ -20,6 +20,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final double dw = MediaQuery.of(context).size.width;
+    final double dh = MediaQuery.of(context).size.height;
+
     return BlocBuilder<HomeCubit, HomeState>(
       builder: (context, state) {
         switch (state.status) {
@@ -52,35 +55,35 @@ class _HomePageState extends State<HomePage> {
               floatingActionButton: PlusButton(mounted: mounted),
               appBar: const CustomAppBar(),
               drawer: const CustomDrawer(),
-              backgroundColor: const Color.fromRGBO(41, 41, 41, 1),
+              backgroundColor: const Color(0xFF292929),
               body: Column(
                 children: [
                   Stack(
                     alignment: AlignmentDirectional.center,
                     children: <Widget>[
                       Container(
-                        height: 80,
-                        color: const Color.fromRGBO(41, 41, 41, 1),
+                        height: dh * .095,
+                        color: const Color(0xFF292929),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.all(20.0),
-                        child: SearchBoxDeadlines(),
+                      Padding(
+                        padding: EdgeInsets.all(dh * .024),
+                        child: const SearchBoxDeadlines(),
                       ),
                     ],
                   ),
                   Container(
-                    height: 120,
-                    color: const Color.fromRGBO(41, 41, 41, 1),
+                    height: dh * .142,
+                    color: const Color(0xFF292929),
                     child: Align(
                       alignment: Alignment.center,
                       child: Padding(
-                        padding: const EdgeInsets.all(20.0),
+                        padding: EdgeInsets.all(dh * .024),
                         child: Text(
                           'App Planner: Upcoming Deadlines',
                           style: GoogleFonts.sono(
-                            fontSize: 30,
+                            fontSize: dh * .036,
                             fontWeight: FontWeight.w500,
-                            color: const Color.fromRGBO(237, 237, 233, 1),
+                            color: const Color(0xFFEDEDE9),
                           ),
                         ),
                       ),
@@ -124,14 +127,15 @@ class _HomePageState extends State<HomePage> {
                             },
                             background: Container(
                               alignment: Alignment.centerRight,
-                              child: const Padding(
-                                padding: EdgeInsets.only(right: 35),
-                                child: Icon(Icons.delete, color: Colors.white),
+                              child: Padding(
+                                padding: EdgeInsets.only(right: dw * .085),
+                                child: const Icon(Icons.delete,
+                                    color: Colors.white),
                               ),
                             ),
                             child: Padding(
                               padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
+                                  EdgeInsets.symmetric(horizontal: dw * .048),
                               child: DeadlineItemWidget(
                                 deadlineItem: deadline,
                               ),
@@ -152,10 +156,11 @@ class _HomePageState extends State<HomePage> {
     required String message,
     required Color backgroundColor,
   }) {
+    final double dw = MediaQuery.of(context).size.width;
     return SnackBar(
       content: Row(
         children: [
-          const SizedBox(width: 10),
+          SizedBox(width: dw * .024),
           Text(message),
         ],
       ),
@@ -174,6 +179,8 @@ class PlusButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double dw = MediaQuery.of(context).size.width;
+
     return FloatingActionButton(
       shape: const CircleBorder(),
       backgroundColor: const Color(0xFFE85D04),
@@ -187,17 +194,17 @@ class PlusButton extends StatelessWidget {
 
         if (result == true && mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
+            SnackBar(
               content: Row(
                 children: [
-                  Icon(
+                  const Icon(
                     Icons.tag_faces_rounded,
                     color: Colors.white,
                   ),
                   SizedBox(
-                    width: 10,
+                    width: dw * .024,
                   ),
-                  Text('Alright, let\'s get to it, dude!'),
+                  const Text('Alright, let\'s get to it, dude!'),
                 ],
               ),
               backgroundColor: Colors.green,
