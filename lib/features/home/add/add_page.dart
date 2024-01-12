@@ -37,7 +37,20 @@ class _AddPageState extends State<AddPage> {
             appBar: AppBar(
               backgroundColor: const Color(0xFF292929),
               elevation: 0,
-              title: const Text('What needs to be done, boss?'),
+              leading: Builder(
+                builder: (BuildContext context) {
+                  return IconButton(
+                    icon: const Icon(Icons.close_rounded, color: Colors.white),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  );
+                },
+              ),
+              title: const Text(
+                'What needs to be done, boss?',
+                style: TextStyle(color: Colors.white),
+              ),
               actions: [
                 IconButton(
                   onPressed: _task == null || _deadline == null
@@ -89,10 +102,12 @@ class _AddPageBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double dw = MediaQuery.of(context).size.width;
+    final double dh = MediaQuery.of(context).size.height;
     return ListView(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 30,
-        vertical: 20,
+      padding: EdgeInsets.symmetric(
+        horizontal: dh * .035,
+        vertical: dw * .049,
       ),
       children: [
         TextField(
@@ -100,7 +115,7 @@ class _AddPageBody extends StatelessWidget {
           onChanged: onTitleChanged,
           decoration: const InputDecoration(
             filled: true,
-            fillColor: Color.fromRGBO(82, 82, 82, 1),
+            fillColor: Color(0xFF525252),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Colors.white),
             ),
@@ -115,7 +130,7 @@ class _AddPageBody extends StatelessWidget {
             ),
           ),
         ),
-        const SizedBox(height: 20),
+        SizedBox(height: dh * .024),
         ElevatedButton(
           onPressed: () async {
             final selectedDate = await showDatePicker(
@@ -135,7 +150,10 @@ class _AddPageBody extends StatelessWidget {
                       onSurface: Colors.white,
                     ),
                   ),
-                  child: child ?? const Text('Choose date'),
+                  child: child ??
+                      const Text(
+                        'Choose date',
+                      ),
                 );
               },
             );
@@ -144,7 +162,10 @@ class _AddPageBody extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.black,
           ),
-          child: Text(selectedDateFormatted ?? 'Choose date'),
+          child: Text(
+            selectedDateFormatted ?? 'Choose date',
+            style: const TextStyle(color: Colors.white),
+          ),
         )
       ],
     );
